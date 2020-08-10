@@ -1,0 +1,117 @@
+/******************************************************************************
+// Created by: Shlomo Hassid.
+// Release Version : 1.0.1
+// Creation Date: 08/08/2020
+// Copyright 2020, Shlomo Hassid.
+//
+// This is created on top of milligram framework to include some css based components. 
+/******************************************************************************/
+
+
+/*****************************      Changelog       ****************************
+1.0.1:
+    ->initial, creation
+***********************************************************************************/
+
+
+/******************************  SIMPLE MODAL v.1.0.0  *****************************/
+
+
+/*****************************      Changelog       ********************************
+1.0.0:
+    ->initial, creation
+***********************************************************************************/
+
+
+/* TODO : add css variables to control the design */
+
+
+/* TODO : modal should shrink and fit responsiveness */
+
+.modal:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.modal .sign-close {
+    color: #9b4dca;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 7px 20px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+.modal .sign-close:hover {
+    color: #651b92;
+}
+
+.opened:before {
+    display: block;
+}
+
+.opened .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    top: 20%;
+}
+
+.modal-dialog {
+    background: #f0f0f0;
+    border: #222222 solid 0px;
+    border-radius: 5px;
+    margin-left: -200px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    z-index: 11;
+    width: 360px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translate(0, -500%);
+    -ms-transform: translate(0, -500%);
+    transform: translate(0, -500%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body input {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    color: #888;
+    background-color: white;
+    outline: 0;
+    font-size: 14px;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 10px 20px;
+}
+
+.modal-header {
+    border-bottom: #d6c6e0 solid 1px;
+    background-color: #fbfbfb;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
