@@ -87,6 +87,7 @@ $conf["page"]["meta"] = [
 
 /******************************  FW signup  *****************************/
 $conf["g-sign"] = array(
+    "app-name"      => "SIK FrameWork",
     "client-id"     => "507601874447-arcjrvaduht39r019nse7a5g7lsg1s16.apps.googleusercontent.com",
     "client-secret" => "83_iqCt15CGLtMHBzYPDY45Z",
     "redirect"      => $conf["path"]["domain"].$conf["path"]["site_base_path"]."?page=gredirect"
