@@ -41,14 +41,20 @@ Trace::reg_vars(["Request" => $Page->request, "Token" => $Page->token, "Pages" =
 /******************************  G Client  *****************************/
 
 $gClient = new Google_Client();
+$gClient->setApplicationName($conf["g-sign"]["app-name"]);
 $gClient->setClientId($conf["g-sign"]["client-id"]);
 $gClient->setClientSecret($conf["g-sign"]["client-secret"]);
 $gClient->setRedirectUri($Page->parse_slash_url_with($conf["g-sign"]["redirect"]));
-$gClient->addScope("email");
-$gClient->addScope("profile");
+$gClient->setScopes([
+    Google_Service_Plus::PLUS_LOGIN,
+    Google_Service_PeopleService::USERINFO_EMAIL,
+    Google_Service_PeopleService::USER_BIRTHDAY_READ
+]);
 $User->gSignUrl = $gClient->createAuthUrl();
 $google_oauth = new Google_Service_Oauth2($gClient);
 
+//$datee = new Google_Service_PeopleService_Date();
+//$datee->
 /******************************  User login / logout   *****************************/
 //Check user signed or not:
 $User->initial_user_login_status($gClient, $google_oauth);
