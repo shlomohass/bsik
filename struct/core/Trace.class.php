@@ -16,9 +16,9 @@
 //      -> added a remove button in the debugger console.
 //      -> Improved styling bystreching left:0, right:0 of the console.
 // 1.3
-//      -> Improved add_trace to support several argument registeration. 
-//      -> Added multiple vars registeration reg_vars(["name" => $var1, "name" => $var])
-//      -> fixed bug with multiple var registeration assignment in add_trace.
+//      -> Improved add_trace to support several argument registration. 
+//      -> Added multiple vars registration reg_vars(["name" => $var1, "name" => $var])
+//      -> fixed bug with multiple var registration assignment in add_trace.
 //      -> fixed bug/Error in reg_var -> changed var to vars.
 /******************************************************************************/
 
