@@ -143,9 +143,7 @@ class User extends Base {
 
     public function initial_user_login_status($gClient) {
         //First check if already signed:
-        $ret = false;
         if (isset($_SESSION['usertoken']) && isset($_SESSION['userid'])) {
-            // TODO: make sign in types globals and managed 
             if(isset($_SESSION["userlogintype"]) && $_SESSION["userlogintype"] == "g") { 
                 $gClient->setAccessToken($_SESSION['usertoken']);
                 if ($gClient->getAccessToken()) { //User is logged...
@@ -153,24 +151,22 @@ class User extends Base {
                         "users", "* ", 
                         [["id", "=", $_SESSION['userid']], 
                         ["g_access_token", "=", $_SESSION['usertoken']["access_token"]]]
-                    );
-                    if (!empty($this->user_data)) {
-                        $this->user_data = $this->user_data[0];
-                        $this->userIsSigned = true;
-                    }
-                    $ret = true;
-                } else { //Google token is expired or invalid or canceled
-                    $ret = false;
-                }
+                    );       
+                } //Google token is expired or invalid or canceled
             } elseif(isset($_SESSION["userlogintype"]) && $_SESSION["userlogintype"] == "e") {
-                $ret = true;
+                $this->userIsSigned = true;
             } else {
-                $ret = false;
+                $this->userIsSigned = false;
             }
+        }
+         // Check if this user exists and is active
+        if (!empty($this->user_data) && intval($this->user_data[0]["user_account_status"]) === 0) {
+            $this->user_data = $this->user_data[0];
+            $this->userIsSigned = true;
         }
         //TODO: log user is active into DB.
         //TODO: Update User Last Seen:
-        return $ret;
+        return $this->userIsSigned;
     }
     /* Get the location of user .
      *  @param $ip => String Ip or Visitor -> will detect the IP
