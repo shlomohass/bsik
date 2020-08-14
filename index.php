@@ -84,7 +84,7 @@ switch ($Page->request["page"]) {
             include PATH_DYANMIC_PAGES.$Page->request["page"].".php";
         } else {
             // Not found page:
-            $Page->error_page("page_request_notfound");
+            $Page::error_page("page_request_notfound");
         }
 }
 

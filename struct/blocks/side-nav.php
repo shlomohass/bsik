@@ -86,4 +86,3 @@ Trace::reg_var("Page Storage", $Page->get(true));
     </div>
     <!-- /Modal -->
 <!-- END : Used Modal for side Nav -->
-$Page

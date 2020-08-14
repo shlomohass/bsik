@@ -13,7 +13,7 @@ if (isset($_GET['code'])) {
         $_SESSION['usertoken'] = $gClient->getAccessToken(); 
     }
     catch (\Google_Service_Exception $e) {
-        $Page->error_page("g_login_internal_error");
+        Page::error_page("g_login_internal_error");
     }
   // get profile info and birthday:
   $gpUserProfile = $google_oauth->userinfo_v2_me->get();
@@ -41,10 +41,14 @@ if (isset($_GET['code'])) {
   $gpUserData['g_locale']       = !empty($gpUserProfile['locale'])?     $gpUserProfile['locale']:''; 
   $gpUserData['picture']        = !empty($gpUserProfile['picture'])?    $gpUserProfile['picture']:''; 
   $gpUserData['birthday']       = !empty($birthDaysStr)?    $birthDaysStr:''; 
-  // now you can use this profile info to create account in your website and make user logged in.
-  var_dump($gpUserData);
-  var_dump($gMe->getBirthdays()[0]->getDate());
+  
+  //All Information collected from Google Client - Store it in DB:
+  //This also create the sessions:
+  $User->save_g_signup_user($g_token, $gpUserData); 
+  
+  //Redirect to login session based.
+  Page::jump_to_page("main");
 
 } else {
-  $Page->error_page("g_login_no_code");
+  Page::error_page("g_login_no_code");
 }

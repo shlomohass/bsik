@@ -44,20 +44,21 @@ class Page extends Base
     private $custom_body_tag = "";
     private $storage = array();
     /* Page constructor.
-     *  @param $conf => SIK configuration array
+     *  @param $conf => SIK configuration array Used in Base Parent
      *  @Default-params: none
      *  @return none
      *  @Exmaples:
     */
     public function __construct($conf)
     {
+        parent::__construct($conf);
         $this->tokenize(); //Tokenize the page.
         $this->request["type"] = $this->request_type(); //Get the request 
         $this->request["page"] = $this->request_page(); //Which page or operation to perform ??
-        $this->fill_dynamic_pages($conf["path"]["dynamic_pages"]); //Create a list of all available pages.
-        $this::$index_page_url = $this->parse_slash_url_with($conf["path"]["domain"].$conf["path"]["site_base_path"]);
+        $this->fill_dynamic_pages($this::$conf["path"]["dynamic_pages"]); //Create a list of all available pages.
+        $this::$index_page_url = $this->parse_slash_url_with($this::$conf["path"]["domain"].$this::$conf["path"]["site_base_path"]);
         $this->request["when"] = self::datetime(); //Time stamp for debuging
-        $this->head_meta = self::array_extend($this->head_meta, $conf["page"]["meta"]); //Sets the ,eta global defaults
+        $this->head_meta = self::array_extend($this->head_meta, $this::$conf["page"]["meta"]); //Sets the ,eta global defaults
     }
     /* Get and set the type of the page request.
      *  @Default-params: none
@@ -198,8 +199,5 @@ class Page extends Base
     */
     public function get($name) {
         return $name === true ? $this->storage : $this->storage[$name];
-    }
-    public function error_page($code = 0) {
-        header("Location: ".$this::$index_page_url."?page=error&ername=".$code);
     }
 }

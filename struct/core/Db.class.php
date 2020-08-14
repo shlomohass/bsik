@@ -828,6 +828,7 @@ class DB {
             $values[] = ( trim(strtoupper($value)) == 'NOW()' ||
                           trim(strtoupper($value)) == 'CURDATE()' ||
                           trim(strtoupper($value)) == 'CURTIME()' ||
+                          trim(strtoupper($value)) == 'CURRENT_TIMESTAMP()' ||
                           trim(strtoupper($value)) == 'NULL'
                         )?trim(strtoupper($value)):"'".$this->filter( $value )."'";
         }
@@ -860,9 +861,12 @@ class DB {
         $query = "UPDATE ".$this->name_parser($table)." SET ";
         if (is_array($variables)) {
         foreach( $variables as $field => $value ) {
-            $updates[]=(strtolower($value) === 'null'||strtolower($value) === 'now()')?
-              "`".$field."` = ".$value:
-              "`".$field."` = '".$this->filter($value)."'";
+            if (strtolower($value) === 'null'|| strtolower($value) === 'now()')
+                $updates[] = "`".$field."` = ".$value;
+            elseif (substr($value, 0, 2) === "++" ||substr($value, 0, 2) === "--") //Handles increment ad decrement issues
+                $updates[] = "`".$field."` = `".$field."` ".$value[0]." ".substr($value, 2);
+            else
+                $updates[] = "`".$field."` = '".$this->filter($value)."'";
         }
         $query .= implode(', ', $updates)." ";
         } else {
