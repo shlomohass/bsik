@@ -20,6 +20,7 @@ class User extends Base {
     public $gSignUrl        = "";
     public $userIsSigned    = false;
     private $DBLink         = null;
+    public $user_data       = false;
     /** Contructor
      * 
      * @param array $conf
@@ -82,7 +83,8 @@ class User extends Base {
         $geo_result = $this->ip_info("Visitor", "location");
         if (empty($checkExists)) { //New Email address = New user
             $Qexec = $this->DBLink->insert_safe( "users", 
-                [   "g_token"       => json_encode($g_token),
+                [   "g_access_token"=> $g_token["access_token"],
+                    "g_token"       => json_encode($g_token),
                     "g_meta"        => json_encode($gpUserData),
                     "g_profile"     => $gpUserData['oauth_uid'],
                     "role"          => $this->get_role_id("user"),
@@ -108,7 +110,8 @@ class User extends Base {
         } else { //Already a registered user - just update and create cookies:
             //TODO: seen counter update only if last seen is old enough
             $Qexec = $this->DBLink->update( "users", 
-                [   "g_token"       => json_encode($g_token),
+                [   "g_access_token"=> $g_token["access_token"],
+                    "g_token"       => json_encode($g_token),
                     "g_meta"        => json_encode($gpUserData),
                     "g_profile"     => $gpUserData['oauth_uid'],
                     "birth_date"    => $gpUserData['birthday'],
@@ -123,28 +126,39 @@ class User extends Base {
                     "ip_continent_code"=> !empty($geo_result) ? $geo_result["continent_code"] : "NULL",
                     "ip_geo_object"    => !empty($geo_result) ? $geo_result["full"] : "NULL",
                     "ip_timezone"      => !empty($geo_result) ? $geo_result["timezone"] : "NULL"
-                ]
+                ],
+                [["id","=",$checkExists[0]["id"]]]
             );
         }
         if (!$Qexec) {
-            //TODO: Test this redirect to error page.
             $this::error_page("g_login_db_error");
         }
         //Handle sessions:
-        $this::create_session(["usertoken" => $g_token, "userlogintype" => "g"]);
+        $this::create_session([
+            "usertoken"     => $g_token, 
+            "userlogintype" => "g",
+            "userid"        => $this->DBLink->lastid()
+        ]);
     }
 
     public function initial_user_login_status($gClient) {
-        //First check if allready signed:
-        if (isset($_SESSION['usertoken'])) {
+        //First check if already signed:
+        if (isset($_SESSION['usertoken']) && isset($_SESSION['userid'])) {
             // TODO: make sign in types globals and managed 
             if(isset($_SESSION["userlogintype"]) && $_SESSION["userlogintype"] == "g") { 
                 $gClient->setAccessToken($_SESSION['usertoken']);
                 if ($gClient->getAccessToken()) { //User is logged...
-
+                    $this->user_data = $this->DBLink->select(
+                        "users", "* ", 
+                        [
+                            ["id", "=", $_SESSION['userid']], 
+                            ["g_access_token", "=", $_SESSION['usertoken']["access_token"]] 
+                        ]
+                    );
+                    //TODO: Check we actually have this user and he is enables??
+                    $this->userIsSigned = true;
                     return true;
                 } else { //Google token is expired or invalid or canceled
-
                     return false;
                 }
             } elseif(isset($_SESSION["userlogintype"]) && $_SESSION["userlogintype"] == "e") {
