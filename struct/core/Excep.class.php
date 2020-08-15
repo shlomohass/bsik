@@ -132,6 +132,7 @@ class SIKErrorPage {
 class SIKErrorPages {
     const ERRORS = [
         "g_login_no_code"       => [ "code" => 234256, "mes" => "Bad login request while using your google account."],
+        "g_login_db_error"      => [ "code" => 234277, "mes" => "Internal error when trying to login with G+."],
         "page_request_notfound" => [ "code" => 982753, "mes" => "The page you request can't be found."] 
     ]; 
     static public function get_by_name($name) {

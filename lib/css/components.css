@@ -62,7 +62,7 @@
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
-    top: 20%;
+    top: 80px;
 }
 
 .modal-dialog {
@@ -90,14 +90,20 @@
     padding: 20px;
 }
 
-.modal-body input {
-    width: 200px;
+.modal-body input,
+.modal-body select {
+    width: 90%;
     padding: 8px;
     border: 1px solid #ddd;
     color: #888;
     background-color: white;
     outline: 0;
     font-size: 14px;
+}
+
+.modal-body select {
+    background: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"-10 0 30 24\"><path fill=\"%23a6a6a6\" d=\"M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z\"/></svg>") center left no-repeat white;
+    padding-left: 3.0rem;
 }
 
 .modal-header,
@@ -114,4 +120,17 @@
 .modal-header h2 {
     font-size: 20px;
     margin-bottom: 0;
+}
+
+.modal-body label {
+    font-size: 1.3rem;
+    text-align: right;
+    padding: 0px 17px;
+}
+
+.modal-body fieldset,
+.modal-body input,
+.modal-body select,
+.modal-body textarea {
+    margin-bottom: 0.5rem;
 }

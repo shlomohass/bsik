@@ -12,6 +12,9 @@
 
 class Base
 {
+
+    /* Base Static properties:*/
+    public static $conf;
     /* Get datetime str
      *  @param $w => String
      *  @Default-param: "now-str"
@@ -21,6 +24,10 @@ class Base
      *      > "now-mysql" => now in 'Y-m-d H:i:s' format
      *      > Any => runs date() and pass argument
      */
+    public function __construct( &$_conf) {
+        Trace::add_trace('construct class',__METHOD__);
+        $this::$conf = $_conf;
+    }
     public static function datetime($w = "now-str")
     {
         switch ($w) {
@@ -66,5 +73,40 @@ class Base
             }
         }
         return $a;
+    }
+    /* A Ui based to handle errors that occured:
+    */
+    public static function error_page($code = 0) {
+        Base::jump_to_page("error",["ername" => $code],true);
+    }
+    /* Jump to page by redirect if headers were sent will use a javascript method.
+     *  @param $page => String - Page name as used by system
+     *  @param $Qparams => Array - Keys as params names and values as value to attach to the URL query string
+     *  @param $exit => Boolean - whether to kill the page or not
+     *  @Default-params: 
+     *      - String "main", 
+     *      - [{no query String extra params}],
+     *      - Boolean True
+     *  @Examples:
+     *      > jump_to_page("about", ["v" => 10]) => redirects to the about page with v = 10
+    */
+    public static function jump_to_page($page = "main", $Qparams = [], $exit = true) {
+        $url = Page::$index_page_url."?page=".urlencode($page);
+        foreach ($Qparams as $p => $v)
+            $url .= "&".urlencode($p)."=".urlencode($v);
+        if (headers_sent()) echo '<script type="text/javascript">window.location = "'.$url.'"</script>';
+        else header("Location: ".$url);
+        if ($exit) exit();
+    } 
+    public static function create_session($sessions) {
+        foreach ($sessions as $key => $sess) {
+            $_SESSION[$key] = $sess;
+        }
+    }
+    public static function delete_session($sessions) {
+        foreach ($sessions as $sess) {
+            if (isset($_SESSION[$sess]))
+                unset($_SESSION[$sess]);
+        }
     }
 }

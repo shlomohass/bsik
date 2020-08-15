@@ -72,6 +72,7 @@ a:hover {
 
 .google-button {
     height: 40px;
+    width: 90%;
     border-width: 0;
     background: white;
     color: #737373;
@@ -413,7 +414,40 @@ aside.side-nav>ul.side-nav-links>li>a>i {
 @media (min-width: 120.0rem) {}
 
 
+/* Signup FORM ****************************************************/
+
+.login-menu .required-field {
+    position: relative;
+}
+
+.login-menu .required-field:after {
+    content: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox=\"-10 0 20 24\" xmlns="http://www.w3.org/2000/svg"> <ellipse ry="5" rx="5" id="svg_2" cy="6" cx="6" fill="%23ff5656"/> </svg>');
+    position: absolute;
+    top: 5px;
+    right: 4px;
+}
+
+
+/* <svg width="12" height="12" viewBox=\"-10 0 30 24\" xmlns="http://www.w3.org/2000/svg">
+  <ellipse ry="5" rx="5" id="svg_2" cy="6" cx="6" stroke-width="1.5" fill="#ff5656"/>
+</svg> */
+
+
 /******************************  Helpers  *****************************/
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-small-bold {
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.text-medium-bold {
+    font-size: 0.8em;
+    font-weight: bold;
+}
 
 .rem-padding {
     padding: 0 !important;
@@ -429,8 +463,16 @@ aside.side-nav>ul.side-nav-links>li>a>i {
     margin: 0;
 }
 
+.display-none {
+    display: none;
+}
+
 .inline-block {
     display: inline-block;
+}
+
+.add-pointer {
+    cursor: pointer;
 }
 
 .noselect {
