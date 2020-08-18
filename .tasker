@@ -1,0 +1,134 @@
+{
+    "desc": "BSIK (Basic SIK Framework) is a base newgen CMS",
+    "name": "BSIK",
+    "notes": [],
+    "tags": [
+        {
+            "bug": {
+                "desc": "for bugs tracking"
+            }
+        },
+        {
+            "database": {
+                "desc": "related to databese dev"
+            }
+        },
+        {
+            "feature": {
+                "desc": "small features and basic tasks"
+            }
+        },
+        {
+            "design": {
+                "desc": "design features"
+            }
+        },
+        {
+            "frontend": {
+                "desc": "Front End Related"
+            }
+        },
+        {
+            "backend": {
+                "desc": "Back-end related"
+            }
+        }
+    ],
+    "tasker": {
+        "allowdelete": true,
+        "created": "18-08-2020 23:51:20",
+        "enableloads": true,
+        "modified": "19-08-2020 02:02:10",
+        "usecolors": true,
+        "used": "19-08-2020 02:02:13",
+        "version": "1.0.5"
+    },
+    "tasks": [
+        {
+            "cancel": false,
+            "created": "18-08-2020 23:55:41",
+            "load": 6,
+            "plan": [
+                {
+                    "date": "",
+                    "user": [
+                        "shlomi"
+                    ],
+                    "v": "1.0.1"
+                },
+                {
+                    "date": "",
+                    "user": [
+                        "shlomi"
+                    ],
+                    "v": "1.0.1"
+                }
+            ],
+            "report": [
+                {
+                    "by": [
+                        "shlomi"
+                    ],
+                    "date": "18-08-2020 23:58:24",
+                    "note": "created basic form toggle as a modal to support the login proccess",
+                    "status": 0.15000000596046448
+                },
+                {
+                    "by": [
+                        "shlomi"
+                    ],
+                    "date": "19-08-2020 01:59:31",
+                    "note": "Built and integrated a validate lib and procedure for client side validation",
+                    "status": 0.3499999940395355
+                }
+            ],
+            "status": 0.3499999940395355,
+            "tagged": [
+                "feature",
+                "backend",
+                "frontend",
+                "database"
+            ],
+            "task": "create email based login procedure",
+            "updated": "19-08-2020 01:58:13"
+        },
+        {
+            "cancel": false,
+            "created": "19-08-2020 02:01:51",
+            "load": 5,
+            "plan": [
+                {
+                    "date": "",
+                    "user": [
+                        "shlomi"
+                    ],
+                    "v": "1.0.1"
+                }
+            ],
+            "report": [],
+            "status": 0.0,
+            "tagged": [
+                "feature"
+            ],
+            "task": "Create and Implement a language pack based system",
+            "updated": "19-08-2020 02:01:51"
+        }
+    ],
+    "types": [
+        {
+            "desc": "basic task",
+            "name": "task"
+        }
+    ],
+    "users": [
+        {
+            "shlomi": {
+                "desc": "main developer and project manager",
+                "mail": "shlomohassid@gmail.com"
+            }
+        }
+    ],
+    "versions": [
+        "1.0.1"
+    ]
+}

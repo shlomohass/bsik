@@ -427,10 +427,26 @@ aside.side-nav>ul.side-nav-links>li>a>i {
     right: 4px;
 }
 
+.login-menu .login-validate-error {
+    color: #ff4949;
+    display: none;
+    padding-right: 5px;
+    font-size: 0.8em;
+}
 
-/* <svg width="12" height="12" viewBox=\"-10 0 30 24\" xmlns="http://www.w3.org/2000/svg">
-  <ellipse ry="5" rx="5" id="svg_2" cy="6" cx="6" stroke-width="1.5" fill="#ff5656"/>
-</svg> */
+.login-menu .login-validate-error:before {
+    content: "\f071";
+    color: #ff4949;
+    font-family: "FontAwesome";
+    font-size: 0.8em;
+    right: -4px;
+    position: relative;
+}
+
+.login-menu .error-field {
+    background-color: #fff5f5;
+    border-color: #ffb4b4;
+}
 
 
 /******************************  Helpers  *****************************/

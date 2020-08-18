@@ -15,6 +15,7 @@ $Page->include("head",     "css",  "//fonts.googleapis.com/css?family=Roboto:300
     ->include("head",      "css",  "css/main.css")
     ->include("head",      "js",   "https://kit.fontawesome.com/c7133f55bd.js")
     ->include("head",      "js",   "import/jquery/jquery-3.5.1.min.js")
+    ->include("body-end",  "js",   "import/validate/validate.min.js")
     ->include("body-end",  "js",   "js/components.js")
     ->include("body-end",  "js",   "js/global.js")
     ->include("body-end",  "js",   "js/main.js");

@@ -85,27 +85,44 @@ Trace::reg_var("Page Storage", $Page->get(true));
                 <p class="text-medium-bold text-underline rem-margin"><span id="signup" class="add-pointer">הרשם בפעם הראשונה</span></p>
             </div>
             <div class="modal-body signup-form display-none">
-                <fieldset>
-                    <label for="email" class="required-field">הקלד כתובת מייל:</label>
-                    <input type="text" name="email" placeholder="example@mail.com" size="55" style="direction:ltr" />
-                    <label for="pass1" class="required-field">הקלד/י סיסמא:</label>
-                    <input type="password" name="password" placeholder="לפחות 6 תווים" size="20" style="direction:ltr" />
-                    <label for="passwordVerify" class="required-field">הקלד/י סיסמא בשנית:</label>
-                    <input type="password" name="passwordVerify" placeholder="אימות סיסמא" size="20" style="direction:ltr" />
-                    <label for="firstname" class="required-field">שם פרטי:</label>
-                    <input type="text" name="firstname" placeholder="אותיות בלבד" size="20" style="direction:rtl" />
-                    <label for="lastname" class="required-field">שם משפחה:</label>
-                    <input type="text" name="lastname" placeholder="אותיות בלבד" size="20" style="direction:rtl" />
-                    <label for="gender">בחר/י מין:</label>
-                    <select name="gender">
-                        <option value="male">זכר</option>
-                        <option value="female">נקבה</option>
-                        <option value="unknkown" selected>אחר</option>
-                    </select>
-                    <label for="organization">שם הארגון / חברה:</label>
-                    <input type="text" name="organization" placeholder="לא חובה" size="35" style="direction:rtl" />
-                </fieldset>
-                <button id="btn-signup" class="button button-outline">הרשם</button>
+                <form action="#" id="normal-signup" method="post" novalidate>
+                    <fieldset>
+                        <label for="email" class="required-field">הקלד כתובת מייל:
+                            <span class="login-validate-error validate-required">השדה הזה נחוץ.</span>
+                            <span class="login-validate-error validate-invalid-email">נדמה כי כתובת האימייל אינה תקינה.</span>
+                        </label>
+                        <input type="text" name="username" placeholder="example@mail.com" size="55" style="direction:ltr" class="error-field" />
+                        <label for="pass1" class="required-field">הקלד/י סיסמא:
+                            <span class="login-validate-error validate-required">השדה הזה נחוץ.</span>
+                            <span class="login-validate-error validate-length">הקלד סיסמא בת 8 תווים לפחות.</span>
+                        </label>
+                        <input type="password" name="password" placeholder="לפחות 6 תווים" size="20" style="direction:ltr" />
+                        <label for="passwordVerify" class="required-field">הקלד/י סיסמא בשנית:
+                            <span class="login-validate-error validate-required">השדה הזה נחוץ</span>
+                            <span class="login-validate-error validate-equality">סיסמאות אינן תואמות.</span>
+                        </label>
+                        <input type="password" name="passwordverify" placeholder="אימות סיסמא" size="20" style="direction:ltr" />
+                        <label for="firstname" class="required-field">שם פרטי:
+                            <span class="login-validate-error validate-required">השדה הזה נחוץ</span>
+                            <span class="login-validate-error validate-length">הערך חייב להיות לפחות 2 תווים אורך.</span>
+                        </label>
+                        <input type="text" name="firstname" placeholder="אותיות בלבד" size="20" style="direction:rtl" />
+                        <label for="lastname" class="required-field">שם משפחה:
+                            <span class="login-validate-error validate-required">השדה הזה נחוץ</span>
+                            <span class="login-validate-error validate-length">הערך חייב להיות לפחות 2 תווים אורך.</span>
+                        </label>
+                        <input type="text" name="lastname" placeholder="אותיות בלבד" size="20" style="direction:rtl" />
+                        <label for="gender">בחר/י מין:</label>
+                        <select name="gender">
+                            <option value="male">זכר</option>
+                            <option value="female">נקבה</option>
+                            <option value="unknkown" selected>אחר</option>
+                        </select>
+                        <label for="organization">שם הארגון / חברה:</label>
+                        <input type="text" name="organization" placeholder="לא חובה" size="35" style="direction:rtl" />
+                    </fieldset>
+                    <button id="btn-signup" type="submit" class="button button-outline">הרשם</button>
+                </form>
                 <p class="text-medium-bold text-underline rem-margin"><span id="signin" class="add-pointer">יש לך כבר משתמש?</span></p>
             </div>
             <div class="modal-footer">
