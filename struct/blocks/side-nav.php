@@ -100,7 +100,7 @@ Trace::reg_var("Page Storage", $Page->get(true));
                         <label for="passwordVerify" class="required-field">הקלד/י סיסמא בשנית:
                             <span class="login-validate-error validate-required">השדה הזה נחוץ</span>
                             <span class="login-validate-error validate-equality">סיסמאות אינן תואמות.</span>
-                        </label>
+                        </label> 
                         <input type="password" name="passwordverify" placeholder="אימות סיסמא" size="20" style="direction:ltr" />
                         <label for="firstname" class="required-field">שם פרטי:
                             <span class="login-validate-error validate-required">השדה הזה נחוץ</span>
