@@ -1,0 +1,104 @@
+/******************************************************************************
+// Created by: Shlomo Hassid.
+// Release Version : 1.0.1
+// Creation Date: 22/05/2020
+// Copyright 2020, Shlomo Hassid.
+/******************************************************************************/
+
+
+/*****************************      Changelog       ****************************
+1.0.1:
+    ->intial, creation
+*******************************************************************************/
+
+
+/* FONTS **********************************************************/
+
+
+/******************************  Alef  *****************************/
+
+@font-face {
+    font-family: 'Alef';
+    src: url('../fonts/Alef/Alef-bold.eot');
+    src: url('../fonts/Alef/Alef-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Alef/Alef-bold.woff') format('woff'), url('../fonts/Alef/Alef-bold.ttf') format('truetype'), url('../fonts/Alef/Alef-bold.svg#alefbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alef';
+    src: url('../fonts/Alef/Alef-regular.eot');
+    src: url('../fonts/Alef/Alef-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Alef/Alef-regular.woff') format('woff'), url('../fonts/Alef/Alef-regular.ttf') format('truetype'), url('../fonts/Alef/Alef-regular.svg#alefregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/******************************  Assistant  *****************************/
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('../fonts/Assistant/Assistant-Bold.eot');
+    src: url('../fonts/Assistant/Assistant-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Assistant/Assistant-Bold.woff') format('woff'), url('../fonts/Assistant/Assistant-Bold.ttf') format('truetype'), url('../fonts/Assistant/Assistant-Bold.svg#assistantbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('../fonts/Assistant/Assistant-Regular.eot');
+    src: url('../fonts/Assistant/Assistant-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Assistant/Assistant-Regular.woff') format('woff'), url('../fonts/Assistant/Assistant-Regular.ttf') format('truetype'), url('../fonts/Assistant/Assistant-Regular.svg#assistantregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('../fonts/Assistant/Assistant-Light.eot');
+    src: url('../fonts/Assistant/Assistant-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Assistant/Assistant-Light.woff') format('woff'), url('../fonts/Assistant/Assistant-Light.ttf') format('truetype'), url('../fonts/Assistant/Assistant-Light.svg#assistantlighter') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('../fonts/Assistant/Assistant-Regular.eot');
+    src: url('../fonts/Assistant/Assistant-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Assistant/Assistant-Regular.woff') format('woff'), url('../fonts/Assistant/Assistant-Regular.ttf') format('truetype'), url('../fonts/Assistant/Assistant-Regular.svg#assistantbolder') format('svg');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+
+/******************************  Roboto  *****************************/
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Bold.eot');
+    src: url('../fonts/Roboto/Roboto-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto/Roboto-Bold.wofff') format('woff'), url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Bold.svg#robotobold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.eot');
+    src: url('../fonts/Roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto/Roboto-Regular.woff') format('woff'), url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Regular.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Light.eot');
+    src: url('../fonts/Roboto/Roboto-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto/Roboto-Light.woff') format('woff'), url('../fonts/Roboto/Roboto-Light.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Light.svg#robotolighter') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Medium.eot');
+    src: url('../fonts/Roboto/Roboto-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto/Roboto-Medium.woff') format('woff'), url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Medium.svg#robotobolder') format('svg');
+    font-weight: bolder;
+    font-style: normal;
+}

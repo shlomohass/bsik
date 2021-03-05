@@ -1,0 +1,426 @@
+/******************************************************************************
+// Created by: Shlomo Hassid.
+// Release Version : 1.0.1
+// Creation Date: 22/05/2020
+// Copyright 2020, Shlomo Hassid.
+/******************************************************************************/
+
+
+/*****************************      Changelog       ****************************
+1.0.1:
+    ->intial, creation
+*******************************************************************************/
+
+
+/******************************  Imports  *****************************/
+
+@import "fonts.css";
+
+/******************************  Variables  *****************************/
+
+:root {
+    --manage-top-nav-height-s: 3.6rem;
+    --manage-top-nav-height-m: 3.6rem;
+    --manage-top-nav-height-l: 3.6rem;
+    --manage-side-nav-width-xs: 65px;
+    --manage-side-nav-width-s: 180px;
+    --manage-side-nav-width-m: 250px;
+    --manage-side-nav-active-color: #49647a;
+    --manage-side-nav-hover-color: #1f3547;
+    --manage-side-nav-font-color: #d4dbe1;
+    --manage-sid-nave-footer-content: "Designed & Built by © SIKDEV"
+}
+
+
+/******************************  Base  *****************************/
+
+html {
+    font-size: 14px;
+}
+
+body {
+    color: #606c76;
+    font-family: 'Assistant', 'Roboto', 'Alef', 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h2 {
+    margin: 0px 0px 20px 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+
+/******************************  Header  *****************************/
+
+.header {
+    box-sizing: border-box;
+    background: #f4f5f6;
+    border-bottom: .1rem solid #d1d1d1;
+    display: block;
+    height: var(--manage-top-nav-height-s);
+    left: 0;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.header__wrapper {
+    max-width: 97%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.brand {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0;
+    text-decoration: none;
+    color: #606c76;
+    font-family: Gotham Rounded A, Gotham Rounded B, Helvetica Neue, Arial, sans-serif;
+    position: relative;
+    height: 100%;
+    line-height: var(--manage-top-nav-height-s);
+}
+
+.brand__img {
+    vertical-align: middle;
+    display: inline;
+    transform: scale(0.7) translate(-35px, -1px);
+}
+
+.menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    float: right;
+}
+
+.menu__item {
+    float: left;
+    margin-bottom: 0;
+    margin-left: 2.5rem;
+    position: relative;
+}
+
+.menu__link {
+    display: inline;
+    font-size: 1rem;
+    line-height: var(--manage-top-nav-height-s);
+    padding: 0;
+    text-decoration: none;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+    .menu {
+        display: inline-block;
+    }
+    .brand__img {
+        transform: scale(0.7) translate(-50px, -1px);
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    .brand__img {
+        transform: scale(0.7) translate(-50px, -1px);
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+
+/******************************  Aside navigation  *****************************/
+
+.aside {
+    box-sizing: border-box;
+    background-color: #2a4052;
+    position: fixed;
+    top: 0;
+    height: calc(100% - var(--manage-top-nav-height-s));
+    margin-top: var(--manage-top-nav-height-s);
+    overflow: auto;
+    z-index: 2;
+    direction: rtl;
+    width: var(--manage-side-nav-width-xs);
+}
+
+.aside::-webkit-scrollbar-track {
+    background-color: #374f63;
+}
+
+.aside::-webkit-scrollbar {
+    width: 8px;
+    background-color: #374f63;
+}
+
+.aside::-webkit-scrollbar-thumb {
+    background-color: #596a79;
+}
+
+.nav {
+    padding: 0.3em 0.1em;
+    font-size: 1rem;
+    color: #fff;
+    direction: ltr;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav .is-active {
+    background-color: var(--manage-side-nav-active-color);
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.nav-list li a {
+    border-radius: 2px;
+    display: block;
+    padding: .5em .75em;
+    color: var(--manage-side-nav-font-color);
+    text-shadow: 1px 1px 3px #0a1b2a;
+}
+
+.nav-list li a span {
+    display: none;
+}
+
+.nav-list li a:hover {
+    background-color: var(--manage-side-nav-hover-color);
+}
+
+.nav-list li ul {
+    list-style: none;
+    margin: 0 .85em;
+    padding-left: 0px;
+}
+
+.nav-list>li>ul>li {
+    border-left: 1px solid #dbdbdb;
+}
+
+.nav-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: .3em;
+    border-bottom: 1px solid #3d586e;
+    margin-bottom: .4em;
+    width: 100%;
+    color: var(--manage-side-nav-font-color);
+    text-shadow: 1px 1px 3px #0a1b2a;
+    display: none;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+    .aside {
+        width: var(--manage-side-nav-width-s);
+    }
+    .aside::before {
+        content: var(--manage-sid-nave-footer-content);
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        right: 5%;
+        text-align: center;
+        color: #d4dbe1;
+        font-weight: normal;
+        font-size: 0.75rem;
+    }
+    .nav {
+        padding: 1em;
+    }
+    .nav-list li {
+        margin-bottom: 0.2rem;
+        text-align: left;
+    }
+    .nav-list li a span {
+        display: inline;
+    }
+    .nav-list li a i {
+        margin-right: 3px;
+    }
+    .nav-label {
+        display: inline-block;
+    }
+    .nav-list li ul {
+        list-style: none;
+        margin: .75em;
+        padding-left: .75em;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    .aside {
+        width: var(--manage-side-nav-width-m);
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+
+/******************************  Content  *****************************/
+
+.container_wrap {
+    box-sizing: border-box;
+    margin-top: var(--manage-top-nav-height-s);
+    margin-left: var(--manage-side-nav-width-xs);
+    padding: 10px;
+    padding: 10px;
+    height: calc(100vh - var(--manage-top-nav-height-s));
+    overflow-y: scroll;
+}
+
+.content {}
+
+.content_title {
+    color: #4d4d4d;
+    padding: 5px 20px;
+    border-bottom: 3px solid #dddddd;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+}
+
+.content::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #b4b4b4;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+    .container_wrap {
+        margin-left: var(--manage-side-nav-width-s);
+        padding: 20px;
+    }
+    .content_title {
+        padding: 5px 20px;
+        font-size: 1.8rem;
+        letter-spacing: 0.08rem;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    .container_wrap {
+        margin-left: var(--manage-side-nav-width-m);
+        padding: 20px;
+    }
+    .content_title {
+        padding: 5px 20px;
+        font-size: 2.1rem;
+        letter-spacing: 0.08rem;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+
+/******************************  Elements  *****************************/
+
+.card {
+    padding: 10px 20px;
+    height: 100%;
+    background-color: #4e4b51;
+    color: #fff;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+.card__title {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.big-text {
+    font-size: 3.5rem;
+}
+
+.small-text {
+    font-size: 0.9rem;
+}
+
+.green-text {
+    color: #00d1b2;
+}
+
+.red-text {
+    color: #ff3860;
+}
+
+.yellow-text {
+    color: #ffdd57;
+}
+
+.space-bottom {
+    margin-bottom: 1em;
+}
