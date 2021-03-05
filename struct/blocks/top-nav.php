@@ -17,7 +17,7 @@ if (!isset($Page)) { include_once(PATH_REQUIRED_PAGES."error.php?p=main&code=10"
 <header class="nav-wrap rem-padding rem-margin">
     <nav class="main-nav bar default">
         <a href="#" class="nav-logo">
-            <img src="img/logo.png" />
+            <img src="img/logosiktec.svg" />
         </a>
         <ul class="nav-list">
             <li class="nav-static">לינק 1</li>

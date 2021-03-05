@@ -11,36 +11,37 @@
 *******************************************************************************/
 
 define('DS', DIRECTORY_SEPARATOR);
-define('EXPOSE_OP_TRACE', true);
+define("ROOT_PATH", dirname(__FILE__) );
 
 /******************************  Requires       *****************************/
 
-require_once 'struct'.DS.'conf.php';
-require_once 'vendor'.DS.'autoload.php';
-require_once PATH_CORE.'Excep.class.php';
-require_once PATH_CORE.'Trace.class.php';
-require_once PATH_CORE.'Db.class.php';
-require_once PATH_CORE.'Base.class.php';
-require_once PATH_CORE.'User.class.php';
-require_once PATH_CORE.'Page.class.php';
+require_once ROOT_PATH.DS."struct".DS.'conf.php';
+require_once PLAT_PATH_VENDOR.DS.'autoload.php';
+require_once PLAT_PATH_CORE.DS.'Base.class.php';
+require_once PLAT_PATH_CORE.DS.'User.class.php';
+require_once PLAT_PATH_CORE.DS.'Page.class.php';
 
-Trace::add_step(__FILE__,"Loading Code - Require");
-Trace::add_trace("Configuration Object",__FILE__, $conf);
+Trace::add_step(__FILE__,"Controller - index");
 
 if(!session_id()){ session_start(); }
-/******************************  Load DataBase      *****************************/
-$Data = new DB($conf['db']);
+
+/*********************  Load Conf and DataBase  *****************************/
+Base::configure($conf);
+Trace::add_trace("Loaded Base Configuration Object",__FILE__, $conf);
+Base::connect_db();
+Trace::add_trace("Establish db connection",__FILE__);
+
 /******************************  Load User      *****************************/
-$User = new User($conf, $Data);
+$User = new User();
+Trace::add_trace("Loaded User Object", __FILE__);
+Trace::reg_vars(["user roles" => $User->roles]);
 
 /******************************  Load Page      *****************************/
-Trace::add_step(__FILE__,"Loading Page structure");
-$Page = new Page($conf);
-Trace::add_trace("Page class loaded - basic page arguments", __FILE__, $Page->request, $Page->token, $Page->dynamic_pages);
-Trace::reg_vars(["Request" => $Page->request, "Token" => $Page->token, "Pages" => $Page->dynamic_pages]);
+$Page = new Page();
+Trace::add_trace("Loaded Page object", __FILE__, ["request" => $Page->request, "token" => $Page->token]);
+Trace::reg_vars(["Requested page" => $Page->request]);
 
 /******************************  G Client  *****************************/
-
 $gClient = new Google_Client();
 $gClient->setApplicationName($conf["g-sign"]["app-name"]);
 $gClient->setClientId($conf["g-sign"]["client-id"]);
@@ -53,41 +54,32 @@ $gClient->setScopes([
 ]);
 $User->gSignUrl = $gClient->createAuthUrl();
 $google_oauth = new Google_Service_Oauth2($gClient);
+Trace::add_trace("Loaded Google client", __FILE__);
 
-//$datee = new Google_Service_PeopleService_Date();
-//$datee->
 /******************************  User login / logout   *****************************/
 //Check user signed or not:
 $User->initial_user_login_status($gClient, $google_oauth);
-Trace::add_trace("User Object",__FILE__, $User);
-/******************************  Build Page      *****************************/
+Trace::add_trace("User login status",__FILE__, $User);
 
+/******************************  Build Page      *****************************/
 Trace::add_step(__FILE__,"Loading and building page:");
-switch ($Page->request["page"]) {
-    case "main":
-        include PATH_REQUIRED_PAGES."main.php";
-        break;
-    case "app":
-        include PATH_REQUIRED_PAGES."app.php";
-        break;
-    case "manage":
-        include PATH_REQUIRED_PAGES."manage.php";
-        break;
-    case "gredirect":
-        include PATH_REQUIRED_PAGES."gredirect.php";
-        break;
-    case "error":
-        include PATH_REQUIRED_PAGES."error.php";
-        break;
-    default:
-        if (in_array($Page->request["page"].".php", $Page->dynamic_pages)) {
-            // Dynamic page:
-            include PATH_DYANMIC_PAGES.$Page->request["page"].".php";
+switch ($Page->request["type"]) {
+    case "page": {
+        if ($Page->load_page()) {
+            Trace::add_trace("Loaded requested page ",__FILE__, $Page->definition);
+            require PLAT_PATH_PAGES.DS."render.php";
         } else {
-            // Not found page:
-            $Page::error_page("page_request_notfound");
+            Trace::add_trace("Failed load requested page", __FILE__, $Page->definition);
         }
+    } break;
+    case "api": {
+
+    } break;
+    default: {
+        // Not found page:
+        $Page::error_page("page_request_notfound");
+    }
 }
 
-/******************************  Expose Trace    *****************************/
+// /******************************  Expose Trace    *****************************/
 Trace::expose_trace();

@@ -11,6 +11,8 @@
 /*****************************      Changelog       ****************************
  1.0: initial
 *******************************************************************************/
+require_once "Trace.class.php";
+require_once "Base.class.php";
 
 class User extends Base {
     
@@ -19,18 +21,17 @@ class User extends Base {
      */
     public $gSignUrl        = "";
     public $userIsSigned    = false;
-    private $DBLink         = null;
+    public $roles           = [];
     public $user_data       = false;
-    /** Contructor
+
+    /** Constructor
      * 
      * @param array $conf
      */
-    public function __construct( &$conf, &$DB ) {
-        parent::__construct($conf);
-        Trace::add_trace('construct class',__METHOD__);
-        $this->DBLink = $DB;
-        $this->roles = $this->DBLink->get('roles'); 
+    public function __construct() {
+        $this->roles = self::$db->get('roles'); 
     }
+
     /* Get roles ID integer of Users based on the role name:
      *  @param $role_name => String the role name to search
      *  @Default-params: None
@@ -78,66 +79,62 @@ class User extends Base {
     /* Save G user and if exists will update credentials:
      */
     public function save_g_signup_user($g_token, $gpUserData) {
-        Trace::add_trace('Saving/Updating G+ signup user',__METHOD__);
-        $checkExists = $this->DBLink->select("users", ["id"], [["email", "=", $gpUserData['email']]]);
+        $check = self::$db->where("email", $gpUserData['email'])->getOne("users", "id");
         $geo_result = $this->ip_info("Visitor", "location");
-        if (empty($checkExists)) { //New Email address = New user
-            $Qexec = $this->DBLink->insert_safe( "users", 
-                [   "g_access_token"=> $g_token["access_token"],
-                    "g_token"       => json_encode($g_token),
-                    "g_meta"        => json_encode($gpUserData),
-                    "g_profile"     => $gpUserData['oauth_uid'],
-                    "role"          => $this->get_role_id("user"),
-                    "first_name"    => $gpUserData['first_name'],
-                    "last_name"     => $gpUserData['last_name'],
-                    "birth_date"    => $gpUserData['birthday'],
-                    "birth_year"    => substr($gpUserData['birthday'], 0, 4),
-                    "ip_country_name"  => !empty($geo_result) ? $geo_result["country"] : "NULL",
-                    "ip_country_code"  => !empty($geo_result) ? $geo_result["country_code"] : "NULL",
-                    "ip_continent_name"=> !empty($geo_result) ? $geo_result["continent"] : "NULL",
-                    "ip_continent_code"=> !empty($geo_result) ? $geo_result["continent_code"] : "NULL",
-                    "ip_geo_object"    => !empty($geo_result) ? $geo_result["full"] : "NULL",
-                    "ip_timezone"      => !empty($geo_result) ? $geo_result["timezone"] : "NULL",
-                    "gender"        => $gpUserData['gender'],
-                    "email"         => $gpUserData['email'],
-                    "status"        => 1,
-                    "seen_counter"  => 1,
-                    "locale"        => $gpUserData['g_locale'],
-                    "picture"       => $gpUserData['picture'],
-                    "last_seen"     => $this->datetime("now-mysql")
-                ]
-            );
+        if (empty($check)) { //New Email address = New user
+            $exec = self::$db->insert("users",[
+                "g_access_token"=> $g_token["access_token"],
+                "g_token"       => json_encode($g_token),
+                "g_meta"        => json_encode($gpUserData),
+                "g_profile"     => $gpUserData['oauth_uid'],
+                "role"          => $this->get_role_id("user"),
+                "first_name"    => $gpUserData['first_name'],
+                "last_name"     => $gpUserData['last_name'],
+                "birth_date"    => $gpUserData['birthday'],
+                "birth_year"    => substr($gpUserData['birthday'], 0, 4),
+                "ip_country_name"  => !empty($geo_result) ? $geo_result["country"] : "NULL",
+                "ip_country_code"  => !empty($geo_result) ? $geo_result["country_code"] : "NULL",
+                "ip_continent_name"=> !empty($geo_result) ? $geo_result["continent"] : "NULL",
+                "ip_continent_code"=> !empty($geo_result) ? $geo_result["continent_code"] : "NULL",
+                "ip_geo_object"    => !empty($geo_result) ? $geo_result["full"] : "NULL",
+                "ip_timezone"      => !empty($geo_result) ? $geo_result["timezone"] : "NULL",
+                "gender"        => $gpUserData['gender'],
+                "email"         => $gpUserData['email'],
+                "status"        => 1,
+                "seen_counter"  => 1,
+                "locale"        => $gpUserData['g_locale'],
+                "picture"       => $gpUserData['picture'],
+                "last_seen"     => $this->datetime("now-mysql")
+            ]);
         } else { //Already a registered user - just update and create cookies:
             //TODO: seen counter update only if last seen is old enough
-            $Qexec = $this->DBLink->update( "users", 
-                [   "g_access_token"=> $g_token["access_token"],
-                    "g_token"       => json_encode($g_token),
-                    "g_meta"        => json_encode($gpUserData),
-                    "g_profile"     => $gpUserData['oauth_uid'],
-                    "birth_date"    => $gpUserData['birthday'],
-                    "birth_year"    => substr($gpUserData['birthday'], 0, 4),
-                    "email"         => $gpUserData['email'],
-                    "seen_counter"  => "++1",
-                    "locale"        => $gpUserData['g_locale'],
-                    "last_seen"     => $this->datetime("now-mysql"),
-                    "ip_country_name"  => !empty($geo_result) ? $geo_result["country"] : "NULL",
-                    "ip_country_code"  => !empty($geo_result) ? $geo_result["country_code"] : "NULL",
-                    "ip_continent_name"=> !empty($geo_result) ? $geo_result["continent"] : "NULL",
-                    "ip_continent_code"=> !empty($geo_result) ? $geo_result["continent_code"] : "NULL",
-                    "ip_geo_object"    => !empty($geo_result) ? $geo_result["full"] : "NULL",
-                    "ip_timezone"      => !empty($geo_result) ? $geo_result["timezone"] : "NULL"
-                ],
-                [["id","=",$checkExists[0]["id"]]]
-            );
+            $exec = self::$db->where("id", $check["id"])->update("users", [   
+                "g_access_token"=> $g_token["access_token"],
+                "g_token"       => json_encode($g_token),
+                "g_meta"        => json_encode($gpUserData),
+                "g_profile"     => $gpUserData['oauth_uid'],
+                "birth_date"    => $gpUserData['birthday'],
+                "birth_year"    => substr($gpUserData['birthday'], 0, 4),
+                "email"         => $gpUserData['email'],
+                "seen_counter"  => "++1",
+                "locale"        => $gpUserData['g_locale'],
+                "last_seen"     => $this->datetime("now-mysql"),
+                "ip_country_name"  => !empty($geo_result) ? $geo_result["country"] : "NULL",
+                "ip_country_code"  => !empty($geo_result) ? $geo_result["country_code"] : "NULL",
+                "ip_continent_name"=> !empty($geo_result) ? $geo_result["continent"] : "NULL",
+                "ip_continent_code"=> !empty($geo_result) ? $geo_result["continent_code"] : "NULL",
+                "ip_geo_object"    => !empty($geo_result) ? $geo_result["full"] : "NULL",
+                "ip_timezone"      => !empty($geo_result) ? $geo_result["timezone"] : "NULL"
+            ]);
         }
-        if (!$Qexec) {
+        if (!$exec) {
             $this::error_page("g_login_db_error");
         }
         //Handle sessions:
         $this::create_session([
             "usertoken"     => $g_token, 
             "userlogintype" => "g",
-            "userid"        => $this->DBLink->lastid()
+            "userid"        => self::$db->getInsertId()
         ]);
     }
 
@@ -146,12 +143,11 @@ class User extends Base {
         if (isset($_SESSION['usertoken']) && isset($_SESSION['userid'])) {
             if(isset($_SESSION["userlogintype"]) && $_SESSION["userlogintype"] == "g") { 
                 $gClient->setAccessToken($_SESSION['usertoken']);
-                if ($gClient->getAccessToken()) { //User is logged...
-                    $this->user_data = $this->DBLink->select(
-                        "users", "* ", 
-                        [["id", "=", $_SESSION['userid']], 
-                        ["g_access_token", "=", $_SESSION['usertoken']["access_token"]]]
-                    );       
+                if ($gClient->getAccessToken()) { 
+                    //User is logged...
+                    $this->user_data = self::$db->where("id", $_SESSION['userid'])
+                                                ->where("g_access_token", $_SESSION['usertoken']["access_token"])
+                                                ->getOne("users");     
                 } //Google token is expired or invalid or canceled
             } elseif(isset($_SESSION["userlogintype"]) && $_SESSION["userlogintype"] == "e") {
                 $this->userIsSigned = true;
@@ -160,10 +156,8 @@ class User extends Base {
             }
         }
          // Check if this user exists and is active
-        if (!empty($this->user_data) && intval($this->user_data[0]["user_account_status"]) === 0) {
-            $this->user_data = $this->user_data[0];
+        if (!empty($this->user_data))
             $this->userIsSigned = true;
-        }
         //TODO: log user is active into DB.
         //TODO: Update User Last Seen:
         return $this->userIsSigned;
@@ -197,7 +191,9 @@ class User extends Base {
                     $ip = $_SERVER['HTTP_CLIENT_IP'];
             }
         }
-        if ($ip === "127.0.0.1") $ip = @file_get_contents("http://ipecho.net/plain");
+        /* SH: added - 2021-03-03 => Check if its an error - why? not equal */
+        if ($ip === "127.0.0.1") 
+            $ip = @file_get_contents("http://ipecho.net/plain");
         $purpose    = str_replace(array("name", "\n", "\t", " ", "-", "_"), null, strtolower(trim($purpose)));
         $support    = array("country", "countrycode", "state", "region", "city", "location", "address");
         $continents = array(

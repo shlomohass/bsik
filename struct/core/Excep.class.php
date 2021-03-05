@@ -87,7 +87,7 @@ class FrameWorkExcepHandler
     }
     private static function render($e, $class = false)
     { 
-        $style_con = "z-index:1000; position: fixed; display:inline-block; border: 1px solid #cf7474;background-color: #fff5f5;padding: 15px;font-size: 11px;width: 500px;font-family: monospace;top: 15px;left: 15px;";
+        $style_con = "display:block; border: 1px solid #cf7474;background-color: #fff5f5;padding: 15px;font-size: 11px;width: 500px;font-family: monospace;";
         $style_header = "margin: 0;text-decoration: underline;font-size: 20px; font-weight:bold; direction:ltr;";
         $style_list_mes = "margin: 0px 15px; direction: ltr;";
         $style_list_trace = "margin: 0px 15px; direction: ltr;";

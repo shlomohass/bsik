@@ -11,16 +11,13 @@
 *******************************************************************************/
 /******************************  Guard  *****************************/
 if (!isset($Page)) { include_once(PATH_REQUIRED_PAGES."error.php?p=main&code=10"); die(); }
-
+if (!isset($Data)) $Data = new MysqliDb();
 
 /******************************  Load Some Data  *****************************/
 //Load side nav navigation links:
-$Page->store("side nav links", $Data->get(
-    "construct_side_nav",
-    false,
-    "`side_nav_pos` ASC"
-));
-Trace::add_trace("Load side nav links from DB", __FILE__, $Page->get("side nav links"));
+$Page->store("side-nav-links", 
+    $Data->orderBy("side_nav_pos","ASC")->get("construct_side_nav"));
+Trace::add_trace("Load side nav links from DB", __FILE__, $Page->get("side-nav-links"));
 
 /******************************  Prepare data   *****************************/
 //Handle user login status:

@@ -22,6 +22,8 @@
 //      -> fixed bug/Error in reg_var -> changed var to vars.
 /******************************************************************************/
 
+if (!defined('EXPOSE_OP_TRACE')) define('EXPOSE_OP_TRACE', false);
+
 class Trace {
     
     public static $trace_arr = array();
@@ -257,8 +259,8 @@ class Trace {
             'table_queries' => "style='width:90%; margin-left:50px; border-collapse: collapse; '",
             'th_queries'    => "style='text-align:center; border:1px solid black; background-color:#F3E2A9; font-size:12px; padding:2px 5px; border-collapse: collapse;'",
             'td_queries'    => "style='text-align:left; border:1px solid black; padding:2px 5px; font-size:11px; border-collapse: collapse;'",            
-            'table_events'  => "style='width:88%; margin-left:50px; border-collapse: collapse; '",
-            'th_events'     => "style='text-align:center; border:1px solid black; background-color:orange; font-size:12px; padding:2px 5px; border-collapse: collapse;'",
+            'table_events'  => "style='width:90%; margin-left:50px; border-collapse: collapse; word-break: break-all;'",
+            'th_events'     => "style='min-width: 100px; text-align:center; border:1px solid black; background-color:orange; font-size:12px; padding:2px 5px; border-collapse: collapse;'",
             'td_events'     => "style='text-align:left; border:1px solid black; padding:2px 5px; font-size:11px; border-collapse: collapse;'",             
         );
     }
@@ -268,7 +270,7 @@ class Trace {
                 "queries time","mem peak real","mem peak emalloc","server load"),
             "regs"      => array("index","variable name","content"),
             "queries"   => array("index","query info", "exec time", "query"),
-            "events"    => array("class::method","operation","catched vars",
+            "events"    => array("file::method","operation","catched vars",
                 "mem real","mem emalloc","timestamp")
         );
     }

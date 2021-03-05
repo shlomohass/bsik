@@ -9,12 +9,18 @@
 1.0.1:
     ->creation - initial
 *******************************************************************************/
+require_once "Excep.class.php";
+require_once 'Db.class.php';
 
-class Base
+class Base 
 {
 
     /* Base Static properties:*/
     public static $conf;
+    public static MysqliDb $db;
+    private static $regex = [
+        "filter-none" => '/[^%s]/'
+    ];
     /* Get datetime str
      *  @param $w => String
      *  @Default-param: "now-str"
@@ -24,9 +30,20 @@ class Base
      *      > "now-mysql" => now in 'Y-m-d H:i:s' format
      *      > Any => runs date() and pass argument
      */
-    public function __construct( &$_conf) {
-        Trace::add_trace('construct class',__METHOD__);
-        $this::$conf = $_conf;
+    public static function configure( array $_conf) : void {
+        self::$conf = $_conf;
+    }
+    public static function connect_db() : void {
+        self::$db = new MysqliDb(
+            self::$conf["db"]['host'], 
+            self::$conf["db"]['user'], 
+            self::$conf["db"]['pass'], 
+            self::$conf["db"]['name'], 
+            self::$conf["db"]['port']
+        );
+    }
+    public static function disconnect_db() : void {
+        self::$db->disconnect();
     }
     public static function datetime($w = "now-str")
     {
@@ -39,19 +56,46 @@ class Base
                 return date($w);
         }
     }
-    /* Check if a string starts or ends with a string.
-     *  @param $haystack => String - the string to check.
-     *  @param $needle => String - the needle to compare
-     *  @Default-params: none
-     *  @return Boolean
-     *  @Exmaples:
-     *      > ("House of Sold", "Ho") => True
-    */
-    public static function string_starts_with($haystack, $needle) {
+    
+    public static function print_pre(...$out) {
+        print "<pre>";
+        foreach ($out as $value) print_r($value);
+        print "</pre>";
+    }
+    /**
+     * string_starts_with
+     * Check if a string starts with a string
+     * 
+     * @param  string $haystack
+     * @param  string $needle
+     * @return bool
+     */
+    public static function string_starts_with(string $haystack, string $needle) : bool {
         return substr_compare($haystack, $needle, 0, strlen($needle)) === 0;
     }
-    public static function string_ends_with($haystack, $needle) {
+    /**
+     * string_ends_with
+     * Check if a string ends with a string
+     * 
+     * @param  string $haystack
+     * @param  string $needle
+     * @return bool
+     */
+    public static function string_ends_with(string $haystack, string $needle) : bool {
         return substr_compare($haystack, $needle, -strlen($needle)) === 0;
+    }    
+    /**
+     * filter_string
+     *
+     * @param  string $str
+     * @param  mixed $allowed - string or array
+     * @return string - filtered string
+     */
+    public static function filter_string(string $str, $allowed = ["A-Z","a-z","0-9"]) : string {
+        $regex = is_string($allowed) ? 
+            sprintf(self::$regex["filter-none"], $allowed) :
+            sprintf(self::$regex["filter-none"], implode($allowed));
+        return preg_replace($regex, '', $str);
     }
     /* extend arrays like in Jquery.
      *  @param $a => Array - wil be overriden if same key
@@ -108,5 +152,18 @@ class Base
             if (isset($_SESSION[$sess]))
                 unset($_SESSION[$sess]);
         }
+    }
+
+    /* Map all files in a folder:
+     *  @param $path => String : the path to the dynamic pages folder.
+     *  @param $ext => String : the extension.
+     *  @return array
+    */
+    protected function list_files_in(string $path, string $ext = ".php") : array {
+        return array_filter(
+            scandir($path), function($k) use($ext) { 
+                return is_string($k) && self::string_ends_with($k, $ext); 
+            }
+        );
     }
 }

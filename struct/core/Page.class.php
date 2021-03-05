@@ -9,13 +9,12 @@
 1.0.1:
     ->creation - initial
 *******************************************************************************/
-include_once "Base.class.php";
+require_once "Trace.class.php";
+require_once "Base.class.php";
 
 class Page extends Base
 {
     private $types = array("page","api");
-    private $defalts = array("main-page" => "main",);
-    public $dynamic_pages = [];
     static $index_page_url;
     public $request =  array(
         "type"      => "",      // page, api
@@ -26,10 +25,13 @@ class Page extends Base
         "csrf" => "",
         "meta" => ""
     );
+
+    //For includes:
+    private $static_links_counter = 0;
+    public $lib_toload = ["css" => [], "js" => []];
     public $includes = array(
-        "head"          => array("js" => array(), "css" => array()),
-        "body-begin"    => array("js" => array(), "css" => array()),
-        "body-end"      => array("js" => array(), "css" => array())
+        "head"  => array("js" => array(), "css" => array()),
+        "end"   => array("js" => array(), "css" => array())
     );
     private $head_meta = array(
         "lang"                  => "",
@@ -43,22 +45,24 @@ class Page extends Base
     private $head_optional_meta = array();
     private $custom_body_tag = "";
     private $storage = array();
+
+    //Page loaded values:
+    public $definition = [];
+
     /* Page constructor.
      *  @param $conf => SIK configuration array Used in Base Parent
      *  @Default-params: none
      *  @return none
-     *  @Exmaples:
+     *  @Examples:
     */
-    public function __construct($conf)
+    public function __construct()
     {
-        parent::__construct($conf);
         $this->tokenize(); //Tokenize the page.
         $this->request["type"] = $this->request_type(); //Get the request 
-        $this->request["page"] = $this->request_page(); //Which page or operation to perform ??
-        $this->fill_dynamic_pages($this::$conf["path"]["dynamic_pages"]); //Create a list of all available pages.
-        $this::$index_page_url = $this->parse_slash_url_with($this::$conf["path"]["domain"].$this::$conf["path"]["site_base_path"]);
-        $this->request["when"] = self::datetime(); //Time stamp for debuging
-        $this->head_meta = self::array_extend($this->head_meta, $this::$conf["page"]["meta"]); //Sets the ,eta global defaults
+        $this->request["page"] = $this->request_page($this::$conf["default-page"] ?? "");
+        $this::$index_page_url = $this->parse_slash_url_with($this::$conf["path"]["site_base_url"]);
+        $this->request["when"] = self::datetime(); //Time stamp for debugging
+        //$this->head_meta = self::array_extend($this->head_meta, $this::$conf["page"]["meta"]); //Sets the ,eta global defaults
     }
     /* Get and set the type of the page request.
      *  @Default-params: none
@@ -75,15 +79,44 @@ class Page extends Base
      *  @return String
      *
     */  
-    private function request_page()
+    private function request_page(string $default)
     {
         // TODO: Log the requests given to the server.
-        return (isset($_REQUEST["page"]) && ctype_alnum($_REQUEST["page"])) ? $_REQUEST["page"] : $this->defalts["main-page"];
+        $page = (isset($_REQUEST["page"]) && ctype_alnum($_REQUEST["page"])) ? $_REQUEST["page"] : $default;
+        return self::filter_string($page, "A-Za-z0-9_-");
+    }
+        
+    /**
+     * load_page
+     * load the page related definition and structure
+     * 
+     * @return bool
+     */
+    public function load_page() : bool {
+        if ($this->request["page"]) {
+            $cols = [
+                "pages.*",
+                "t.name as template_name",
+                "t.libs as default_libs",
+                "t.global as default_settings",
+                "ty.id as type_id",
+                "ty.name as type_name",
+                "l.name as layout_name",
+                "l.variables as default_layout_vars",
+                "l.file as layout_file"
+            ];
+            $this->definition = self::$db->where("pages.name", $this->request["page"])
+                                         ->join("templates as t", "t.id = pages.template", "LEFT")
+                                         ->join("page_layout as l", "l.id = pages.layout", "LEFT")
+                                         ->join("page_types as ty", "ty.id = pages.type", "LEFT")
+                                         ->getOne("pages", $cols);
+        }
+        return !empty($this->definition);
     }
     /* Get and Set the page token If not set create a new one.
      *  @Default-params: none
      *  @return none
-    */  
+    */
     private function tokenize()
     {
         if (empty($_SESSION['csrf_token']))
@@ -91,37 +124,164 @@ class Page extends Base
         $this->token["csrf"] = $_SESSION['csrf_token'];
         $this->token["meta"] = "<meta name='csrf-token' content=".$this->token["csrf"].">";
     }
-    /* Fill the class pages array ll dynamic pages - traverse the folder.
-     *  @param $path => String : the path to the dynamic pages folder.
-     *  @Default-params: none
-     *  @return none
-    */
-    private function fill_dynamic_pages($path) {
-        // TODO: should we check the files?? maybe a security issue???
-        $this->dynamic_pages = array_filter(
-            scandir($path), function($k) { 
-                return is_string($k) && self::string_ends_with($k, ".php"); 
-            }
-        );
-    }
-    /* include libs in the page sections.
-     *  @param $place => String - must be: head | body-begin | body-end
-     *  @param $type => String - file type to include must be - js | css
-     *  @Default-params: none
-     *  @return Object(this)
-     *  @Example:
-     *      > $Page->include("head", "js", "jquery.min.js");
-    */
-    public function include($place, $type, $file, $add = "") {
-        if (!is_string($place) || !isset($this->includes[$place]))
-            trigger_error("'Page->include' first argument ($place) is unknown place value", E_PLAT_WARNING);
-        if (!is_string($type) || (strtolower($type) !== "js" && strtolower($type) !== "css"))
+
+
+    /**
+     * include - used by system and also by user for loading libs after parsed:
+     *
+     * @param  string $pos - the position -> head, body
+     * @param  string $type - the lib type -> css, js
+     * @param  string $name - the lib name
+     * @param  array  $set - lib definition -> ["name", "version"]
+     * @param  string $add - optional append to link
+     * @return void
+     */
+    public function include(string $pos, string $type, string $name, array $set, string $add = "") {
+        /* SH: added - 2021-03-03 => convert this to db error logging  */
+        if (!is_string($pos) || !isset($this->includes[$pos])) {
+            trigger_error("'Page->include' first argument ($pos) is unknown pos value", E_PLAT_WARNING);
+            return $this;
+        }
+        if (!is_string($type) || (strtolower($type) !== "js" && strtolower($type) !== "css")) {
             trigger_error("'Page->include' second argument ($type) must be a valid type argument - js | css.", E_PLAT_WARNING);
-        $link = (self::string_starts_with($file,"//") || self::string_starts_with($file,"http"))
-                ? $file : $this->build_url_with(PATH_LIB, $file);
-        $this->includes[$place][$type][] = ["link" => $link, "add" => $add];
-        return $this;
+            return $this;
+        }
+        $path = $set["name"] ?? "";
+        if (self::string_starts_with($name,"link") || self::string_starts_with($name,"path")) {
+            $path = $path;
+            $name = $name[0] == 'l' ? "link" : "path"; 
+        } else {
+            $name = $name;
+            $path = $set["version"] ?? "";
+        }
+        $this->includes[$pos][$type][] = ["name" => $name ,"path" => $path, "add" => $add];
+        //return $this;
     }
+    
+    /**
+     * parse_lib_query - parse a lib name to components for version control
+     *
+     * @param  string $lib_query - the lib name ex. libname:+3.3.0
+     * @param  mixed $pos        - where to include -> head, body
+     * @return void
+     */
+    private static function parse_lib_query(string $lib_query, string $pos = "") : array {
+        $lib = explode(':', $lib_query);
+        $version = ltrim($lib[1], " +=");
+        return [
+            "name" => $lib[0],
+            "cond" => substr($lib[1] ?? "=", 0, 1),
+            "version" => $version,
+            "sig" => intval(explode(".", $version)[0] ?? 0),
+            "pos" => $pos
+        ];
+    }
+    /**
+     * load_json_libs - loads cms based define libs that are stored as special json object
+     * 
+     * @param  string $libs_json -> the json representation
+     * @return void
+     */
+    private function load_json_libs(string $libs_json) {
+        //Parse lib json object to array:
+        $def_lib = json_decode($libs_json, true);
+        //Parse each lib:
+        foreach ($def_lib as $key => $inpos_lib) {
+            $pos = $key;
+            foreach ($inpos_lib as $type_libs) {
+                $type = $type_libs["type"];
+                foreach ($type_libs["libs"] as $lib) {
+                    if (self::string_starts_with($lib,"//") || self::string_starts_with($lib,"http")) {
+                        $this->static_links_counter++;
+                        $this->lib_toload[$type]["link".$this->static_links_counter] = ["name" => $lib, "pos" => $pos];
+                    } else {
+                        $lib_obj = self::parse_lib_query($lib, $pos);
+                        if ($this->lib_toload[$type][$lib_obj["name"]] ?? false) {
+                            if ($lib_obj["cond"] === "=" && $lib_obj["version"] !== $this->lib_toload[$type][$lib_obj["name"]]["version"]) {
+                                trigger_error(
+                                    sprintf("Lib `%s` require version `%s` but version `%s` loaded first", $lib_obj["name"], $lib_obj["version"], $this->lib_toload[$type][$lib_obj["name"]]["version"]), 
+                                    E_USER_WARNING
+                                );
+                            } elseif ($lib_obj["cond"] === "+" && $lib_obj["sig"] <  $this->lib_toload[$type][$lib_obj["name"]]["sig"]) {
+                                trigger_error(
+                                    sprintf("Lib `%s` require at least version `%s` but version `%s` loaded first", $lib_obj["name"], $lib_obj["sig"], $this->lib_toload[$type][$lib_obj["name"]]["version"]), 
+                                    E_USER_WARNING
+                                );
+                            }
+                        } else {
+                            $this->lib_toload[$type][$lib_obj["name"]] = $lib_obj;
+                        }
+                    }
+                }
+            }
+        }
+    }
+        
+    /**
+     * load_libs - lids predefined libs by the cms
+     *
+     * @param  bool $template - whether to load template default libs?
+     * @param  bool $page - whether to load page specific libs?
+     * @return int
+     */
+    public function load_libs(bool $template, bool $page) : int {
+        
+        //Build definitions:
+        if ($template && isset($this->definition["default_libs"])) 
+            $this->load_json_libs($this->definition["default_libs"]);
+        if ($page && isset($this->definition["libs"])) 
+            $this->load_json_libs($this->definition["libs"]);
+    
+        //Add via include method:
+        foreach($this->lib_toload as $type => $libs)
+            foreach($libs as $name => $set)
+                $this->include($set["pos"], $type, $name, $set);
+    
+        return count($this->lib_toload["css"]) + count($this->lib_toload["js"]);
+    }
+    
+    /**
+     * import_defined_libs - import installed libs from db 
+     *
+     * @return array - return the libs not found
+     */
+    public function import_defined_libs() : array {
+        $import = [];
+        $not_found = [];
+        //Build required:
+        foreach($this->includes as $pos => $types)
+            foreach($types as $type => $libs)
+                foreach($libs as $lib)
+                    if ($lib["name"] !== "link" && $lib["name"] !== "path")
+                        $import[strtolower($lib["name"].$lib["path"])] = "";
+        //Create query conditions:
+        self::$db->where("concat_ws('',name,version)", array_keys($import) , "IN");
+        $data = self::$db->map('libname')->get("libs", null, ["concat_ws('',name,version) as libname","js","css"]);
+        //Parse :
+        foreach($data as &$lib) {
+            $lib["js"] = json_decode($lib["js"], true);
+            usort($lib["js"], fn($a, $b) => $a["order"] <=> $b["order"] );
+            $lib["css"] = json_decode($lib["css"], true);
+            usort($lib["css"], fn($a, $b) => $a["order"] <=> $b["order"] );
+        }
+        //Fill the data or removed undefined:
+        foreach($this->includes as $pos => &$types) 
+            foreach($types as $type => &$libs)
+                foreach($libs as $key => &$lib)
+                    if ($lib["name"] !== "link" && $lib["name"] !== "path")
+                        if (isset($data[strtolower($lib["name"].$lib["path"])])) {
+                            $base = PLAT_URL_BASE."/lib/import/".strtolower($lib["name"])."/".$type."/";
+                            $lib["path"] = array_map(
+                                fn($a) => $base.$a['file'], 
+                                $data[strtolower($lib["name"].$lib["path"])][$type]
+                            );
+                        } else {
+                            $not_found[] = strtolower($lib["name"].$lib["path"]);
+                            unset($libs[$key]);
+                        }
+        return $not_found;
+    }
+    
     /* Set and Gets page html meta tags values.
      *  @param $name => String - the meta tag to use
      *  @param $set => Mixed - False|String if false will GET if string will set.
@@ -166,7 +326,7 @@ class Page extends Base
      *      > $Page->build_url_with("/dir/img/", "dom.png");
     */
     public function build_url_with($path, $file) {
-        return str_replace('\\', '/', URL_DOMAIN.$path.$file);
+        return str_replace('\\', '/', PLAT_URL_DOMAIN.DS.PLAT_URL_BASE.DS.$path.$file);
     }
     public function parse_slash_url_with($url) {
         return str_replace('\\', '/', $url);
@@ -199,5 +359,23 @@ class Page extends Base
     */
     public function get($name) {
         return $name === true ? $this->storage : $this->storage[$name];
+    }
+
+
+    /******************************  RENDER ELEMENTS  *****************************/
+    
+    public function render_libs(string $type, string $pos) {
+        $tpl = [
+            "css" => '<link rel="stylesheet" href="%s" />'.PHP_EOL,
+            "js"  => '<script type="text/javascript" src="%s"></script>'.PHP_EOL
+        ];
+        $use = $tpl[$type];
+        foreach ($this->includes[$pos][$type] ?? [] as $lib) {
+            if (is_array($lib["path"])) {
+                array_walk($lib["path"], fn($p) => printf($use, $p));
+            } else {
+                printf($use, $lib["path"]);
+            }
+        }
     }
 }
