@@ -57,7 +57,7 @@ if (isset($_GET['code'])) {
   $User->save_g_signup_user($g_token, $gpUserData); 
   
   //Redirect to login session based.
-  Page::jump_to_page("main");
+  Page::jump_to_page("api");
 
 } else {
   Page::error_page("g_login_no_code");

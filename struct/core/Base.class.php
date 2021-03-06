@@ -98,7 +98,7 @@ class Base
         return preg_replace($regex, '', $str);
     }
     
-    /* A Ui based to handle errors that occured:
+    /* A Ui based to handle errors that occurred:
     */
     public static function error_page($code = 0) {
         Base::jump_to_page("error",["ername" => $code],true);
@@ -114,12 +114,16 @@ class Base
      *  @Examples:
      *      > jump_to_page("about", ["v" => 10]) => redirects to the about page with v = 10
     */
-    public static function jump_to_page($page = "main", $Qparams = [], $exit = true) {
-        $url = Page::$index_page_url."?page=".urlencode($page);
+    public static function jump_to_page($page = "/", $Qparams = [], $exit = true) {
+        $url = Page::$index_page_url."/".
+                ($page !== "/" ? urlencode($page)."/" : "").
+                (!empty($Qparams) ? "?" : "");
         foreach ($Qparams as $p => $v)
             $url .= "&".urlencode($p)."=".urlencode($v);
-        if (headers_sent()) echo '<script type="text/javascript">window.location = "'.$url.'"</script>';
-        else header("Location: ".$url);
+        if (headers_sent()) 
+            echo '<script type="text/javascript">window.location = "'.$url.'"</script>';
+        else
+            header("Location: ".$url);
         if ($exit) exit();
     } 
     public static function create_session($sessions) {

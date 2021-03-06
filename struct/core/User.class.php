@@ -116,7 +116,7 @@ class User extends Base {
                 "birth_date"    => $gpUserData['birthday'],
                 "birth_year"    => substr($gpUserData['birthday'], 0, 4),
                 "email"         => $gpUserData['email'],
-                "seen_counter"  => "++1",
+                "seen_counter"  => self::$db->inc(1),
                 "locale"        => $gpUserData['g_locale'],
                 "last_seen"     => $this->datetime("now-mysql"),
                 "ip_country_name"  => !empty($geo_result) ? $geo_result["country"] : "NULL",
@@ -128,6 +128,8 @@ class User extends Base {
             ]);
         }
         if (!$exec) {
+            print self::$db->getLastError();
+            exit();
             $this::error_page("g_login_db_error");
         }
         //Handle sessions:
