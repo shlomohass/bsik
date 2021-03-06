@@ -67,6 +67,8 @@ switch ($Page->request["type"]) {
     case "page": {
         if ($Page->load_page()) {
             Trace::add_trace("Loaded requested page ",__FILE__, $Page->definition);
+            Trace::add_trace("Parsed page settings ",__FILE__, $Page->settings);
+            Trace::reg_vars(["Page Settings" => $Page->settings]);
             require PLAT_PATH_PAGES.DS."render.php";
         } else {
             Trace::add_trace("Failed load requested page", __FILE__, $Page->definition);

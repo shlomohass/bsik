@@ -9,13 +9,25 @@ if (!isset($conf)) {
 }
 //$Page::print_pre($Page->definition);
 
+
+/******************************  Set Meta   *****************************/
+// $Page->meta("lang", "en")
+//      ->meta("title", "SIK Framework")
+//      ->meta("description", "PHP made simple the correct way to build fast and powerfull PHP web apps")
+//      ->body_tag("style=''");
+
 /******************************  Set Includes  *****************************/
 $loaded_libs = $Page->load_libs($template_libs = true, $page_libs = true);
 //$Page->include("end", "css", "path", ["name" => "/test/files.js"]);
 Trace::add_trace("loaded template & page libs", __FILE__.__LINE__, "Loaded: ".$loaded_libs);
 $imported_libs = $Page->import_defined_libs();
 Trace::add_trace("Imported libs from DB", __FILE__.__LINE__, "Not found: ".count($imported_libs), $imported_libs);
-$Page::print_pre($Page->includes);
+//$Page::print_pre($Page->includes);
+
+
+
+
+
 
 /******************************  Render Page  *****************************/
 $Page->render_libs("css", "head");

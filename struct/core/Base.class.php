@@ -97,27 +97,7 @@ class Base
             sprintf(self::$regex["filter-none"], implode($allowed));
         return preg_replace($regex, '', $str);
     }
-    /* extend arrays like in Jquery.
-     *  @param $a => Array - wil be overriden if same key
-     *  @param $b => Array - will override $a
-     *  @Default-params: none
-     *  @return Array
-     *  @Exmaples:
-    */
-    public static function array_extend($a, $b) {
-        foreach($b as $k => $v) {
-            if( is_array($v) ) {
-                if( !isset($a[$k]) ) {
-                    $a[$k] = $v;
-                } else {
-                    $a[$k] = self::array_extend($a[$k], $v);
-                }
-            } else {
-                $a[$k] = $v;
-            }
-        }
-        return $a;
-    }
+    
     /* A Ui based to handle errors that occured:
     */
     public static function error_page($code = 0) {
@@ -166,4 +146,8 @@ class Base
             }
         );
     }
+
+
+    /********************** ARRAY HELPERS *********************************************/
+
 }

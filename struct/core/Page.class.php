@@ -48,7 +48,7 @@ class Page extends Base
 
     //Page loaded values:
     public $definition = [];
-
+    public $settings = []; // Holds merged definition settings
     /* Page constructor.
      *  @param $conf => SIK configuration array Used in Base Parent
      *  @Default-params: none
@@ -110,6 +110,19 @@ class Page extends Base
                                          ->join("page_layout as l", "l.id = pages.layout", "LEFT")
                                          ->join("page_types as ty", "ty.id = pages.type", "LEFT")
                                          ->getOne("pages", $cols);
+            //Parse settings if set:
+            if (!empty($this->definition)) {
+                if (isset($this->definition["default_settings"]))
+                    $this->definition["default_settings"] = json_decode($this->definition["default_settings"], true);
+                else
+                    $this->definition["default_settings"] = [];
+                if (isset($this->definition["settings"]))
+                    $this->definition["settings"] = json_decode($this->definition["settings"], true); 
+                else
+                    $this->definition["settings"] = [];
+                //Merge defined -> extends default settings:
+                $this->settings = array_merge($this->definition["default_settings"], $this->definition["settings"]);
+            }
         }
         return !empty($this->definition);
     }
