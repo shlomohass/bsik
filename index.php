@@ -82,6 +82,3 @@ switch ($Page->request["type"]) {
         $Page::error_page("page_request_notfound");
     }
 }
-
-// /******************************  Expose Trace    *****************************/
-Trace::expose_trace();

@@ -42,7 +42,7 @@ class Page extends Base
         "title"                 => "",
         "icon"                  => ""
     );
-    private $head_optional_meta = array();
+    public $additional_meta = array();
     private $custom_body_tag = "";
     private $storage = array();
 
@@ -309,15 +309,20 @@ class Page extends Base
         if (!$set) return $this->head_meta[$name];
         $this->head_meta[$name] = $set;
         return $this;
-    }
-    public function op_meta($name = false, $set = false) {
-        if (!$name) {
-            return $this->head_optional_meta;
+    }    
+    /**
+     * op_meta - declare a custom optional meta tag:
+     * e.x op_meta(["name" => "text", "content" => "text"])
+     *
+     * @param array $define - associative array that defines the attributes
+     * @return self
+     */
+    public function op_meta(array $define) {
+        $attrs = "";
+        foreach ($define as $attr => $value) {
+            $attrs .= $attr.'="'.htmlspecialchars($value).'" '; 
         }
-        if (!$set) {
-            return (isset($this->head_optional_meta[$name]))?$this->head_optional_meta[$name]:"";
-        }
-        $this->head_optional_meta[$name] = $set;
+        $this->additional_meta[] = sprintf("<meta %s />", $attrs);
         return $this;
     }
     /* Set and Gets a custom body tag <body *******>.
