@@ -100,7 +100,7 @@ class User extends Base {
                 "ip_timezone"      => !empty($geo_result) ? $geo_result["timezone"] : "NULL",
                 "gender"        => $gpUserData['gender'],
                 "email"         => $gpUserData['email'],
-                "status"        => 1,
+                "user_account_status" => 1,
                 "seen_counter"  => 1,
                 "locale"        => $gpUserData['g_locale'],
                 "picture"       => $gpUserData['picture'],
@@ -185,9 +185,9 @@ class User extends Base {
         if (filter_var($ip, FILTER_VALIDATE_IP) === false) {
             $ip = $_SERVER["REMOTE_ADDR"];
             if ($deep_detect) {
-                if (filter_var(@$_SERVER['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP))
+                if (($_SERVER['HTTP_X_FORWARDED_FOR'] ?? false) && filter_var($_SERVER['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP))
                     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-                if (filter_var(@$_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP))
+                if (($_SERVER['HTTP_CLIENT_IP'] ?? false) && filter_var($_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP))
                     $ip = $_SERVER['HTTP_CLIENT_IP'];
             }
         }

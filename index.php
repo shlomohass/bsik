@@ -65,11 +65,17 @@ Trace::add_trace("User login status",__FILE__, $User);
 Trace::add_step(__FILE__,"Loading and building page:");
 switch ($Page->request["type"]) {
     case "page": {
-        if ($Page->load_page()) {
+        if ($Page->request["page"] === 'gredirect') {
+            
+            require PLAT_PATH_PAGES.DS."gredirect.php";
+
+        } elseif ($Page->load_page()) {
+
             Trace::add_trace("Loaded requested page ",__FILE__, $Page->definition);
             Trace::add_trace("Parsed page settings ",__FILE__, $Page->settings);
             Trace::reg_vars(["Page Settings" => $Page->settings]);
             require PLAT_PATH_PAGES.DS."render.php";
+            
         } else {
             Trace::add_trace("Failed load requested page", __FILE__, $Page->definition);
         }
@@ -82,3 +88,6 @@ switch ($Page->request["type"]) {
         $Page::error_page("page_request_notfound");
     }
 }
+
+//Render Platform Trace:
+    Trace::expose_trace();

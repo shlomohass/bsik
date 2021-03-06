@@ -1,6 +1,7 @@
 <?php
 /******************************  intellisense  *****************************/
 if (!isset($Page)) $Page = new Page();
+if (!isset($User)) $User = new User();
 
 /******************************  Guard  *****************************/
 if (!isset($conf)) {
@@ -48,8 +49,9 @@ Trace::add_trace("Loaded & Render Header structure", __FILE__.__LINE__);
 
 
 
-//Render Platform Trace:
-Trace::expose_trace();
+print  "<a href='".$User->get_g_signup_url()."'>Connect with google!</a>";
+
+
 
 
 //Close document + bottom includes:
