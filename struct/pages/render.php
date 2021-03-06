@@ -19,8 +19,8 @@ $Page->meta("lang", $Page->settings["lang"] ?? "en")
 Trace::add_trace("Required META set done.", __FILE__.__LINE__);
 
 /******************************  Set Meta - optional  *****************************/
-foreach($Page->settings["addmeta"] ?? [] as $opmeta) 
-    $Page->op_meta($opmeta);
+foreach($Page->settings["addmeta"] ?? [] as $opm) 
+    $Page->op_meta($opm);
 Trace::add_trace("Optional META extend done.", __FILE__.__LINE__, "Total: ".count($Page->settings["addmeta"] ?? []));
 
 /******************************  Set Body tag  *****************************/
