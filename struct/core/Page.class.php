@@ -283,7 +283,7 @@ class Page extends Base
                 foreach($libs as $key => &$lib)
                     if ($lib["name"] !== "link" && $lib["name"] !== "path")
                         if (isset($data[strtolower($lib["name"].$lib["path"])])) {
-                            $base = PLAT_URL_BASE."/lib/import/".strtolower($lib["name"])."/".$type."/";
+                            $base = PLAT_URL_BASE."/lib/import/".strtolower($lib["name"].".".$lib["path"])."/".$type."/";
                             $lib["path"] = array_map(
                                 fn($a) => $base.$a['file'], 
                                 $data[strtolower($lib["name"].$lib["path"])][$type]
