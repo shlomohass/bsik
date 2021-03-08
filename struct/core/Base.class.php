@@ -87,12 +87,12 @@ class Base
             header("Location: ".$url);
         if ($exit) exit();
     } 
-    public static function create_session($sessions) {
+    public static function create_session(array $sessions) {
         foreach ($sessions as $key => $sess) {
             $_SESSION[$key] = $sess;
         }
     }
-    public static function delete_session($sessions) {
+    public static function delete_session(array $sessions) {
         foreach ($sessions as $sess) {
             if (isset($_SESSION[$sess]))
                 unset($_SESSION[$sess]);
