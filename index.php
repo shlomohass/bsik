@@ -59,7 +59,8 @@ Trace::add_trace("Loaded Google client", __FILE__);
 /******************************  User login / logout   *****************************/
 //Check user signed or not:
 $User->initial_user_login_status($gClient, $google_oauth);
-Trace::add_trace("User login status",__FILE__, $User);
+Trace::reg_vars(["User signed" => $User->is_signed]);
+Trace::add_trace("User login status",__FILE__, $User->user_data);
 
 /******************************  Build Page      *****************************/
 Trace::add_step(__FILE__,"Loading and building page:");
@@ -75,7 +76,7 @@ switch ($Page->request["type"]) {
             Trace::add_trace("Parsed page settings ",__FILE__, $Page->settings);
             Trace::reg_vars(["Page Settings" => $Page->settings]);
             require PLAT_PATH_PAGES.DS."render.php";
-            
+
         } else {
             Trace::add_trace("Failed load requested page", __FILE__, $Page->definition);
         }

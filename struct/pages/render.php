@@ -47,7 +47,9 @@ require_once PLAT_PATH_BLOCKS.DS."load-header.php";
 print $CoreBlockRender($Page);
 Trace::add_trace("Loaded & Render Header structure", __FILE__.__LINE__);
 
-
+//Admin widget for page:
+    require_once PLAT_PATH_BLOCKS.DS."admin-widget.php";
+    print $CoreBlockRender($Page, ["isadmin" => false]);
 
 print  "<a href='".$User->get_g_signup_url()."'>Connect with google!</a>";
 

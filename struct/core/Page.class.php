@@ -61,7 +61,7 @@ class Page extends Base
         $this->request["type"] = $this->request_type(); //Get the request 
         $this->request["page"] = $this->request_page($this::$conf["default-page"] ?? "");
         $this::$index_page_url = $this->parse_slash_url_with($this::$conf["path"]["site_base_url"]);
-        $this->request["when"] = self::datetime(); //Time stamp for debugging
+        $this->request["when"] = self::std_time_datetime(); //Time stamp for debugging
         //$this->head_meta = self::array_extend($this->head_meta, $this::$conf["page"]["meta"]); //Sets the ,eta global defaults
     }
     /* Get and set the type of the page request.
@@ -83,7 +83,7 @@ class Page extends Base
     {
         // TODO: Log the requests given to the server.
         $page = (isset($_REQUEST["page"]) && ctype_alnum($_REQUEST["page"])) ? $_REQUEST["page"] : $default;
-        return self::filter_string($page, "A-Za-z0-9_-");
+        return self::std_str_filter_string($page, "A-Za-z0-9_-");
     }
         
     /**
@@ -160,7 +160,7 @@ class Page extends Base
             return $this;
         }
         $path = $set["name"] ?? "";
-        if (self::string_starts_with($name,"link") || self::string_starts_with($name,"path")) {
+        if (self::std_str_starts_with($name,"link") || self::std_str_starts_with($name,"path")) {
             $path = $path;
             $name = $name[0] == 'l' ? "link" : "path"; 
         } else {
@@ -204,7 +204,7 @@ class Page extends Base
             foreach ($inpos_lib as $type_libs) {
                 $type = $type_libs["type"];
                 foreach ($type_libs["libs"] as $lib) {
-                    if (self::string_starts_with($lib,"//") || self::string_starts_with($lib,"http")) {
+                    if (self::std_str_starts_with($lib,"//") || self::std_str_starts_with($lib,"http")) {
                         $this->static_links_counter++;
                         $this->lib_toload[$type]["link".$this->static_links_counter] = ["name" => $lib, "pos" => $pos];
                     } else {
@@ -343,7 +343,7 @@ class Page extends Base
      *  @Examples:
      *      > $Page->build_url_with("/dir/img/", "dom.png");
     */
-    public function build_url_with($path, $file) {
+    public function build_url_with($path, $file = "") {
         return str_replace('\\', '/', PLAT_URL_DOMAIN.DS.PLAT_URL_BASE.DS.$path.$file);
     }
     public function parse_slash_url_with($url) {

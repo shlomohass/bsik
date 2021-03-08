@@ -20,7 +20,7 @@ class User extends Base {
      *
      */
     public $gSignUrl        = "";
-    public $userIsSigned    = false;
+    public $is_signed       = false;
     public $roles           = [];
     public $user_data       = false;
 
@@ -32,7 +32,7 @@ class User extends Base {
         $this->roles = self::$db->get('roles'); 
     }
 
-    /* Get roles ID integer of Users based on the role name:
+    /*  Get roles ID integer of Users based on the role name:
      *  @param $role_name => String the role name to search
      *  @Default-params: None
      *  @return Mixed => False | Integer {False for not found}
@@ -80,6 +80,7 @@ class User extends Base {
      */
     public function save_g_signup_user($g_token, $gpUserData) {
         $check = self::$db->where("email", $gpUserData['email'])->getOne("users", "id");
+        $uid = $check["id"] ?? 0;
         $geo_result = $this->ip_info("Visitor", "location");
         if (empty($check)) { //New Email address = New user
             $exec = self::$db->insert("users",[
@@ -100,12 +101,13 @@ class User extends Base {
                 "ip_timezone"      => !empty($geo_result) ? $geo_result["timezone"] : "NULL",
                 "gender"        => $gpUserData['gender'],
                 "email"         => $gpUserData['email'],
-                "user_account_status" => 1,
+                "user_account_status" => 0,
                 "seen_counter"  => 1,
                 "locale"        => $gpUserData['g_locale'],
                 "picture"       => $gpUserData['picture'],
-                "last_seen"     => $this->datetime("now-mysql")
+                "last_seen"     => self::std_time_datetime("now-mysql")
             ]);
+            $uid = self::$db->getInsertId();
         } else { //Already a registered user - just update and create cookies:
             //TODO: seen counter update only if last seen is old enough
             $exec = self::$db->where("id", $check["id"])->update("users", [   
@@ -118,7 +120,7 @@ class User extends Base {
                 "email"         => $gpUserData['email'],
                 "seen_counter"  => self::$db->inc(1),
                 "locale"        => $gpUserData['g_locale'],
-                "last_seen"     => $this->datetime("now-mysql"),
+                "last_seen"     => self::std_time_datetime("now-mysql"),
                 "ip_country_name"  => !empty($geo_result) ? $geo_result["country"] : "NULL",
                 "ip_country_code"  => !empty($geo_result) ? $geo_result["country_code"] : "NULL",
                 "ip_continent_name"=> !empty($geo_result) ? $geo_result["continent"] : "NULL",
@@ -128,41 +130,46 @@ class User extends Base {
             ]);
         }
         if (!$exec) {
-            print self::$db->getLastError();
-            exit();
             $this::error_page("g_login_db_error");
         }
         //Handle sessions:
         $this::create_session([
-            "usertoken"     => $g_token, 
+            "usertoken"     => $g_token["access_token"], 
             "userlogintype" => "g",
-            "userid"        => self::$db->getInsertId()
+            "userid"        => $uid
         ]);
     }
 
     public function initial_user_login_status($gClient) {
         //First check if already signed:
-        if (isset($_SESSION['usertoken']) && isset($_SESSION['userid'])) {
-            if(isset($_SESSION["userlogintype"]) && $_SESSION["userlogintype"] == "g") { 
-                $gClient->setAccessToken($_SESSION['usertoken']);
-                if ($gClient->getAccessToken()) { 
-                    //User is logged...
+        $defined = self::std_arr_get_from($_SESSION, ["userid", "userlogintype", "usertoken"]);
+        if ($defined['userid'] && $defined['userlogintype'] && $defined['usertoken']) {
+            switch ($defined['userlogintype']) {
+                case "g": {
+                    $gClient->setAccessToken($defined['usertoken']);
+                    if ($gClient->getAccessToken()) { 
+                        //User is logged...
+                        $this->user_data = self::$db->where("id", $defined['userid'])
+                                                    ->where("g_access_token", $defined['usertoken'])
+                                                    ->getOne("users"); 
+                    }
+                } break;
+                case "e": {
+                    //User has access token
                     $this->user_data = self::$db->where("id", $_SESSION['userid'])
-                                                ->where("g_access_token", $_SESSION['usertoken']["access_token"])
-                                                ->getOne("users");     
-                } //Google token is expired or invalid or canceled
-            } elseif(isset($_SESSION["userlogintype"]) && $_SESSION["userlogintype"] == "e") {
-                $this->userIsSigned = true;
-            } else {
-                $this->userIsSigned = false;
+                         ->where("e_token", $defined['usertoken'])
+                         ->getOne("users");
+                } break;
+                default: {
+
+                }
             }
         }
-         // Check if this user exists and is active
-        if (!empty($this->user_data))
-            $this->userIsSigned = true;
         //TODO: log user is active into DB.
         //TODO: Update User Last Seen:
-        return $this->userIsSigned;
+        // Check if this user exists and is active
+        $this->is_signed = ($this->user_data["user_account_status"] ?? -1 === 0) ? true : false;
+        return $this->is_signed;
     }
     /* Get the location of user .
      *  @param $ip => String Ip or Visitor -> will detect the IP
