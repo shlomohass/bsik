@@ -9,3 +9,4 @@
 4. curl php
 5. set ssl in php.ini for curl
 6. install cacert.pem in php extras/ssl
+7. enable openssl in php.ini
