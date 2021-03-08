@@ -156,7 +156,7 @@ class User extends Base {
                 } break;
                 case "e": {
                     //User has access token
-                    $this->user_data = self::$db->where("id", $_SESSION['userid'])
+                    $this->user_data = self::$db->where("id", $defined['userid'])
                          ->where("e_token", $defined['usertoken'])
                          ->getOne("users");
                 } break;
