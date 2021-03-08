@@ -26,7 +26,7 @@ define("BUILD_ON",      "PHP 7");
 define("APP_VERSION",   "1.0.1");
 
 /************************** System Configuration & Trace ******************************/
-define( 'TOKEN_SALT', '????' );
+define( 'PLAT_HASH_SALT', '????' );
 
 
 if (!defined('EXPOSE_OP_TRACE')) define('EXPOSE_OP_TRACE', false); //Don't touch

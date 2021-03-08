@@ -38,12 +38,39 @@ class Admin extends Base {
         $this->levels = self::$db->map("id")->get('admin_levels'); 
     }
 
-    public function initial_admin_login_status($gClient) {
+    public function admin_login() {
+        $defined = self::std_arr_get_from($_POST, ["email", "password"]);
+        if (
+            is_string($defined["email"]) && strlen($defined["email"]) && 
+            is_string($defined["password"]) && strlen($defined["password"]) && 
+            filter_var($defined["email"], FILTER_VALIDATE_EMAIL)
+        ) {
+            //Prepare Values:
+            $defined['email'] = strtolower($defined['email']);
+            $hashed_password = openssl_digest(PLAT_HASH_SALT.$defined['password'].PLAT_HASH_SALT, "sha512");
+            //Check on DB:
+            $admin = self::$db->where("email", $defined['email'])
+                              ->where("password", $hashed_password)
+                              ->getOne("admins");
+            //Is Valid?
+            if (!empty($admin) && isset($admin["id"])) {
+                //Create new login token:
+                $token = $this->generate_admin_token($defined['password'], $admin['email']);
+                self::$db->where("id", $admin["id"])->update("admins",["e_token" => $token], 1);
+                //Create new session:
+                $this::create_session([
+                    "admintoken"     => $token, 
+                    "adminid"        => $admin["id"]
+                ]);
+            } 
+        }
+    }
+    public function initial_admin_login_status() {
         //First check if already signed:
         $defined = self::std_arr_get_from($_SESSION, ["adminid", "admintoken"]);
         if ($defined['adminid'] && $defined['admintoken']) {
             //User has access token
-            $this->admin_data = self::$db->where("id", $_SESSION['adminid'])
+            $this->admin_data = self::$db->where("id", $defined['adminid'])
                                          ->where("e_token", $defined['admintoken'])
                                          ->getOne("admins");
             //Load privileges:
@@ -62,6 +89,9 @@ class Admin extends Base {
         // Check if this user exists and is active
         $this->is_signed = ($this->admin_data["user_account_status"] ?? -1 === 0) ? true : false;
         return $this->is_signed;
+    }
+    private function generate_admin_token(string $hashed_pass, string $email_address) : string {
+        return openssl_digest(self::std_time_datetime().$hashed_pass.$email_address, "sha512");
     }
     /* Get the location of user .
      *  @param $ip => String Ip or Visitor -> will detect the IP
