@@ -30,7 +30,7 @@ class APage extends Base
     public $lib_toload = ["css" => [], "js" => []];
     public $includes = array(
         "head"  => array("js" => array(), "css" => array()),
-        "end"   => array("js" => array(), "css" => array())
+        "body"   => array("js" => array(), "css" => array())
     );
     private $head_meta = array(
         "lang"                  => "",

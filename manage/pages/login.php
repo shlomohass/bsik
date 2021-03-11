@@ -1,25 +1,16 @@
-<?php 
+<?php
+/******************************  intellisense  *****************************/
+if (!isset($APage)) {
+    $APage = new APage();
+} 
 
-echo "admin login please";
+$APage->include("head", "css", "path", ["name" => "lib/required/bootstrap/css/bootstrap.css"]);
+$APage->include("head", "css", "path", ["name" => "lib/css/global.css"]);
+$APage->include("head", "css", "path", ["name" => "lib/css/login.css"]);
+$APage->include("head", "js",  "path", ["name" => "lib/required/jquery/jquery.min.js"]);
 
+/******************************  Guard  *****************************/
 
-
-/*
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "jquery/jquery",
-                "version": "1.2.3",
-                "dist": {
-                    "url": "http://code.jquery.com/jquery-3.5.1.min.js",
-                    "type": "file"
-                }
-            }
-        }
-    ]
-    */
-    
 ?>
 <html data-docby="BSIK Platfom">
     <head>
@@ -28,16 +19,14 @@ echo "admin login please";
         <meta name="author" content="SIKTEC">
         <meta name="description" content="PHP made simple the correct way to build fast and powerful PHP web apps">
         <meta http-equiv="X-UA-Compatible" content="IE=7">
-        <meta name="csrf-token" content="b342665c672cafd5586755b2fa34fbf476453e21cb5a19838b27de56858bfb7d">
-        <meta name="revisit-after" content="7 days">
-        <title>SIK Framework - Main page</title>
+        <?php print $APage->token["meta"]; ?>
+        <title>SIK Framework - Login Page</title>
         <link rel="icon" href="">
         <!-- START : Head includes -->
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
-        <link rel="stylesheet" href="/bsik/lib/import/bootstrap.5.0.0/css/bootstrap.min.css">
-        <script type="text/javascript" src="/bsik/lib/import/jquery.3.5.1/js/jquery-3.5.1.min.js"></script>
-        <script type="text/javascript" src="/bsik/lib/import/bootstrap.5.0.0/js/bootstrap.min.js"></script>
-
+        <?PHP
+            $APage->render_libs("css", "head");
+            $APage->render_libs("js", "head");
+        ?>
         <!-- END : Head includes -->
     </head>
     <body style="">        

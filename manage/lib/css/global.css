@@ -1,0 +1,6 @@
+@import "variables.css";
+@import "fonts.css";
+body {
+    background: var(--admin-base-background);
+    font-family: 'Roboto', sans-serif;
+}

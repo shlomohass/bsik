@@ -1,7 +1,9 @@
 {
     "require": {
         "google/apiclient": "^2.4",
-        "components/jquery": "3.5.*"
+        "components/jquery": "3.5.*",
+        "fortawesome/font-awesome": "5.15.*",
+        "components/bootstrap": "4.6.*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -12,10 +14,11 @@
             "php -r \"echo 'SIK SAYS -> manage required is cleared...'.PHP_EOL;\"",
             "php -r \"array_map( 'unlink', array_filter((array) glob('./manage/lib/required/*') ) );\"",
             "php -r \"echo 'SIK SAYS -> Creating Folders for libs...'.PHP_EOL;\"",
-            "php -r \"array_map(fn($d) => mkdir('./manage/lib/required/'.$d), ['jquery', 'bootstrap']);\"",
+            "php -r \"array_map(fn($d) => mkdir('./manage/lib/required/'.$d), ['jquery', 'bootstrap', 'font-awesome']);\"",
             "php -r \"echo 'SIK SAYS -> Copy required libs...'.PHP_EOL;\"",
             "cp -r './vendor/components/jquery/' './manage/lib/required/'",
-            "php -r \"//copy('./vendor/components/jquery/jquery.js', './manage/lib/required/jquery.min.js');\""
+            "cp -r './vendor/components/bootstrap/' './manage/lib/required/'",
+            "cp -r './vendor/fortawesome/font-awesome/' './manage/lib/required/'"
         ]
     }
 
