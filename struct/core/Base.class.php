@@ -17,6 +17,7 @@ class Base
 
     /* Base Static properties:*/
     public static $conf;
+    static $index_page_url = "";
     public static MysqliDb $db;
     private static $regex = [
         "filter-none" => '/[^%s]/'
@@ -76,7 +77,7 @@ class Base
      *      > jump_to_page("about", ["v" => 10]) => redirects to the about page with v = 10
     */
     public static function jump_to_page($page = "/", $Qparams = [], $exit = true) {
-        $url = Page::$index_page_url."/".
+        $url = self::$index_page_url."/".
                 ($page !== "/" ? urlencode($page)."/" : "").
                 (!empty($Qparams) ? "?" : "");
         foreach ($Qparams as $p => $v)

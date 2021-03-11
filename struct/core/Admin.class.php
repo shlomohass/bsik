@@ -11,8 +11,8 @@
 /*****************************      Changelog       ****************************
  1.0: initial
 *******************************************************************************/
-require_once "Trace.class.php";
-require_once "Base.class.php";
+require_once PLAT_PATH_CORE.DS."Trace.class.php";
+require_once PLAT_PATH_CORE.DS."Base.class.php";
 
 class Admin extends Base {
     
@@ -21,13 +21,7 @@ class Admin extends Base {
      */
     public $is_signed       = false;
     public $levels          = [];
-    public $priv            = (object) array(
-        "level"      => "",
-        "users"      => 0,
-        "content"    => 0,
-        "admin"      => 0,
-        "install"    => 0
-    );
+    public $priv;
     public $admin_data      = false;
 
     /** Constructor
@@ -36,6 +30,13 @@ class Admin extends Base {
      */
     public function __construct() {
         $this->levels = self::$db->map("id")->get('admin_levels'); 
+        $this->priv = (object) [
+            "level"      => 0,
+            "users"      => 0,
+            "content"    => 0,
+            "admin"      => 0,
+            "install"    => 0
+        ];
     }
 
     public function admin_login() {

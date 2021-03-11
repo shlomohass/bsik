@@ -9,22 +9,22 @@
 1.0.1:
     ->creation - initial
 *******************************************************************************/
-require_once "Trace.class.php";
-require_once "Base.class.php";
+require_once PLAT_PATH_CORE.DS."Trace.class.php";
+require_once PLAT_PATH_CORE.DS."Base.class.php";
 
-class Page extends Base
+class APage extends Base
 {
-    private $types = array("page","api");
-    public $request =  array(
+    private $types = array("module","api","error");
+    public  $request =  array(
         "type"      => "",      // page, api
-        "page"      => "",
+        "module"      => "",
         "when"      => ""
     );
     public $token =  array(
         "csrf" => "",
         "meta" => ""
     );
-
+    public $modules = [];
     //For includes:
     private $static_links_counter = 0;
     public $lib_toload = ["css" => [], "js" => []];
@@ -57,11 +57,59 @@ class Page extends Base
     public function __construct()
     {
         $this->tokenize(); //Tokenize the page.
-        $this->request["type"] = $this->request_type(); //Get the request 
-        $this->request["page"] = $this->request_page($this::$conf["default-page"] ?? "");
-        $this::$index_page_url = $this->parse_slash_url_with($this::$conf["path"]["site_base_url"]);
-        $this->request["when"] = self::std_time_datetime(); //Time stamp for debugging
-        //$this->head_meta = self::array_extend($this->head_meta, $this::$conf["page"]["meta"]); //Sets the ,eta global defaults
+        $this->request["type"]      = $this->request_type(); //Get the request 
+        $this->request["module"]    = $this->request_module($this::$conf["default-module"] ?? "");
+        $this::$index_page_url      = $this->parse_slash_url_with($this::$conf["path"]["site_admin_url"]);
+        $this->request["when"]      = self::std_time_datetime(); //Time stamp for debugging
+        $this->fill_modules();
+    }
+    private function fill_modules() {
+        //Get basic info needed:
+        $this->modules = self::$db->map("name")->arrayBuilder()->get("admin_modules", null, [
+            "name", "priv_users", "priv_content", "priv_admin", "priv_install", "path"
+        ]);
+        //Parse required privileges:
+        foreach ($this->modules as &$module) {
+            $module["priv"] = (object)[
+                "users"     => $module["priv_users"]    ? true : false,
+                "content"   => $module["priv_content"]  ? true : false,
+                "admin"     => $module["priv_admin"]    ? true : false,
+                "install"   => $module["priv_install"]  ? true : false
+            ];
+        }
+        return count($this->modules);
+    }    
+    /**
+     * isset_module
+     *
+     * @param  string $name
+     * @return bool
+     */
+    public function isset_module(string $name = "") : bool {
+        $name = empty($name) ? $this->request["module"] : $name;
+        return isset($this->modules[$name]);
+    } 
+    /**
+     * get_module_priv
+     * get an object with all required priv of the signed admin
+     * @param  string $name
+     * @return mixed - Object with privs attributes, NULL if not set
+     */
+    public function get_module_priv(string $name = null) {
+        $name = empty($name) ? $this->request["module"] : $name;
+        return isset($this->modules[$name]) ? $this->modules[$name]["priv"] : null;
+    }
+    public function is_allowed_to_use(&$Admin, string $name = "") : bool {
+        $name = empty($name) ? $this->request["module"] : $name;
+        if (isset($Admin->priv) && !empty($Admin->priv) && isset($this->modules[$name])) {
+            $module = &$this->modules[$name];
+            if ($Admin->priv->users     < $module["priv"]->users)     return false;
+            if ($Admin->priv->content   < $module["priv"]->content)   return false;
+            if ($Admin->priv->admin     < $module["priv"]->admin)     return false;
+            if ($Admin->priv->install   < $module["priv"]->install)   return false;
+            return true;
+        }
+        return false;
     }
     /* Get and set the type of the page request.
      *  @Default-params: none
@@ -78,10 +126,10 @@ class Page extends Base
      *  @return String
      *
     */  
-    private function request_page(string $default)
+    private function request_module(string $default)
     {
         // TODO: Log the requests given to the server.
-        $page = (isset($_REQUEST["page"]) && ctype_alnum($_REQUEST["page"])) ? $_REQUEST["page"] : $default;
+        $page = (isset($_REQUEST["module"]) && ctype_alnum($_REQUEST["module"])) ? $_REQUEST["module"] : $default;
         return self::std_str_filter_string($page, "A-Za-z0-9_-");
     }
         
@@ -91,8 +139,8 @@ class Page extends Base
      * 
      * @return bool
      */
-    public function load_page() : bool {
-        if ($this->request["page"]) {
+    public function load_module() : bool {
+        if ($this->request["module"]) {
             $cols = [
                 "pages.*",
                 "t.name as template_name",
