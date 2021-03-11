@@ -3,4 +3,6 @@
 body {
     background: var(--admin-base-background);
     font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: var(--admin-white-text);
 }

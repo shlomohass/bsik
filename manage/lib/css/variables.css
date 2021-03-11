@@ -15,5 +15,9 @@
 /* VARIABLES **********************************************************/
 
 :root {
-    --admin-base-background: #222629;
+    --admin-base-background: #151515;
+    --admin-base-lighter-background: #242424;
+    --admin-base-orange: #fbb040;
+    --admin-white-text: #CECECE;
+    --admin-grey-text: #6C6C6C;
 }
