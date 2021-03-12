@@ -122,9 +122,11 @@ label {
     box-shadow: 0 0 6px 4px rgb(251 176 64 / 50%);
 }
 
-.login-text {
+.login-message {
     text-align: center;
-    color: var(--admin-white-text);
+    color: var(--admin-red-text);
+    padding: 0px 20px 20px 20px;
+    font-size: 12px;
 }
 
 .plat-info {

@@ -1,8 +1,7 @@
 <?php
 /******************************  intellisense  *****************************/
-if (!isset($APage)) {
-    $APage = new APage();
-} 
+if (!isset($APage)) { $APage = new APage(); } 
+if (!isset($Admin)) { $Admin = new Admin(); } 
 
 $APage->include("head", "css", "path", ["name" => "lib/required/font-awesome/css/all.min.css"]);
 $APage->include("head", "css", "path", ["name" => "lib/required/bootstrap/css/bootstrap.css"]);
@@ -17,7 +16,18 @@ $APage->store("plat-info", "BSik by SIKTEC - Version: ".APP_VERSION);
 $APage->store("form-user-label", "USERNAME");
 $APage->store("form-user-pass", "PASSWORD");
 $APage->store("form-btn-login", "LOGIN");
-
+$APage->store("login-message", "", false);
+var_dump($Admin->errors["login"]);
+if (!empty($Admin->errors["login"] ?? "")) {
+    switch ($Admin->errors["login"]) {
+        case "error":
+            $APage->store("login-message", "Incorrect username or password  - Try Again.", false);
+            break;
+        case "session":
+            $APage->store("login-message", "Page needed refresh first - Now you can continue and login .", false);
+            break;
+    }
+}
 
 ?>
 <html data-docby="BSIK Platfom">
@@ -53,6 +63,13 @@ $APage->store("form-btn-login", "LOGIN");
 
                     <div class="col-lg-12 login-form">
                         <div class="col-lg-12 login-form">
+                            <?php
+                                if (!empty($APage->get("login-message"))) {
+                                    print '<div class="login-message">'.PHP_EOL;
+                                    print $APage->get("login-message");
+                                    print '</div>'.PHP_EOL;
+                                } 
+                            ?>
                             <form method="post">
                                 <input type="hidden" name="csrftoken" value="<?php print $APage->token["csrf"]; ?>" />
                                 <div class="form-group">
@@ -69,15 +86,10 @@ $APage->store("form-btn-login", "LOGIN");
                                     </label>
                                     <input name="password" type="password" class="form-control" />
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="col-12 login-text">
-                                        <!-- Error Message -->
-                                    </div>
-                                    <div class="col-12 text-center mb-4">
-                                        <button type="submit" class="btn btn-outline-primary">
-                                            <?php print $APage->get("form-btn-login"); ?>
-                                        </button>
-                                    </div>
+                                <div class="col-12 text-center mb-4">
+                                    <button type="submit" class="btn btn-outline-primary">
+                                        <?php print $APage->get("form-btn-login"); ?>
+                                    </button>
                                 </div>
                             </form>
                         </div>

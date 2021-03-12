@@ -23,6 +23,7 @@ class Admin extends Base {
     public $levels          = [];
     public $priv;
     public $admin_data      = false;
+    public $errors          = [];
 
     /** Constructor
      * 
@@ -39,21 +40,33 @@ class Admin extends Base {
         ];
     }
 
-    public function admin_login() {
-        $defined = self::std_arr_get_from($_POST, ["email", "password", "csrf"]);
+    public function admin_login() : bool {
+        $defined = self::std_arr_get_from($_POST, ["username", "password", "csrftoken"]);
         if (
-            is_string($defined["csrf"]) && strlen($defined["csrf"]) && 
-            is_string($defined["email"]) && strlen($defined["email"]) && 
-            is_string($defined["password"]) && strlen($defined["password"]) && 
-            filter_var($defined["email"], FILTER_VALIDATE_EMAIL)
+            is_string($defined["csrftoken"]) &&
+            is_string($defined["username"]) &&
+            is_string($defined["password"])
         ) {
-            var_dump($defined["csrf"]);
-            var_dump($_SESSION['csrf_token']);
+            //Make sure same session call:
+            if ($defined["csrftoken"] !== $_SESSION['csrf_token']) {
+                $this->errors["login"] = "session";
+                return false;
+            }
+            //Validate inputs:
+            if (
+                !strlen($defined["username"]) || 
+                !strlen($defined["password"]) || 
+                !filter_var($defined["username"], FILTER_VALIDATE_EMAIL)
+            ) {
+                $this->errors["login"] = "error";
+                return false;
+            }
+
             //Prepare Values:
-            $defined['email'] = strtolower($defined['email']);
+            $defined['username'] = strtolower($defined['username']);
             $hashed_password = openssl_digest(PLAT_HASH_SALT.$defined['password'].PLAT_HASH_SALT, "sha512");
             //Check on DB:
-            $admin = self::$db->where("email", $defined['email'])
+            $admin = self::$db->where("email", $defined['username'])
                               ->where("password", $hashed_password)
                               ->getOne("admins");
             //Is Valid?
@@ -66,8 +79,13 @@ class Admin extends Base {
                     "admintoken"     => $token, 
                     "adminid"        => $admin["id"]
                 ]);
-            } 
+                return true;
+
+            } else {
+                $this->errors["login"] = "error";
+            }
         }
+        return false;
     }
     public function initial_admin_login_status() {
         //First check if already signed:
