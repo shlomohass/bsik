@@ -40,12 +40,15 @@ class Admin extends Base {
     }
 
     public function admin_login() {
-        $defined = self::std_arr_get_from($_POST, ["email", "password"]);
+        $defined = self::std_arr_get_from($_POST, ["email", "password", "csrf"]);
         if (
+            is_string($defined["csrf"]) && strlen($defined["csrf"]) && 
             is_string($defined["email"]) && strlen($defined["email"]) && 
             is_string($defined["password"]) && strlen($defined["password"]) && 
             filter_var($defined["email"], FILTER_VALIDATE_EMAIL)
         ) {
+            var_dump($defined["csrf"]);
+            var_dump($_SESSION['csrf_token']);
             //Prepare Values:
             $defined['email'] = strtolower($defined['email']);
             $hashed_password = openssl_digest(PLAT_HASH_SALT.$defined['password'].PLAT_HASH_SALT, "sha512");

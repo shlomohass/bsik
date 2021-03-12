@@ -28,6 +28,7 @@ $APage->store("form-btn-login", "LOGIN");
         <meta name="description" content="PHP made simple the correct way to build fast and powerful PHP web apps">
         <meta http-equiv="X-UA-Compatible" content="IE=7">
         <?php print $APage->token["meta"]; ?>
+        <?php $APage->render_favicon(PLAT_FULL_DOMAIN."/manage/lib/img/fav"); ?>
         <title>SIK Framework - Login Page</title>
         <link rel="icon" href="">
         <!-- START : Head includes -->
