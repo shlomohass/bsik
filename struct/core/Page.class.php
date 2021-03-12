@@ -380,7 +380,14 @@ class Page extends Base
 
 
     /******************************  RENDER ELEMENTS  *****************************/
-    
+        
+    /**
+     * render_libs
+     * render libs that are included in all the different methods
+     * @param  mixed $type
+     * @param  mixed $pos
+     * @return void
+     */
     public function render_libs(string $type, string $pos) {
         $tpl = [
             "css" => '<link rel="stylesheet" href="%s" />'.PHP_EOL,
@@ -394,5 +401,25 @@ class Page extends Base
                 printf($use, $lib["path"]);
             }
         }
+    }
+
+    /**
+     * render_favicon
+     * the system expects 4 files ad the path folder:
+     *  - apple-touch-icon.png
+     *  - favicon-32x32.png
+     *  - favicon-16x16.png
+     *  - site.webmanifest
+     * @param  string $path - path to the folder with favicons
+     * @param  string $name - naming scheme of favicons
+     * @return void
+     */
+    /* SH: added - 2021-03-12 => Attach to template or page variables */
+    public function render_favicon(string $path, string $name = "favicon") {
+        $tpl = '<link rel="apple-touch-icon" sizes="180x180" href="%1$s/apple-touch-icon.png">'.
+        '<link rel="icon" type="image/png" sizes="32x32" href="%1$s/%2$s-32x32.png">'.
+        '<link rel="icon" type="image/png" sizes="16x16" href="%1$s/%2$s-16x16.png">'.
+        '<link rel="manifest" href="%1$s/site.webmanifest">';
+        printf($tpl, $path, $name);
     }
 }

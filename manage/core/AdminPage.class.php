@@ -443,16 +443,23 @@ class APage extends Base
             }
         }
     }
-
+    
+    /**
+     * render_favicon
+     * the system expects 4 files ad the path folder:
+     *  - apple-touch-icon.png
+     *  - favicon-32x32.png
+     *  - favicon-16x16.png
+     *  - site.webmanifest
+     * @param  string $path - path to the folder with favicons
+     * @param  string $name - naming scheme of favicons
+     * @return void
+     */
     public function render_favicon(string $path, string $name = "favicon") {
-
-        
         $tpl = '<link rel="apple-touch-icon" sizes="180x180" href="%1$s/apple-touch-icon.png">'.
         '<link rel="icon" type="image/png" sizes="32x32" href="%1$s/%2$s-32x32.png">'.
         '<link rel="icon" type="image/png" sizes="16x16" href="%1$s/%2$s-16x16.png">'.
         '<link rel="manifest" href="%1$s/site.webmanifest">';
-
         printf($tpl, $path, $name);
-
     }
 }
