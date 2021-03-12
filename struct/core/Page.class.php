@@ -305,7 +305,7 @@ class Page extends Base
     public function meta($name, $set = false) {
         if (!isset($this->head_meta[$name]))
             trigger_error("'Page->meta()' you must use a valid meta type.", E_PLAT_WARNING);
-        if (!$set) return $this->head_meta[$name];
+        if ($set === false) return $this->head_meta[$name];
         $this->head_meta[$name] = $set;
         return $this;
     }    

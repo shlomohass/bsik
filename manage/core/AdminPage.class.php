@@ -46,8 +46,10 @@ class APage extends Base
     private $storage = array();
 
     //Page loaded values:
-    public $definition = [];
+    public $platform_settings = [];
+    public $platform_libs = [];
     public $settings = []; // Holds merged definition settings
+
     /* Page constructor.
      *  @param $conf => SIK configuration array Used in Base Parent
      *  @Default-params: none
@@ -62,6 +64,16 @@ class APage extends Base
         $this::$index_page_url      = $this->parse_slash_url_with($this::$conf["path"]["site_admin_url"]);
         $this->request["when"]      = self::std_time_datetime(); //Time stamp for debugging
         $this->fill_modules();
+        $this->load_plat_settings("global", true);
+    }
+    private function load_plat_settings(string $which = "global", bool $load_libs = true) {
+        $set = self::$db->where("name", $which)->getOne("admin_panel_settings", ["object", "libs"]);
+        if (!empty($set) && !empty($set["object"])) {
+            $this->platform_settings = json_decode($set["object"], true);
+        }
+        if (!empty($set) && !empty($set["libs"]) && $load_libs) {
+            $this->platform_libs = json_decode($set["libs"], true);
+        }
     }
     private function fill_modules() {
         //Get basic info needed:
@@ -142,36 +154,23 @@ class APage extends Base
     public function load_module() : bool {
         if ($this->request["module"]) {
             $cols = [
-                "pages.*",
-                "t.name as template_name",
-                "t.libs as default_libs",
-                "t.global as default_settings",
-                "ty.id as type_id",
-                "ty.name as type_name",
-                "l.name as layout_name",
-                "l.variables as default_layout_vars",
-                "l.file as layout_file"
+                "admin_modules.name",
+                "admin_modules.path",
+                "admin_modules.settings",
+                "admin_modules.defaults",
+                "admin_modules.version",
+                "admin_modules.menu"
             ];
-            $this->definition = self::$db->where("pages.name", $this->request["page"])
-                                         ->join("templates as t", "t.id = pages.template", "LEFT")
-                                         ->join("page_layout as l", "l.id = pages.layout", "LEFT")
-                                         ->join("page_types as ty", "ty.id = pages.type", "LEFT")
-                                         ->getOne("pages", $cols);
+            $module_settings = self::$db->where("admin_modules.name", $this->request["module"])
+                                        ->getOne("admin_modules", $cols);
             //Parse settings if set:
-            if (!empty($this->definition)) {
-                if (isset($this->definition["default_settings"]))
-                    $this->definition["default_settings"] = json_decode($this->definition["default_settings"], true);
-                else
-                    $this->definition["default_settings"] = [];
-                if (isset($this->definition["settings"]))
-                    $this->definition["settings"] = json_decode($this->definition["settings"], true); 
-                else
-                    $this->definition["settings"] = [];
+            if (!empty($module_settings) && !empty($module_settings["settings"])) {
+                $module_settings["settings"] = json_decode($module_settings["settings"], true);
                 //Merge defined -> extends default settings:
-                $this->settings = array_merge($this->definition["default_settings"], $this->definition["settings"]);
+                $this->settings = array_merge($this->platform_settings, $module_settings["settings"]);
             }
         }
-        return !empty($this->definition);
+        return !empty($this->settings);
     }
     /* Get and Set the page token If not set create a new one.
      *  @Default-params: none
@@ -227,12 +226,12 @@ class APage extends Base
      */
     private static function parse_lib_query(string $lib_query, string $pos = "") : array {
         $lib = explode(':', $lib_query);
-        $version = ltrim($lib[1], " +=");
+        $place = in_array($lib[0], ["required", "lib", "install", "ext"]) ? $lib[0] : false;
+        if (!$place) return [];
+        $path = $lib[1] ?? "";
         return [
-            "name" => $lib[0],
-            "cond" => substr($lib[1] ?? "=", 0, 1),
-            "version" => $version,
-            "sig" => intval(explode(".", $version)[0] ?? 0),
+            "path" => $path,
+            "place" => $place,
             "pos" => $pos
         ];
     }
@@ -242,11 +241,9 @@ class APage extends Base
      * @param  string $libs_json -> the json representation
      * @return void
      */
-    private function load_json_libs(string $libs_json) {
-        //Parse lib json object to array:
-        $def_lib = json_decode($libs_json, true);
+    private function load_libs_object(array $libs) {
         //Parse each lib:
-        foreach ($def_lib as $key => $inpos_lib) {
+        foreach ($libs as $key => $inpos_lib) {
             $pos = $key;
             foreach ($inpos_lib as $type_libs) {
                 $type = $type_libs["type"];
@@ -256,20 +253,22 @@ class APage extends Base
                         $this->lib_toload[$type]["link".$this->static_links_counter] = ["name" => $lib, "pos" => $pos];
                     } else {
                         $lib_obj = self::parse_lib_query($lib, $pos);
-                        if ($this->lib_toload[$type][$lib_obj["name"]] ?? false) {
-                            if ($lib_obj["cond"] === "=" && $lib_obj["version"] !== $this->lib_toload[$type][$lib_obj["name"]]["version"]) {
-                                trigger_error(
-                                    sprintf("Lib `%s` require version `%s` but version `%s` loaded first", $lib_obj["name"], $lib_obj["version"], $this->lib_toload[$type][$lib_obj["name"]]["version"]), 
-                                    E_USER_WARNING
-                                );
-                            } elseif ($lib_obj["cond"] === "+" && $lib_obj["sig"] <  $this->lib_toload[$type][$lib_obj["name"]]["sig"]) {
-                                trigger_error(
-                                    sprintf("Lib `%s` require at least version `%s` but version `%s` loaded first", $lib_obj["name"], $lib_obj["sig"], $this->lib_toload[$type][$lib_obj["name"]]["version"]), 
-                                    E_USER_WARNING
-                                );
+                        if (!empty($lib_obj)) {
+                            $this->static_links_counter++;
+                            switch ($lib_obj["place"]) {
+                                case "required": {
+                                    $this->lib_toload[$type]["path".$this->static_links_counter] = [
+                                        "name" => PLAT_FULL_DOMAIN."/manage/lib/required/".$lib_obj["path"],
+                                        "pos"  => $lib_obj["pos"]
+                                    ];
+                                } break;
+                                case "lib": {
+                                    $this->lib_toload[$type]["path".$this->static_links_counter] = [
+                                        "name" => PLAT_FULL_DOMAIN."/manage/lib/".$lib_obj["path"],
+                                        "pos"  => $lib_obj["pos"]
+                                    ];
+                                } break;
                             }
-                        } else {
-                            $this->lib_toload[$type][$lib_obj["name"]] = $lib_obj;
                         }
                     }
                 }
@@ -284,13 +283,13 @@ class APage extends Base
      * @param  bool $page - whether to load page specific libs?
      * @return int
      */
-    public function load_libs(bool $template, bool $page) : int {
+    public function load_libs(bool $global, bool $module = false) : int {
         
-        //Build definitions:
-        if ($template && isset($this->definition["default_libs"])) 
-            $this->load_json_libs($this->definition["default_libs"]);
-        if ($page && isset($this->definition["libs"])) 
-            $this->load_json_libs($this->definition["libs"]);
+        //Build libs:
+        if ($global && !empty($this->platform_libs)) 
+            $this->load_libs_object($this->platform_libs);
+        // if ($page && isset($this->definition["libs"])) 
+        //     $this->load_json_libs($this->definition["libs"]);
     
         //Add via include method:
         foreach($this->lib_toload as $type => $libs)
@@ -298,48 +297,6 @@ class APage extends Base
                 $this->include($set["pos"], $type, $name, $set);
     
         return count($this->lib_toload["css"]) + count($this->lib_toload["js"]);
-    }
-    
-    /**
-     * import_defined_libs - import installed libs from db 
-     *
-     * @return array - return the libs not found
-     */
-    public function import_defined_libs() : array {
-        $import = [];
-        $not_found = [];
-        //Build required:
-        foreach($this->includes as $pos => $types)
-            foreach($types as $type => $libs)
-                foreach($libs as $lib)
-                    if ($lib["name"] !== "link" && $lib["name"] !== "path")
-                        $import[strtolower($lib["name"].$lib["path"])] = "";
-        //Create query conditions:
-        self::$db->where("concat_ws('',name,version)", array_keys($import) , "IN");
-        $data = self::$db->map('libname')->get("libs", null, ["concat_ws('',name,version) as libname","js","css"]);
-        //Parse :
-        foreach($data as &$lib) {
-            $lib["js"] = json_decode($lib["js"], true);
-            usort($lib["js"], fn($a, $b) => $a["order"] <=> $b["order"] );
-            $lib["css"] = json_decode($lib["css"], true);
-            usort($lib["css"], fn($a, $b) => $a["order"] <=> $b["order"] );
-        }
-        //Fill the data or removed undefined:
-        foreach($this->includes as $pos => &$types) 
-            foreach($types as $type => &$libs)
-                foreach($libs as $key => &$lib)
-                    if ($lib["name"] !== "link" && $lib["name"] !== "path")
-                        if (isset($data[strtolower($lib["name"].$lib["path"])])) {
-                            $base = PLAT_URL_BASE."/lib/import/".strtolower($lib["name"].".".$lib["path"])."/".$type."/";
-                            $lib["path"] = array_map(
-                                fn($a) => $base.$a['file'], 
-                                $data[strtolower($lib["name"].$lib["path"])][$type]
-                            );
-                        } else {
-                            $not_found[] = strtolower($lib["name"].$lib["path"]);
-                            unset($libs[$key]);
-                        }
-        return $not_found;
     }
     
     /* Set and Gets page html meta tags values.
@@ -353,7 +310,7 @@ class APage extends Base
     public function meta($name, $set = false) {
         if (!isset($this->head_meta[$name]))
             trigger_error("'Page->meta()' you must use a valid meta type.", E_PLAT_WARNING);
-        if (!$set) return $this->head_meta[$name];
+        if ($set === false) return $this->head_meta[$name];
         $this->head_meta[$name] = $set;
         return $this;
     }    
@@ -456,10 +413,10 @@ class APage extends Base
      * @return void
      */
     public function render_favicon(string $path, string $name = "favicon") {
-        $tpl = '<link rel="apple-touch-icon" sizes="180x180" href="%1$s/apple-touch-icon.png">'.
-        '<link rel="icon" type="image/png" sizes="32x32" href="%1$s/%2$s-32x32.png">'.
-        '<link rel="icon" type="image/png" sizes="16x16" href="%1$s/%2$s-16x16.png">'.
-        '<link rel="manifest" href="%1$s/site.webmanifest">';
+        $tpl = '<link rel="apple-touch-icon" sizes="180x180" href="%1$s/apple-touch-icon.png">'.PHP_EOL.
+        '<link rel="icon" type="image/png" sizes="32x32" href="%1$s/%2$s-32x32.png">'.PHP_EOL.
+        '<link rel="icon" type="image/png" sizes="16x16" href="%1$s/%2$s-16x16.png">'.PHP_EOL.
+        '<link rel="manifest" href="%1$s/site.webmanifest">'.PHP_EOL;
         printf($tpl, $path, $name);
     }
 }

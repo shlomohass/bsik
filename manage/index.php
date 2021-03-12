@@ -67,6 +67,7 @@ switch ($APage->request["type"]) {
             $APage::error_page("admin_is_not_allowed");
         } else {
             //Load the platform that will also render the module:
+            $APage->load_module();
             require_once PLAT_PATH_MANAGE.DS."pages".DS."base.php";
         }
     } break;
