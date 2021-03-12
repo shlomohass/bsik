@@ -48,6 +48,7 @@ $content = <<<HTML
         <meta name="description"            content="{$Page->meta('description')}" />
         <meta http-equiv="X-UA-Compatible"  content="IE=7" />
         {$Page->token["meta"]}
+        {$Page->render_favicon(PLAT_FULL_DOMAIN."/img/fav")}
         $ex_meta
         <title>{$Page->meta("title")}</title>
         <link rel="icon" href="{$Page->meta('icon')}" />
