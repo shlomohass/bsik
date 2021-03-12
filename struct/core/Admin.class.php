@@ -52,6 +52,7 @@ class Admin extends Base {
                 $this->errors["login"] = "session";
                 return false;
             }
+            var_dump("1");
             //Validate inputs:
             if (
                 !strlen($defined["username"]) || 
@@ -61,10 +62,12 @@ class Admin extends Base {
                 $this->errors["login"] = "error";
                 return false;
             }
-
+            var_dump("2");
             //Prepare Values:
             $defined['username'] = strtolower($defined['username']);
             $hashed_password = openssl_digest(PLAT_HASH_SALT.$defined['password'].PLAT_HASH_SALT, "sha512");
+            var_dump(PLAT_HASH_SALT);
+            var_dump($hashed_password);
             //Check on DB:
             $admin = self::$db->where("email", $defined['username'])
                               ->where("password", $hashed_password)

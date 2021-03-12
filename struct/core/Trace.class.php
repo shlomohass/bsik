@@ -241,22 +241,22 @@ class Trace {
     }
     private static function get_expose_styles() {
         return array(
-            'wrapper'       => "style='background:#F2F2F2; border-top:1px solid #A4A4A4; margin:0; padding:0; display: block; z-index:1000; "
+            'wrapper'       => "style='color: black;background:#F2F2F2; border-top:1px solid #A4A4A4; margin:0; padding:0; display: block; z-index:1000; "
                               ."position:fixed;left:0;right:0;width:100%; bottom:0; font-size:14px; font-family:arial; -webkit-box-shadow:0px -5px 9px -3px #424242; "
                               ." -moz-box-shadow:0px -5px 9px -3px #424242; box-shadow: 0px -5px 9px -3px rgba(66,66,66,0.8);direction:ltr;'",
             'remover'       => "style='padding:0px;color:white;float:left;margin-left:10px;cursor:pointer;'",
             'toggle'        => "style='padding:0; margin:0; display:none;'",
             'content'       => "style='max-height: 400px; overflow-y: scroll; overflow-x:auto; padding: 0; margin: 0; display: block; color: #050505;'",
             'header'        => "style='width:100%; padding-top:10px; padding-bottom:10px; font-size:14px; color:#BDBDBD; background:#2E2E2E; text-align:center; cursor:pointer;'",
-            'table_general' => "style='width:90%; margin-left:50px; border-collapse: collapse; '",
+            'table_general' => "style='width:90%; margin-left:50px; border-collapse: collapse;color: black; '",
             'th_general'    => "style='text-align:center; border:1px solid black; background-color:#D8F6CE; font-size:12px; padding:2px 5px; border-collapse: collapse;'",
             'td_general'    => "style='text-align:left; border:1px solid black; padding:2px 5px; font-size:11px; border-collapse: collapse;'",
-            'table_regs'    => "style='width:90%; margin-left:50px; border-collapse: collapse; '",
+            'table_regs'    => "style='width:90%; margin-left:50px; border-collapse: collapse;color: black; '",
             'th_regs'       => "style='text-align:center; border:1px solid black; background-color:#E6E0F8; font-size:12px; padding:2px 5px; border-collapse: collapse;'",
             'td_regs'       => "style='text-align:left; border:1px solid black; padding:2px 5px; font-size:11px; border-collapse: collapse;'",
             'td_regs_fixed' => "style='text-align:left; border:1px solid black; padding:2px 5px; font-size:11px; border-collapse: collapse; width:550px;'",
             'div_regs_fixed'=> "style='max-height:350px; width:550px; overflow:auto'",
-            'table_queries' => "style='width:90%; margin-left:50px; border-collapse: collapse; '",
+            'table_queries' => "style='width:90%; margin-left:50px; border-collapse: collapse;color: black; '",
             'th_queries'    => "style='text-align:center; border:1px solid black; background-color:#F3E2A9; font-size:12px; padding:2px 5px; border-collapse: collapse;'",
             'td_queries'    => "style='text-align:left; border:1px solid black; padding:2px 5px; font-size:11px; border-collapse: collapse;'",            
             'table_events'  => "style='width:90%; margin-left:50px; border-collapse: collapse; word-break: break-all;'",
