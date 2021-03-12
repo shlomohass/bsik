@@ -39,6 +39,7 @@ AddDefaultCharset UTF-8
     # RewriteRule ^(user)/([\w\d\-]+)/?$ /?page=$1&tab=$2 [NC,L,QSA]
     # RewriteRule ^(logout)/?$ /?page=$1 [NC,L,P]
     RewriteRule ^(error)/?$ index.php?module=$1&type=$1 [NC,L,QSA]
+    RewriteRule ^(logout)/?$ index.php?module=$1&type=$1 [NC,L,QSA] 
     RewriteRule ^([\w\d\-\_]+)/?$ index.php?module=$1 [NC,L,QSA]
 </IfModule>
 

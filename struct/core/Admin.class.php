@@ -38,8 +38,21 @@ class Admin extends Base {
             "admin"      => 0,
             "install"    => 0
         ];
-    }
-
+    }    
+    /**
+     * admin_logout
+     *
+     * @return void
+     */
+    public function admin_logout() {
+        self::$db->where("id", $this->admin_data["id"])->update("admins",["e_token" => ""], 1);
+        $this::delete_session(["admintoken", "adminid"]);
+    }    
+    /**
+     * admin_login
+     *
+     * @return bool
+     */
     public function admin_login() : bool {
         $defined = self::std_arr_get_from($_POST, ["username", "password", "csrftoken"]);
         if (

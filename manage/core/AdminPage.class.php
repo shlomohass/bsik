@@ -14,7 +14,7 @@ require_once PLAT_PATH_CORE.DS."Base.class.php";
 
 class APage extends Base
 {
-    private $types = array("module","api","error");
+    private $types = array("module","api","error","logout");
     public  $request =  array(
         "type"      => "",      // page, api
         "module"      => "",

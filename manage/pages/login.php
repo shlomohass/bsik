@@ -3,15 +3,16 @@
 if (!isset($APage)) { $APage = new APage(); } 
 if (!isset($Admin)) { $Admin = new Admin(); } 
 
-$APage->include("head", "css", "path", ["name" => "lib/required/font-awesome/css/all.min.css"]);
-$APage->include("head", "css", "path", ["name" => "lib/required/bootstrap/css/bootstrap.css"]);
-$APage->include("head", "css", "path", ["name" => "lib/css/global.css"]);
-$APage->include("head", "css", "path", ["name" => "lib/css/login.css"]);
-$APage->include("head", "js",  "path", ["name" => "lib/required/jquery/jquery.min.js"]);
+$APage->include("head", "css", "path", ["name" => PLAT_FULL_DOMAIN."/manage/lib/required/font-awesome/css/all.min.css"]);
+$APage->include("head", "css", "path", ["name" => PLAT_FULL_DOMAIN."/manage/lib/required/bootstrap/css/bootstrap.css"]);
+$APage->include("head", "css", "path", ["name" => PLAT_FULL_DOMAIN."/manage/lib/css/global.css"]);
+$APage->include("head", "css", "path", ["name" => PLAT_FULL_DOMAIN."/manage/lib/css/login.css"]);
+$APage->include("head", "js",  "path", ["name" => PLAT_FULL_DOMAIN."/manage/lib/required/jquery/jquery.min.js"]);
 
 
 /******************************  Basic login Form values  *****************************/
 $APage->store("form-title", "ADMIN PANEL LOGIN");
+$APage->store("form-logo", PLAT_FULL_DOMAIN."/manage/lib/img/logo.svg");
 $APage->store("plat-info", "BSik by SIKTEC - Version: ".APP_VERSION);
 $APage->store("form-user-label", "USERNAME");
 $APage->store("form-user-pass", "PASSWORD");
@@ -55,7 +56,7 @@ if (!empty($Admin->errors["login"] ?? "")) {
                 <div class="col-lg-3 col-md-2"></div>
                 <div class="col-lg-6 col-md-8 login-box">
                     <div class="col-lg-12 plat-logo">
-                        <img src="lib/img/logo.svg" />
+                        <?php print "<img  src='".$APage->get("form-logo")."' />".PHP_EOL; ?>
                     </div>
                     <div class="col-lg-12 login-title">
                         <?php print $APage->get("form-title"); ?>

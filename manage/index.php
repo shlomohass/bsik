@@ -79,6 +79,13 @@ switch ($APage->request["type"]) {
         echo "error";
         var_dump($_REQUEST);
     } break;
+    case "logout": {
+        if ($Admin->is_signed) {
+            $Admin->admin_logout();
+        }
+        $APage::jump_to_page();
+    }
+    break;
     default: {
         // Not found page:
         $APage::error_page("module_type_not_set");
