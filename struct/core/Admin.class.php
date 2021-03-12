@@ -52,7 +52,6 @@ class Admin extends Base {
                 $this->errors["login"] = "session";
                 return false;
             }
-            var_dump("1");
             //Validate inputs:
             if (
                 !strlen($defined["username"]) || 
@@ -62,12 +61,9 @@ class Admin extends Base {
                 $this->errors["login"] = "error";
                 return false;
             }
-            var_dump("2");
             //Prepare Values:
             $defined['username'] = strtolower($defined['username']);
             $hashed_password = openssl_digest(PLAT_HASH_SALT.$defined['password'].PLAT_HASH_SALT, "sha512");
-            var_dump(PLAT_HASH_SALT);
-            var_dump($hashed_password);
             //Check on DB:
             $admin = self::$db->where("email", $defined['username'])
                               ->where("password", $hashed_password)
@@ -112,7 +108,7 @@ class Admin extends Base {
         //TODO: log admin is active into DB.
         //TODO: Update Admin Last Seen:
         // Check if this user exists and is active
-        $this->is_signed = ($this->admin_data["user_account_status"] ?? -1 === 0) ? true : false;
+        $this->is_signed = (isset($this->admin_data["account_status"]) && $this->admin_data["account_status"] === 0) ? true : false;
         return $this->is_signed;
     }
     private function generate_admin_token(string $hashed_pass, string $email_address) : string {
