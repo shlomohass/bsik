@@ -259,7 +259,7 @@ class Trace {
             'table_queries' => "style='width:90%; margin-left:50px; border-collapse: collapse;color: black; '",
             'th_queries'    => "style='text-align:center; border:1px solid black; background-color:#F3E2A9; font-size:12px; padding:2px 5px; border-collapse: collapse;'",
             'td_queries'    => "style='text-align:left; border:1px solid black; padding:2px 5px; font-size:11px; border-collapse: collapse;'",            
-            'table_events'  => "style='width:90%; margin-left:50px; border-collapse: collapse; word-break: break-all;'",
+            'table_events'  => "style='width:90%; margin-left:50px; border-collapse: collapse; word-break: break-all;color: black;'",
             'th_events'     => "style='min-width: 100px; text-align:center; border:1px solid black; background-color:orange; font-size:12px; padding:2px 5px; border-collapse: collapse;'",
             'td_events'     => "style='text-align:left; border:1px solid black; padding:2px 5px; font-size:11px; border-collapse: collapse;'",             
         );
