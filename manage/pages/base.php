@@ -36,16 +36,53 @@ $loaded_libs = $APage->load_libs($global = true);
 
 
 
-
-
+/******************************  Set Side Menu  *****************************/
+$APage->load_menu();
+Trace::add_trace("Parsed defined menu entries ", __FILE__.__LINE__);
 
 /******************************  Render Page  *****************************/
 //Build html / Head / Meta / includes:
 require_once PLAT_PATH_MANAGE.DS."pages".DS."header.php";
-print $CoreBlockRender($APage);
+$doc_head = $CoreBlockRender($APage, [], false);
 Trace::add_trace("Loaded & Render Header structure", __FILE__.__LINE__);
-
 
 //Close document + bottom includes:
 require_once PLAT_PATH_MANAGE.DS."pages".DS."footer.php";
-print $CoreBlockRender($APage);
+$doc_end =  $CoreBlockRender($APage, [], false);
+Trace::add_trace("Loaded & Render End of document structure", __FILE__.__LINE__);
+
+$doc_admin_bar = <<<HTML
+<div class="container-fluid">
+    <div class="admin-bar">
+        Admin Bar
+    </div>
+</div>
+HTML;
+
+//Side Menu:
+require_once PLAT_PATH_MANAGE.DS."pages".DS."menu.php";
+$doc_side_menu = $CoreBlockRender($APage, [], false);
+Trace::add_trace("Loaded & Render side-menu structure", __FILE__.__LINE__);
+
+
+$doc_tpl = <<<HTML
+    %s
+    <div class="container-fluid p-0">
+        <div class="container-bar">%s</div>
+        <div class="content-wrapper">
+            <div class="container-side-menu">%s</div>
+            <div class="container-module">%s</div>
+        </div>
+        <div class="container-footer">%s</div>
+    </div>
+    %s
+HTML;
+
+printf($doc_tpl,
+    $doc_head,
+    "Admin Bar",
+    $doc_side_menu,
+    "Content<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>content",
+    "Footer",
+    $doc_end
+);

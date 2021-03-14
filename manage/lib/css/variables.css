@@ -12,7 +12,7 @@
 *******************************************************************************/
 
 
-/* VARIABLES **********************************************************/
+/* BASE VARIABLES **********************************************************/
 
 :root {
     --admin-base-background: #151515;
@@ -21,4 +21,15 @@
     --admin-white-text: #CECECE;
     --admin-grey-text: #6C6C6C;
     --admin-red-text: #ff8d8d;
+}
+
+
+/* ADMIN PANEL STRUCTURE **********************************************************/
+
+:root {
+    --top-admin-bar-height: 65px;
+    --bottom-admin-footer-height: 30px;
+    --side-admin-menu-width: 200px;
+    --grid-border-spacer-color: #484747;
+    --module-content-padding: 15px 20px;
 }

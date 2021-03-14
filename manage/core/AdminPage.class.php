@@ -14,6 +14,7 @@ require_once PLAT_PATH_CORE.DS."Base.class.php";
 
 class APage extends Base
 {
+    private $storage = array();
     private $types = array("module","api","error","logout");
     public  $request =  array(
         "type"      => "",      // page, api
@@ -43,12 +44,13 @@ class APage extends Base
     );
     public $additional_meta = array();
     private $custom_body_tag = "";
-    private $storage = array();
-
+    
+    //Menu:
+    public $menu = [];
     //Page loaded values:
     public $platform_settings = [];
     public $platform_libs = [];
-    public $settings = []; // Holds merged definition settings
+    public $settings = []; // Holds merged settings
 
     /* Page constructor.
      *  @param $conf => SIK configuration array Used in Base Parent
@@ -78,7 +80,7 @@ class APage extends Base
     private function fill_modules() {
         //Get basic info needed:
         $this->modules = self::$db->map("name")->arrayBuilder()->get("admin_modules", null, [
-            "name", "priv_users", "priv_content", "priv_admin", "priv_install", "path"
+            "name", "priv_users", "priv_content", "priv_admin", "priv_install", "path", "menu"
         ]);
         //Parse required privileges:
         foreach ($this->modules as &$module) {
@@ -171,6 +173,16 @@ class APage extends Base
             }
         }
         return !empty($this->settings);
+    }
+
+    public function load_menu() {
+        //Parse definitions:
+        foreach ($this->modules as &$module) {
+            $m = json_decode($module["menu"], true);
+            usort($m["sub"], fn($a, $b) => $a['order'] - $b['order']);
+            $this->menu[] = $m;
+        }
+        usort($this->menu, fn($a, $b) => $a['order'] - $b['order']);
     }
     /* Get and Set the page token If not set create a new one.
      *  @Default-params: none
