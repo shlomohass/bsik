@@ -205,4 +205,35 @@ class Base
                 return date($w);
         }
     }
+
+    /********************** File System HELPERS *********************************************/ 
+    final public static function std_fs_path_to(string $in, array $path_to_file = []) {
+        $path = "";
+        $url  = PLAT_FULL_DOMAIN;
+        switch ($in) {
+            case "modules":
+                $path = PLAT_PATH_MANAGE.DS."modules".DS;
+                $url  .= "/manage/modules/"; 
+                break;
+            case "admin-lib-required":
+                $path = PLAT_PATH_MANAGE.DS."lib".DS."required".DS;
+                $url  .= "/manage/lib/required/"; 
+                break;
+            case "admin-lib":
+                $path = PLAT_PATH_MANAGE.DS."lib".DS;
+                $url  .= "/manage/lib/"; 
+                break;
+        }
+        $path .= implode(DS, $path_to_file);
+        $url  .= implode("/", $path_to_file);
+        return ["path" => $path, "url" => $url];
+    }
+    final public static function std_fs_file_exists(string $in, array $path_to_file = []) 
+    {
+        $file = self::std_fs_path_to($in, $path_to_file);
+        if (file_exists($file["path"])) {
+            return $file;
+        }
+        return false;
+    }
 }

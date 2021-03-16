@@ -26,6 +26,7 @@ class APage extends Base
         "meta" => ""
     );
     public $modules = [];
+    public $module;         //will hols an object that defines the loaded module 
     //For includes:
     private $static_links_counter = 0;
     public $lib_toload = ["css" => [], "js" => []];
@@ -163,13 +164,20 @@ class APage extends Base
                 "admin_modules.version",
                 "admin_modules.menu"
             ];
-            $module_settings = self::$db->where("admin_modules.name", $this->request["module"])
+            $loaded_module = self::$db->where("admin_modules.name", $this->request["module"])
                                         ->getOne("admin_modules", $cols);
+            
+            //Save module:
+            $this->module = (object)[
+                "name"    => $loaded_module["name"] ?? null,
+                "version" => $loaded_module["version"] ?? null,
+                "path"    => $loaded_module["path"] ?? null
+            ];
             //Parse settings if set:
-            if (!empty($module_settings) && !empty($module_settings["settings"])) {
-                $module_settings["settings"] = json_decode($module_settings["settings"], true);
+            if (!empty($loaded_module) && !empty($loaded_module["settings"])) {
+                $loaded_module["settings"] = json_decode($loaded_module["settings"], true);
                 //Merge defined -> extends default settings:
-                $this->settings = array_merge($this->platform_settings, $module_settings["settings"]);
+                $this->settings = array_merge($this->platform_settings, $loaded_module["settings"]);
             }
         }
         return !empty($this->settings);
@@ -430,5 +438,28 @@ class APage extends Base
         '<link rel="icon" type="image/png" sizes="16x16" href="%1$s/%2$s-16x16.png">'.PHP_EOL.
         '<link rel="manifest" href="%1$s/site.webmanifest">'.PHP_EOL;
         printf($tpl, $path, $name);
+    }
+
+    public function render_dynamic_table(string $id, string $api, array $fields, array $opt = []) {
+        $tpl_html = '<table id="%s"></table>'.PHP_EOL;
+        $tpl_js   = "<script>
+            $('#%s').bootstrapTable({ url: 'index.php', data:'%s', pagination: %s, search: %s,
+                columns: %s
+            });
+            </script>
+        ".PHP_EOL;
+        $columns = [];
+        foreach ($fields as $field => $title) {
+            $columns[] = ["field" => $field, "title" => $title];
+        }
+        $code = sprintf($tpl_html, $id, $api);
+        $code .= sprintf($tpl_js, 
+            $id, 
+            $api, 
+            ($opt["pagination"] ?? false) ? 'true' : 'false',   
+            ($opt["search"] ?? false) ? 'true' : 'false',   
+            json_encode($columns)
+        );
+        return $code;
     }
 }

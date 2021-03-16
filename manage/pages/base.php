@@ -31,11 +31,16 @@ $APage->body_tag("style=''");
 
 /******************************  Set Includes  *****************************/
 $loaded_libs = $APage->load_libs($global = true);
-// //$APage->include("end", "css", "path", ["name" => "/test/files.js"]);
-// Trace::add_trace("loaded template & page libs", __FILE__.__LINE__, "Loaded: ".$loaded_libs);
-// $imported_libs = $APage->import_defined_libs();
-// Trace::add_trace("Imported libs from DB", __FILE__.__LINE__, "Not found: ".count($imported_libs), $imported_libs);
-// //$APage::print_pre($APage->includes);
+//Load module scripts:
+if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, "module.css"])) {
+    $APage->include("head", "css", "link", ["name" => $generic_lib["url"]]);
+    Trace::add_trace("Loaded generic module stylesheet.", __FILE__.__LINE__);
+}
+if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, "module.js"])) {
+    $APage->include("body", "js", "link", ["name" => $generic_lib["url"]]);
+    Trace::add_trace("Loaded generic module script.", __FILE__.__LINE__);
+}
+
 
 
 
@@ -65,11 +70,20 @@ require_once PLAT_PATH_MANAGE.DS."pages".DS."menu.php";
 $doc_side_menu = $CoreBlockRender($APage, []);
 Trace::add_trace("Loaded & Render side-menu structure", __FILE__.__LINE__);
 
+$module_content = $APage->render_dynamic_table(
+    "all-users-table", 
+    "get-all-users", 
+    [
+        "id" => "Item named Id", 
+        "name" => "Item named Name", 
+        "price" => "Item named Price"
+    ]
+);
 
 $doc_tpl = <<<HTML
     %s
     <div class="container-fluid p-0">
-        <div class="container-bar">%s</div>
+        <div class="container-bar noselect">%s</div>
         <div class="content-wrapper">
             <div class="container-side-menu noselect">%s</div>
             <div class="container-module">%s</div>
@@ -83,7 +97,7 @@ printf($doc_tpl,
     $doc_head,
     $doc_admin_bar,
     $doc_side_menu,
-    "Content<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>content",
+    $module_content,
     "BSik by SIKTEC - Version: 1.0.1",
     $doc_end
 );

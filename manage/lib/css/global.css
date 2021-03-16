@@ -3,7 +3,7 @@
 body {
     background: var(--admin-base-background);
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: var(--admin-base-font-size);
     color: var(--admin-white-text);
     /* overflow: hidden; */
 }
@@ -117,6 +117,17 @@ ul.admin-menu>li.menu-entry.has-submenu.open-menu>.entry-sub-menu {
 ul.admin-menu li.menu-entry:hover:not(.has-submenu.open-menu) {
     background-color: var(--admin-side-menu-entry-hover);
     color: var(--admin-side-menu-text-hover-color);
+}
+
+
+/******************************  MODULE CONTENT  *****************************/
+
+.container-module {
+    color: var(--admin-module-content-text-color);
+}
+
+.container-module .table {
+    color: var(--admin-module-content-text-color);
 }
 
 

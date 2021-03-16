@@ -21,6 +21,7 @@
     --admin-white-text: #CECECE;
     --admin-grey-text: #6C6C6C;
     --admin-red-text: #ff8d8d;
+    --admin-base-font-size: 12px;
 }
 
 
@@ -45,4 +46,11 @@
 :root {
     --admin-side-menu-entry-hover: #2a2a2a;
     --admin-side-menu-text-hover-color: var(--admin-base-orange);
+}
+
+
+/* ADMIN MODULE CONTENT BASE **********************************************************/
+
+:root {
+    --admin-module-content-text-color: var(--admin-white-text);
 }
