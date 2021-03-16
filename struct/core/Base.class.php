@@ -88,18 +88,41 @@ class Base
             header("Location: ".$url);
         if ($exit) exit();
     } 
+
+        
+    /**
+     * create_session - sets a session value
+     *
+     * @param  array $sessions
+     * @return void
+     */
     public static function create_session(array $sessions) {
         foreach ($sessions as $key => $sess) {
             $_SESSION[$key] = $sess;
         }
     }
+    /**
+     * create_session - deletes a session value
+     *
+     * @param  array $sessions
+     * @return void
+     */
     public static function delete_session(array $sessions) {
         foreach ($sessions as $sess) {
             if (isset($_SESSION[$sess]))
                 unset($_SESSION[$sess]);
         }
     }
-
+    /**
+     * get_session - get from session
+     *
+     * @param  string $key
+     * @param  mixed $default
+     * @return mixed
+     */
+    public static function get_session(string $key, $default = null) {
+        return isset($_SESSION[$key]) ? $_SESSION[$key] : $default;
+    }
     /* Map all files in a folder:
      *  @param $path => String : the path to the dynamic pages folder.
      *  @param $ext => String : the extension.
