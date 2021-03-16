@@ -61,7 +61,7 @@ class Admin extends Base {
             is_string($defined["password"])
         ) {
             //Make sure same session call:
-            if ($defined["csrftoken"] !== $_SESSION['csrf_token']) {
+            if ($defined["csrftoken"] !== self::get_session("csrf-token")) {
                 $this->errors["login"] = "session";
                 return false;
             }
