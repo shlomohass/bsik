@@ -4,7 +4,8 @@
         "components/jquery": "3.5.*",
         "fortawesome/font-awesome": "5.15.*",
         "components/bootstrap": "4.6.*",
-        "wenzhixin/bootstrap-table": "1.18.*"
+        "wenzhixin/bootstrap-table": "1.18.*",
+        "formr/formr": "1.1.*"
     },
     "scripts": {
         "post-install-cmd": [

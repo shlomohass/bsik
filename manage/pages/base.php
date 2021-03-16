@@ -10,11 +10,11 @@ if (!isset($conf)) {
 }
 
 /******************************  Set Meta - required  *****************************/
-$APage->meta("lang",         $APage->settings["lang"] ?? "en")
-      ->meta("charset",      $APage->settings["charset"] ?? "utf8")
-      ->meta("title",        $APage->settings["title"] ?? "")
-      ->meta("author",       $APage->settings["author"] ?? "")
-      ->meta("description",  $APage->settings["desc"] ?? "");
+$APage->meta("lang",         $APage->settings["lang"]       ?? "en")
+      ->meta("charset",      $APage->settings["charset"]    ?? "utf8")
+      ->meta("title",        $APage->settings["title"]      ?? "")
+      ->meta("author",       $APage->settings["author"]     ?? "")
+      ->meta("description",  $APage->settings["desc"]       ?? "");
 Trace::add_trace("Required META set done.", __FILE__.__LINE__);
 
 /******************************  Set Meta - optional  *****************************/
@@ -30,8 +30,9 @@ $APage->store("plat-logo", PLAT_FULL_DOMAIN."/manage/lib/img/logo.svg");
 $APage->body_tag("style=''");
 
 /******************************  Set Includes  *****************************/
+//Auto load global libs + required module libs:
 $loaded_libs = $APage->load_libs($global = true);
-//Load module scripts:
+//Load module generic files (js, css):
 if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, "module.css"])) {
     $APage->include("head", "css", "link", ["name" => $generic_lib["url"]]);
     Trace::add_trace("Loaded generic module stylesheet.", __FILE__.__LINE__);
@@ -42,8 +43,6 @@ if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, 
 }
 
 
-
-
 /******************************  Set Side Menu  *****************************/
 $APage->load_menu();
 Trace::add_trace("Parsed defined menu entries ", __FILE__.__LINE__);
@@ -51,6 +50,7 @@ Trace::add_trace("Parsed defined menu entries ", __FILE__.__LINE__);
 
 /******************************  Render Page  *****************************/
 //Build html / Head / Meta / includes:
+/* SH: added - 2021-03-16 => Change to register inside the class page as object entries */
 require_once PLAT_PATH_MANAGE.DS."pages".DS."header.php";
 $doc_head = $CoreBlockRender($APage, []);
 Trace::add_trace("Loaded & Render Header structure", __FILE__.__LINE__);
