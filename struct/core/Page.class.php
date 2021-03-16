@@ -131,9 +131,9 @@ class Page extends Base
     */
     private function tokenize()
     {
-        if (empty($_SESSION['csrf_token']))
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-        $this->token["csrf"] = $_SESSION['csrf_token'];
+        if (empty(self::get_session("csrftoken")))
+            self::create_session(["csrftoken" => bin2hex(random_bytes(32))]);
+        $this->token["csrf"] = self::get_session("csrftoken");
         $this->token["meta"] = "<meta name='csrf-token' content=".$this->token["csrf"].">";
     }
 
