@@ -33,3 +33,16 @@
     --grid-border-spacer-color: #484747;
     --module-content-padding: 15px 20px;
 }
+
+
+/* ADMIN TOP BAR **********************************************************/
+
+:root {}
+
+
+/* ADMIN SIDE MENU **********************************************************/
+
+:root {
+    --admin-side-menu-entry-hover: #2a2a2a;
+    --admin-side-menu-text-hover-color: var(--admin-base-orange);
+}

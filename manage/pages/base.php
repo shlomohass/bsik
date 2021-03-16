@@ -22,6 +22,9 @@ foreach($APage->settings["addmeta"] ?? [] as $opm)
     $APage->op_meta($opm);
 Trace::add_trace("Optional META extend done.", __FILE__.__LINE__, "Total: ".count($APage->settings["addmeta"] ?? []));
 
+/******************************  Store Important values  *****************************/
+$APage->store("plat-logo", PLAT_FULL_DOMAIN."/manage/lib/img/logo.svg");
+
 /******************************  Set Body tag  *****************************/
 /* SH: added - 2021-03-06 => connect to cms */
 $APage->body_tag("style=''");
@@ -40,28 +43,26 @@ $loaded_libs = $APage->load_libs($global = true);
 $APage->load_menu();
 Trace::add_trace("Parsed defined menu entries ", __FILE__.__LINE__);
 
+
 /******************************  Render Page  *****************************/
 //Build html / Head / Meta / includes:
 require_once PLAT_PATH_MANAGE.DS."pages".DS."header.php";
-$doc_head = $CoreBlockRender($APage, [], false);
+$doc_head = $CoreBlockRender($APage, []);
 Trace::add_trace("Loaded & Render Header structure", __FILE__.__LINE__);
 
 //Close document + bottom includes:
 require_once PLAT_PATH_MANAGE.DS."pages".DS."footer.php";
-$doc_end =  $CoreBlockRender($APage, [], false);
+$doc_end =  $CoreBlockRender($APage, []);
 Trace::add_trace("Loaded & Render End of document structure", __FILE__.__LINE__);
 
-$doc_admin_bar = <<<HTML
-<div class="container-fluid">
-    <div class="admin-bar">
-        Admin Bar
-    </div>
-</div>
-HTML;
+//Top bar:
+require_once PLAT_PATH_MANAGE.DS."pages".DS."topbar.php";
+$doc_admin_bar =  $CoreBlockRender($APage, []);
+Trace::add_trace("Loaded & Render Admin Top Bar", __FILE__.__LINE__);
 
 //Side Menu:
 require_once PLAT_PATH_MANAGE.DS."pages".DS."menu.php";
-$doc_side_menu = $CoreBlockRender($APage, [], false);
+$doc_side_menu = $CoreBlockRender($APage, []);
 Trace::add_trace("Loaded & Render side-menu structure", __FILE__.__LINE__);
 
 
@@ -70,7 +71,7 @@ $doc_tpl = <<<HTML
     <div class="container-fluid p-0">
         <div class="container-bar">%s</div>
         <div class="content-wrapper">
-            <div class="container-side-menu">%s</div>
+            <div class="container-side-menu noselect">%s</div>
             <div class="container-module">%s</div>
         </div>
         <div class="container-footer">%s</div>
@@ -80,9 +81,9 @@ HTML;
 
 printf($doc_tpl,
     $doc_head,
-    "Admin Bar",
+    $doc_admin_bar,
     $doc_side_menu,
     "Content<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>content",
-    "Footer",
+    "BSik by SIKTEC - Version: 1.0.1",
     $doc_end
 );
