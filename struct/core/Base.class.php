@@ -172,6 +172,7 @@ class Base
             sprintf(self::$regex["filter-none"], implode($allowed));
         return preg_replace($regex, '', $str);
     }
+
     /********************** ARRAY HELPERS *********************************************/    
     /**
      * std_arr_get_from
@@ -187,6 +188,18 @@ class Base
         ksort($merged);
         return $merged;
     }
+    
+    /**
+     * std_arr_filter_out - copies an array without excluded keys
+     *
+     * @param  array $input - input array
+     * @param  array $exclude - excluded keys
+     * @return array
+     */
+    final public static function std_arr_filter_out(array $input, array $exclude = []) : array {
+        return array_diff_key($input, array_flip($exclude));
+    }
+    
     /********************** DATE HELPERS *********************************************/    
     /**
      * std_time_datetime

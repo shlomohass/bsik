@@ -5,7 +5,7 @@ define("E_PLAT_ERROR", E_USER_ERROR);
 
 class SIKErrorStruct {
     private $obj;
-    public function __construct($class, $code, $mes, $file, $line, $trace)
+    public function __construct($class, $code, $mes, $file, $line, $trace = [])
     {
         $this->obj = array(
             "class"     => $class, 
@@ -22,11 +22,28 @@ class SIKErrorStruct {
     public function getFile()       { return $this->obj["file"];    }
     public function getLine()       { return $this->obj["line"];    }
     public function getTrace()      { return $this->obj["trace"];   }
+    public function str() {
+        return sprintf($this->obj["mes"]." : File[".$this->obj["file"].":".$this->obj["line"]."] ");
+    }
 }
+
 class FrameWorkExcepHandler
 {  
     public static function handleException(Throwable $e)
     {
+        //Log the Exception:
+        switch ($e->getCode()) {
+            case 0:
+            case E_CORE_ERROR:
+            case E_ERROR:
+            case E_PARSE:
+            case E_NOTICE:
+            case E_PLAT_ERROR: {
+                $to_log = new SIKErrorStruct("ERROR",$e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine());
+                error_log($to_log->str(), 0);
+            } break;
+        }
+        //Expose:
         if (ERROR_METHOD == 'inline') {
             print self::render($e);
         } elseif (ERROR_METHOD == 'redirect') {
@@ -41,6 +58,19 @@ class FrameWorkExcepHandler
     }
     public static function handleError($errno, $errstr, $errfile, $errline)
     {
+        //Log first:
+        switch ($errno) {
+            case 0:
+            case E_CORE_ERROR:
+            case E_ERROR:
+            case E_PARSE:
+            case E_NOTICE:
+            case E_PLAT_NOTICE:
+            case E_PLAT_ERROR: {
+                $to_log = new SIKErrorStruct("NOTICE",$errno, $errstr, $errfile, $errline);
+                error_log($to_log->str(), 0);
+            } break;
+        }
         if (ERROR_METHOD == 'inline') {
             switch ($errno) {
                 /*Notice*/
@@ -86,7 +116,12 @@ class FrameWorkExcepHandler
         ));
     }
     private static function render($e, $class = false)
-    { 
+    {
+        if (
+            ini_get('display_errors') === "off" || 
+            ini_get('display_errors') === 0 || 
+            ini_get('display_errors') === false
+        ) return "";
         $style_con = "color:black; display:block; border: 1px solid #cf7474;background-color: #fff5f5;padding: 15px;font-size: 11px;width: 500px;font-family: monospace;";
         $style_header = "margin: 0;text-decoration: underline;font-size: 20px; font-weight:bold; direction:ltr;";
         $style_list_mes = "margin: 0px 15px; direction: ltr;";

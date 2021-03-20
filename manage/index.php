@@ -70,11 +70,13 @@ switch ($APage->request["type"]) {
             $APage->load_module();
             require_once PLAT_PATH_MANAGE.DS."pages".DS."base.php";
         }
+        Trace::expose_trace();
     } break;
     case "api": {
         //Must be signed in:
-        if (!$Admin->is_signed)
-            require_once PLAT_PATH_MANAGE.DS."pages".DS."login.php";
+        //Load core Api end points
+        require_once PLAT_PATH_MANAGE.DS."core".DS."AdminApi.php";
+        //Load module extended methods:
     } break;
     case "error": {
         echo "error";
@@ -90,8 +92,7 @@ switch ($APage->request["type"]) {
     default: {
         // Not found page:
         $APage::error_page("module_type_not_set");
+        Trace::expose_trace();
     }
 }
 
-//Render Platform Trace:
-Trace::expose_trace();

@@ -124,6 +124,12 @@ class Admin extends Base {
         $this->is_signed = (isset($this->admin_data["account_status"]) && $this->admin_data["account_status"] === 0) ? true : false;
         return $this->is_signed;
     }
+    public function admin_identifier() : string {
+        if ($this->is_signed) {
+            return ($this->admin_data["id"] ?? "*").":".($this->admin_data["email"] ?? "*");
+        }
+        return "";
+    }
     private function generate_admin_token(string $hashed_pass, string $email_address) : string {
         return openssl_digest(self::std_time_datetime().$hashed_pass.$email_address, "sha512");
     }
