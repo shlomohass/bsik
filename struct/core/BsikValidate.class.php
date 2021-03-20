@@ -216,9 +216,9 @@ class BsikValidate {
     }
     private static function filter_string(mixed $input, ...$allowed) {
         //procedure
-        $regex = is_string($allowed) ? 
-            sprintf('/[^%s]/', $allowed) :
-            sprintf('/[^%s]/', implode($allowed));
+        if (!is_string($input) && !is_array($input)) 
+            return $input;
+        $regex = is_string($allowed) ? sprintf('/[^%s]/', $allowed) : sprintf('/[^%s]/', implode($allowed));
         return preg_replace($regex, '', $input);
     }
 /******************************  Validator conditions  *****************************/

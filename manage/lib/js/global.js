@@ -44,7 +44,21 @@ let sikbase = {
         //Extend settings & handlers:
         $.extend(ajaxSet, handlers);
         //Execute:
+        console.log(ajaxSet);
         return $.ajax(url, ajaxSet);
+    },
+    ajaxDataTable: function(url, req, params) {
+        console.log(params);
+        return sikbase.apiRequest(
+            url,
+            req,
+            params.data, {
+                error: params.error,
+                success: function(res) {
+                    params.success(res.data);
+                }
+            }
+        );
     },
     serializeToObject: function(form, exclude) {
         exclude || (exclude = []);

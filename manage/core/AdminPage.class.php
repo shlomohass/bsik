@@ -1,5 +1,8 @@
 <?php
 /******************************************************************************/
+
+use function GuzzleHttp\json_encode;
+
 // Created by: Shlomi Hassid.
 // Release Version : 1.0.1
 // Creation Date: date
@@ -12,8 +15,17 @@
 require_once PLAT_PATH_CORE.DS."Trace.class.php";
 require_once PLAT_PATH_CORE.DS."Base.class.php";
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 class APage extends Base
-{
+{   
+
+    //Logger:
+    public Logger $logger;
+    public static $user_string;
+
+    //Properties:
     private $storage = array();
     private $types = array("module","api","error","logout");
     public  $request =  array(
@@ -59,8 +71,11 @@ class APage extends Base
      *  @return none
      *  @Examples:
     */
-    public function __construct()
-    {
+    public function __construct(
+        string $user_str = "",
+        string $logger_channel = "bsikapi-general",
+        string $logger_stream = PLAT_LOG_DIRECTORY
+    ) {
         $this->tokenize(); //Tokenize the page.
         $this->request["type"]      = $this->request_type(); //Get the request 
         $this->request["module"]    = $this->request_module($this::$conf["default-module"] ?? "");
@@ -68,7 +83,21 @@ class APage extends Base
         $this->request["when"]      = self::std_time_datetime(); //Time stamp for debugging
         $this->fill_modules();
         $this->load_plat_settings("global", true);
+
+        //Logger:
+        $this->logger = new Logger($logger_channel);
+        $this->logger->pushHandler(new StreamHandler($logger_stream.$logger_channel.".log"));
+        $this->logger->pushProcessor(function ($record) {
+            $record['extra']['admin'] = APage::$user_string;
+            return $record;
+        });
+        $this->set_user_string($user_str);
     }
+
+    public function set_user_string(string $str) {
+        self::$user_string = empty(trim($str)) ? "unknown" : trim($str);
+    }
+
     private function load_plat_settings(string $which = "global", bool $load_libs = true) {
         $set = self::$db->where("name", $which)->getOne("admin_panel_settings", ["object", "libs"]);
         if (!empty($set) && !empty($set["object"])) {
@@ -440,24 +469,50 @@ class APage extends Base
         printf($tpl, $path, $name);
     }
 
-    public function render_dynamic_table(string $id, string $api, array $fields, array $opt = []) {
+    public function render_module(string $module = "", $values = null) {
+        $module = empty($module) ? $this->module->name : $module;
+        $path = PLAT_PATH_MANAGE.DS."modules".DS.$module.DS."module.php";
+        if (file_exists($path)) {
+            require_once $path;
+            try {
+                return $ModuleBlockRender($this, $values);
+            } catch (Throwable $e) {
+                $this->logger->error("Error captured on module render [{$e->getMessage()}].", ["module" => $module, "path" => $path]);
+                return "";
+            }
+        }
+        $this->logger->error("Could not find module content to render.", ["module" => $module, "path" => $path]);
+        return "";
+    } 
+    public function render_dynamic_table(string $id, string $api, string $table, array $fields, array $opt = []) {
         $tpl_html = '<table id="%s"></table>'.PHP_EOL;
         $tpl_js   = "<script>
-            $('#%s').bootstrapTable({ url: 'index.php', data:'%s', pagination: %s, search: %s,
+            $('#%s').bootstrapTable({
+                ajax: function(params) {
+                    params.data['fields'] = %s;
+                    params.data['table_name'] = '%s';
+                    sikbase.ajaxDataTable('%s', 'get_for_datatable', params);
+                },
+                search: %s,
+                pagination: %s,
+                sort: %s,
                 columns: %s
-            });
-            </script>
-        ".PHP_EOL;
+            })
+        </script>".PHP_EOL;
         $columns = [];
         foreach ($fields as $field => $title) {
             $columns[] = ["field" => $field, "title" => $title];
         }
         $code = sprintf($tpl_html, $id, $api);
-        $code .= sprintf($tpl_js, 
-            $id, 
-            $api, 
-            ($opt["pagination"] ?? false) ? 'true' : 'false',   
-            ($opt["search"] ?? false) ? 'true' : 'false',   
+        $code .= sprintf(
+            $tpl_js,
+            $id,
+            json_encode(array_keys($fields)),
+            $table,
+            $api,
+            ($opt["search"] ?? false) ? "true" : "false",
+            ($opt["pagination"] ?? false) ? "true" : "false",
+            ($opt["sort"] ?? false) ? "true" : "false",
             json_encode($columns)
         );
         return $code;

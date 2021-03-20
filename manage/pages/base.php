@@ -70,15 +70,9 @@ require_once PLAT_PATH_MANAGE.DS."pages".DS."menu.php";
 $doc_side_menu = $CoreBlockRender($APage, []);
 Trace::add_trace("Loaded & Render side-menu structure", __FILE__.__LINE__);
 
-$module_content = $APage->render_dynamic_table(
-    "all-users-table", 
-    "get-all-users", 
-    [
-        "id" => "Item named Id", 
-        "name" => "Item named Name", 
-        "price" => "Item named Price"
-    ]
-);
+//Module content:
+//Empty on errors / Exception will be logged by the method:
+$module_content = $APage->render_module("", $Admin);
 
 $doc_tpl = <<<HTML
     %s

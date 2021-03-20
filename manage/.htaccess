@@ -40,7 +40,7 @@ AddDefaultCharset UTF-8
     # RewriteRule ^(logout)/?$ /?page=$1 [NC,L,P]
     RewriteRule ^(error)/?$ index.php?module=$1&type=$1 [NC,L,QSA]
     RewriteRule ^(logout)/?$ index.php?module=$1&type=$1 [NC,L,QSA] 
-    RewriteRule ^(api)/?$ index.php?module=$1&type=$1 [NC,L,QSA] 
+    RewriteRule ^(api)/([\w\d\-\_]+)/?$ index.php?module=$2&type=$1 [NC,L,QSA] 
     RewriteRule ^([\w\d\-\_]+)/?$ index.php?module=$1 [NC,L,QSA]
 </IfModule>
 

@@ -45,7 +45,10 @@ Trace::add_trace("Admin login status",__FILE__, $Admin->admin_data);
 
 
 /******************************  Load Modules And Pages *****************************/
-$APage = new APage();
+$APage = new APage(
+    $Admin->admin_identifier(), // For logging Admin identifier
+    "bsikrender-manage",        // For the chanel to use  
+);
 Trace::add_trace("Loaded AdminPage object", __FILE__, ["request" => $APage->request, "token" => $APage->token]);
 Trace::reg_vars(["Requested module" => $APage->request]);
 Trace::reg_vars(["Available modules" => $APage->modules]);
