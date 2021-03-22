@@ -516,43 +516,82 @@ class APage extends Base
                 return $ModuleBlockRender($this, $values);
             } catch (Throwable $e) {
                 $this->logger->error("Error captured on module render [{$e->getMessage()}].", ["module" => $module, "path" => $path]);
-                return "";
+                return "Error in module - check logs.";
             }
         }
         $this->logger->error("Could not find module content to render.", ["module" => $module, "path" => $path]);
         return "";
     } 
-    public function render_dynamic_table(string $id, string $api, string $table, array $fields, array $opt = []) {
-        $tpl_html = '<table id="%s"></table>'.PHP_EOL;
-        $tpl_js   = "<script>
+    //See: https://live.bootstrap-table.com/example/welcome.html for example
+    private array $defaults_dynamic_table = [ //NULL omits field option
+        "field"             => null,        // Field name in db
+        "title"             => null,        // Display Title string 
+        "sortable"          => false,       // Set sort control
+        "rowspan"           => 1,           // Header rowspan
+        "colspan"           => 1,           // Header colspan
+        "align"             => "center",    // Align header
+        "valign"            => 'middle',    // Vertical align header
+        "clickToSelect"     => true,        // Enable / Disable header clickable
+        "checkbox"          => false,       // Add row select checkbox
+        "events"            => null,        // Events are sent to? a function.
+        "formatter"         => null,        // Column formatter function
+        "footerFormatter"   => null         // Footer Formatter function
+    ]; 
+    public function render_dynamic_table(
+        string $id, 
+        string $ele_selector, 
+        array $option_attributes,
+        string $api, 
+        string $table, 
+        array $fields, 
+        array $operations = []
+    ) {
+        //Table js:
+        $tpl_js   = "
+        %s
+        <script>
             $('#%s').bootstrapTable({
                 ajax: function(params) {
                     params.data['fields'] = %s;
                     params.data['table_name'] = '%s';
                     sikbase.ajaxDataTable('%s', 'get_for_datatable', params);
                 },
-                search: %s,
-                pagination: %s,
-                sort: %s,
                 columns: %s
-            })
+            });
+            %s
         </script>".PHP_EOL;
+        $tpl_operations = "function %s() { return '%s'; }";
+        $operate_formatter_name = self::std_str_filter_string($id)."_operateFormatter";
+        //Build columns:
         $columns = [];
-        foreach ($fields as $field => $title) {
-            $columns[] = ["field" => $field, "title" => $title];
+        foreach ($fields as $field) {
+            if (!empty($field["field"])) {
+                 $merged = array_merge($this->defaults_dynamic_table, $field);
+                 if ($field["field"] === "operate")
+                    $merged["formatter"] = $operate_formatter_name;
+                 $columns[] = array_filter($merged,fn($v) => !is_null($v));
+            }
         }
-        $code = sprintf($tpl_html, $id, $api);
-        $code .= sprintf(
+        $columns = json_encode($columns);
+        //Build Operations:
+        //["name" => "like", "title" => "Like me", "icon" => "fa fa-heart"],
+        $eles_operation = [];
+        foreach ($operations as $op) {
+            $eles_operation[] = implode($this->html_ele(
+                "a.".($op["name"] ?? "notset"), 
+                array_merge(["href" => "javascript:void(0)"], self::std_arr_filter_out($op, ["name", "href"])),
+                implode($this->html_ele("i", ["class" => $op["icon"] ?? "no-icon"]))
+            ));
+        }
+        return sprintf(
             $tpl_js,
+            implode($this->html_ele($ele_selector, $option_attributes)).PHP_EOL,
             $id,
-            json_encode(array_keys($fields)),
+            json_encode(array_filter(array_column($fields, 'field'), fn($v) => $v !== "operate")),
             $table,
             $api,
-            ($opt["search"] ?? false) ? "true" : "false",
-            ($opt["pagination"] ?? false) ? "true" : "false",
-            ($opt["sort"] ?? false) ? "true" : "false",
-            json_encode($columns)
+            preg_replace('/"@js:([\w.]+)"/m', '$1', $columns), // Fixed a bug this allows to define object names and functions 
+            sprintf($tpl_operations, $operate_formatter_name, implode($eles_operation))
         );
-        return $code;
     }
 }

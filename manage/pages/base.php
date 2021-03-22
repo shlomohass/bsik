@@ -32,13 +32,18 @@ $APage->body_tag("style=''");
 /******************************  Set Includes  *****************************/
 //Auto load global libs + required module libs:
 $loaded_libs = $APage->load_libs($global = true);
+
+//Module content:
+//Empty on errors / Exception will be logged by the method:
+$module_content = $APage->render_module("", $Admin);
+
 //Load module generic files (js, css):
 if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, "module.css"])) {
     $APage->include("head", "css", "link", ["name" => $generic_lib["url"]]);
     Trace::add_trace("Loaded generic module stylesheet.", __FILE__.__LINE__);
 }
 if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, "module.js"])) {
-    $APage->include("body", "js", "link", ["name" => $generic_lib["url"]]);
+    $APage->include("head", "js", "link", ["name" => $generic_lib["url"]]); // Always keep in head - gives more control on needed predefined function declaration
     Trace::add_trace("Loaded generic module script.", __FILE__.__LINE__);
 }
 
@@ -70,9 +75,7 @@ require_once PLAT_PATH_MANAGE.DS."pages".DS."menu.php";
 $doc_side_menu = $CoreBlockRender($APage, []);
 Trace::add_trace("Loaded & Render side-menu structure", __FILE__.__LINE__);
 
-//Module content:
-//Empty on errors / Exception will be logged by the method:
-$module_content = $APage->render_module("", $Admin);
+
 
 $doc_tpl = <<<HTML
     %s

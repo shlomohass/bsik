@@ -4,5 +4,9 @@
         "modalname",
         "Bsik",
         "csrf"
+    ],
+    "cSpell.ignoreWords": [
+        "encode",
+        "json"
     ]
 }
