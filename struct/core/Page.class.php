@@ -324,6 +324,44 @@ class Page extends Base
         $this->additional_meta[] = sprintf("<meta %s />", $attrs);
         return $this;
     }
+    /**
+     * html_ele - Builds an html element defined by a selector.
+     *
+     * @param  mixed $selector
+     * @param  mixed $add_attrs
+     * @param  mixed $content
+     * @return void
+     */
+    public function html_ele(string $selector = "div", array $add_attrs = [], string $content = "") : array {
+        $parts = explode(".", $selector);
+        $tag   = explode("#", array_shift($parts));
+        $id    = $tag[1] ?? null;
+        $tag   = $tag[0];
+        $attrs = [];
+        // has classes:
+        $attrs["class"] = !empty($parts) ? $parts : [];
+        if (isset($add_attrs["class"])) {
+            array_push($attrs["class"], ...explode(".",$add_attrs["class"]));
+            unset($add_attrs["class"]);
+        }
+        // has id:
+        if (!empty($id)) $attrs["id"] = $id;
+        //merge additional attributes:
+        $attrs = array_merge($attrs, $add_attrs);
+        $attrs_str = [];
+        foreach ($attrs as $a => $value) {
+            if (!empty($value))
+                $attrs_str[] = $a.'="'.(is_array($value) ? implode(" ", $value) : $value).'"';
+        }
+        $ele = [sprintf("<%s %s>", $tag, implode(" ", $attrs_str)), $content , ""];
+        if (!in_array($tag, [
+            "meta","area","base","br","call","command","embed","hr",
+            "img","input","keygen","link","param","source","track","wbr"
+        ])) {
+            $ele[2] = "</$tag>";
+        }
+        return $ele;
+    }
     /* Set and Gets a custom body tag <body *******>.
      *  @param $set => MIXED - String | False
      *  @Default-params: false
