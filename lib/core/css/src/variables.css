@@ -1,0 +1,53 @@
+/******************************************************************************
+// Created by: Shlomo Hassid.
+// Release Version : 1.0.1
+// Creation Date: 22/05/2020
+// Copyright 2020, Shlomo Hassid.
+/******************************************************************************/
+/*****************************      Changelog       ****************************
+1.0.1:
+    ->intial, creation
+*******************************************************************************/
+/* VARIABLES **********************************************************/
+:root {
+  --doc-dir-left: right;
+  /* RTL:right, LTR:left */
+  --doc-dir-right: left;
+  /* RTL:left, LTR:right */
+  --nav-border-dir: 0px 0px 0px 0px;
+  /* RTL:0px 0px 0px 1px, LTR:0px 1px 0px 0px */
+  --nav-menu-border-dir: 0px 2px 2px 2px;
+  /* RTL:0px 1px 0px 0px, LTR:0px 0px 0px 1px */
+  --side-nav-border-dir: 0px 0px 0px 1px;
+  /* RTL:0px 0px 0px 1px, LTR:0px 1px 0px 0px */ }
+
+:root {
+  --nav-height: 63px;
+  /* Total navigation bar height                */
+  --nav-border-width: 3px;
+  /* Nav border height included in total height */
+  --side-nav-width: 202px; }
+
+:root {
+  --site-base-background: #222629;
+  --logo-main-color1: #f2f2f2;
+  --logo-main-color2: #8fb854;
+  --text-color: #c9c9c9;
+  --link-color: #aac87f;
+  --nav-mobile-bg-color: #222629;
+  --nav-tablet-bg-color: #222629;
+  --nav-desktop-bg-color: #222629;
+  --nav-tv-bg-color: #222629;
+  --nav-bottom-border-color: #8fb854;
+  --nav-dropdown-border-color: #606c76;
+  --nav-dropdown-bg: #2a2e31;
+  --nav-dropdown-hover-bg: #373b3e;
+  --side-nav-padding: 2rem;
+  --side-nav-bg: #2a2e31;
+  --side-nav-border-color: #363b3e;
+  --side-nav-hover-bg: #373b3e;
+  --not-logggedin-color: rgb(255, 146, 146);
+  --not-logggedin-color-hover: rgb(248, 90, 90);
+  --link-main-color: #aac87f;
+  --link-main-focus-hover: #aac87f;
+  --container-dark-bg: #2a2e31; }

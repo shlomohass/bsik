@@ -4,7 +4,7 @@
         "google/apiclient": "^2.4",
         "components/jquery": "3.5.*",
         "fortawesome/font-awesome": "5.15.*",
-        "components/bootstrap": "4.6.*",
+        "twbs/bootstrap": "5.0.0-beta3",
         "wenzhixin/bootstrap-table": "1.18.*",
         "formr/formr": "1.1.*"
     },
@@ -20,9 +20,12 @@
             "php -r \"array_map(fn($d) => mkdir('./manage/lib/required/'.$d), ['jquery', 'bootstrap', 'font-awesome', 'bootstrap-table']);\"",
             "php -r \"echo 'SIK SAYS -> Copy required libs...'.PHP_EOL;\"",
             "cp -r './vendor/components/jquery/' './manage/lib/required/'",
-            "cp -r './vendor/components/bootstrap/' './manage/lib/required/'",
+            "cp -r './vendor/twbs/bootstrap/dist/.' './manage/lib/required/bootstrap/'",
             "cp -r './vendor/wenzhixin/bootstrap-table/dist/.' './manage/lib/required/bootstrap-table/",
-            "cp -r './vendor/fortawesome/font-awesome/' './manage/lib/required/'"
+            "cp -r './vendor/fortawesome/font-awesome/' './manage/lib/required/'",
+            "php -r \"echo 'SIK SAYS -> Creating Source SCSS of bootstrap...'.PHP_EOL;\"",
+            "php -r \"mkdir('./manage/lib/themes/bootstrap/');\"",
+            "cp -r './vendor/twbs/bootstrap/scss/.' './manage/lib/themes/bootstrap/'"
         ]
     }
 

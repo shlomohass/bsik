@@ -1,0 +1,81 @@
+//Color base:
+$admin-base-background: #151515;
+$admin-base-lighter-background: #242424;
+$admin-base-orange: #fbb040;
+$admin-white-text: #CECECE;
+$admin-grey-text: #6C6C6C;
+$admin-dark-text: #4f4f4f;
+$admin-red-text: #ff8d8d;
+$admin-base-font-size: 14px;
+//Dyn Tables variables:
+$dyn-table-border-color: #4c4c4c;
+$dyn-table-hover-bg: rgba(0, 0, 0, .075);
+$dyn-table-background: #353535;
+$dyn-table-color: $admin-white-text;
+$dyn-table-dark-border-color: #4c4c4c;
+//Base variables used in bootstrap:
+$body-bg: $admin-base-background;
+$body-color: $admin-white-text;
+// 15. Forms
+// ===========================================================================
+$input-bg-color: rgb(247, 137, 137);
+$label-font-size: .8rem !default;
+$input-transition: all .3s !default;
+$input-disabled-color: rgba(0, 0, 0, .46) !default;
+$input-sik-focus-color: $admin-base-orange !default;
+$input-error-color: rgb(255, 124, 124) !default;
+$input-success-color: rgb(27, 255, 122) !default;
+$input-label-after-top: 65px !default;
+$input-label-after-transition: .2s opacity ease-out,
+.2s color ease-out !default;
+$input-border-color: #ced4da !default;
+$input-label-transition: .2s ease-out !default;
+$input-label-color: #757575 !default;
+$input-label-top: .65rem !default;
+$input-label-active-transform: translateY(-14px) !default;
+$input-prefix-transition: color .2s !default;
+$input-sik-form-margin-top: 1.5rem !default;
+$input-sik-form-margin-bottom: $input-sik-form-margin-top !default;
+$input-label-font-size: 1rem !default;
+$input-label-active-font-size: 1rem !default;
+$input-prefix-top: .25rem !default;
+$input-prefix-font-size: 1.75rem !default;
+$input-prefix-margin-left: 2.5rem !default;
+$input-prefix-width: calc(100% - 2.5rem) !default;
+$input-group-addon-font-size: 1.4rem !default;
+$input-form-text-ml: 2.6rem !default;
+$input-validate-mb: 2.5rem !default;
+$input-label-valid-top: 4.1rem !default;
+$input-label-invalid-top: 4rem !default;
+$input-label-font-size-lg: 1.25rem !default;
+$input-label-active-font-size-lg: 1.15rem !default;
+$input-prefix-top-lg: .4rem !default;
+$input-prefix-font-size-lg: 2rem !default;
+$input-prefix-margin-left-lg: 3rem !default;
+$input-prefix-width-lg: calc(100% - 3rem) !default;
+$input-group-addon-font-size-lg: 1.65rem !default;
+$input-form-text-ml-lg: 3.1rem !default;
+$input-validate-mb-lg: 2.8rem !default;
+$input-label-valid-top-lg: 4.6rem !default;
+$input-label-invalid-top-lg: 4.6rem !default;
+$input-label-font-size-sm: .875rem !default;
+$input-label-active-font-size-sm: .95rem !default;
+$input-prefix-top-sm: .35rem !default;
+$input-prefix-font-size-sm: 1.5rem !default;
+$input-prefix-margin-left-sm: 2rem !default;
+$input-prefix-width-sm: calc(100% - 2rem) !default;
+$input-group-addon-font-size-sm: 1.15rem !default;
+$input-form-text-ml-sm: 2rem !default;
+$input-validate-mb-sm: 2.3rem !default;
+$input-label-valid-top-sm: 3.7rem !default;
+$input-label-invalid-top-sm: 3.6rem !default;
+$textarea-padding: 1.5rem !default;
+$input-form-control-margin-bottom: .5rem !default;
+$input-form-control-padding-top: .6rem !default;
+$input-form-control-padding-bottom: .4rem !default;
+$input-disabled-solid-color: #bdbdbd !default;
+$input-readonly-border-color: #dbe4ec !default;
+// Input group
+$input-group-text-bgc: #e0e0e0 !default;
+$input-group-form-control-px: .75rem !default;
+$input-group-form-control-py: .375rem !default;

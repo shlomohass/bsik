@@ -19,7 +19,7 @@ $ModuleBlockRender = function(APage $APage, Admin $Admin = null) {
 //Elements:
 $users_table = $APage->render_dynamic_table(
     "users-dynamic-table",
-    "table#users-dynamic-table.table.table-dark",
+    "table#users-dynamic-table.table",
     $option_attributes = [
         //"data-toolbar"=>"#toolbar",
         "data-search"=>"true",
@@ -38,7 +38,8 @@ $users_table = $APage->render_dynamic_table(
         "data-id-field"=>"id",
         "data-page-list"=>"[10, 25, 50, 100, all]",
         "data-show-footer"=>"false",
-        "data-side-pagination"=>"server"
+        "data-side-pagination"=>"server",
+        "data-search-align"=>"left"
     ],
     $APage::$conf["path"]["base"]."/manage/api/users/",
     "users", 
@@ -77,7 +78,7 @@ $content = <<<HTML
 
 <div class='container'>
     <div class='row'>
-        <div class='col-12'>
+        <div class='col-12 sik-form-init'>
             {$users_table}
         </div>
     </div>

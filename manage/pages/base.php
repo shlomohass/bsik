@@ -37,6 +37,12 @@ $loaded_libs = $APage->load_libs($global = true);
 //Empty on errors / Exception will be logged by the method:
 $module_content = $APage->render_module("", $Admin);
 
+//Load themes files:
+//$APage->include("head", "js", "link", ["name" => "http://unpkg.com/tableexport.jquery.plugin@1.10.22/tableExport.min.js"]);
+if ($generic_lib = $APage::std_fs_file_exists("themes", ["base-dark", "theme.css"])) {
+    $APage->include("head", "css", "link", ["name" => $generic_lib["url"]]);
+    Trace::add_trace("Loaded theme plat stylesheet.", __FILE__.__LINE__);
+}
 //Load module generic files (js, css):
 if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, "module.css"])) {
     $APage->include("head", "css", "link", ["name" => $generic_lib["url"]]);

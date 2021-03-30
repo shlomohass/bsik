@@ -1,9 +1,13 @@
 @import "variables.css";
 @import "fonts.css";
-body {
-    background: var(--admin-base-background);
+html {
     font-family: 'Roboto', sans-serif;
     font-size: var(--admin-base-font-size);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--admin-base-background);
     color: var(--admin-white-text);
     /* overflow: hidden; */
 }
@@ -117,13 +121,6 @@ ul.admin-menu>li.menu-entry.has-submenu.open-menu>.entry-sub-menu {
 ul.admin-menu li.menu-entry:hover:not(.has-submenu.open-menu) {
     background-color: var(--admin-side-menu-entry-hover);
     color: var(--admin-side-menu-text-hover-color);
-}
-
-
-/******************************  BOOTSTRAP TABLE  *****************************/
-
-.bootstrap-table {
-    /* width: 100%; */
 }
 
 

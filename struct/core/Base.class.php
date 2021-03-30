@@ -236,6 +236,10 @@ class Base
                 $path = PLAT_PATH_MANAGE.DS."lib".DS;
                 $url  .= "/manage/lib/"; 
                 break;
+            case "themes":
+                $path = PLAT_PATH_MANAGE.DS."lib".DS."themes".DS;
+                $url  .= "/manage/lib/themes/"; 
+                break;
         }
         $path .= implode(DS, $path_to_file);
         $url  .= implode("/", $path_to_file);
