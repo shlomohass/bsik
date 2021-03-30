@@ -57,7 +57,7 @@
         // Focused input style
         &:focus:not([readonly]) {
             border-bottom: 1px solid $input-sik-focus-color;
-            box-shadow: 0 1px 0 0 $input-sik-focus-color;
+            box-shadow: 0 2px 0 0 $input-sik-focus-color;
             // Focused label style
             +label {
                 color: $input-sik-focus-color;
