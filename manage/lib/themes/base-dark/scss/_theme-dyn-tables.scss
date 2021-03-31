@@ -16,20 +16,6 @@ version:
 
 /******************************  BOOTSTRAP TABLE  *****************************/
 
-.bootstrap-table .fixed-table-toolbar .btn-group .btn-secondary {
-    color: var(--admin-dark-text);
-    background-color: var(--admin-base-orange);
-    border-color: var(--admin-base-orange);
-}
-
-.bootstrap-table .page-list {}
-
-.bootstrap-table .fixed-table-toolbar .btn-group .btn-secondary:hover {
-    color: white;
-    box-shadow: 0px 0px 6px -1px #151515;
-    text-shadow: 0 0 1px black;
-}
-
 .bootstrap-table {
     .fixed-table-toolbar {
         &::after {
@@ -45,6 +31,21 @@ version:
             margin-bottom: 10px;
         }
         .columns {
+            >.btn,
+            >.btn-group .btn {
+                color: $dyn-table-toolbar-btn-color;
+                background-color: $dyn-table-toolbar-btn-bg;
+                border-color: $dyn-table-toolbar-btn-bg;
+                &.show,
+                &:focus {
+                    box-shadow: none;
+                    background-color: lighten($dyn-table-toolbar-btn-bg, 10%);
+                }
+            }
+            >.btn-group .btn-secondary:hover,
+            >.btn-secondary:hover {
+                background-color: lighten($dyn-table-toolbar-btn-bg, 10%);
+            }
             .btn-group>.btn-group {
                 display: inline-block;
                 margin-left: -1px !important;
@@ -100,6 +101,16 @@ version:
                 vertical-align: middle;
                 box-sizing: border-box;
                 color: $dyn-table-color;
+            }
+            td>a {
+                font-size: 1.15rem;
+                color: $dyn-table-color;
+                &:hover {
+                    color: $admin-base-color-actions;
+                }
+                >i {
+                    margin-right: 10px;
+                }
             }
             thead th {
                 vertical-align: bottom;
@@ -222,7 +233,7 @@ version:
                     justify-content: center;
                     .loading-text {
                         margin-right: 6px;
-                        font-size: 1.5em !important;
+                        font-size: 1.25rem !important;
                         font-weight: 400;
                     }
                     .animation-wrap {
@@ -289,6 +300,14 @@ version:
                     position: relative;
                     display: inline-block;
                     vertical-align: middle;
+                    .btn-secondary {
+                        background-color: $dyn-table-pager-bg;
+                        border-color: $dyn-table-pager-border;
+                        &:focus,
+                        &.show {
+                            box-shadow: $dyn-table-pager-focus;
+                        }
+                    }
                     .dropdown-menu {
                         margin-bottom: 0;
                     }

@@ -1,32 +1,4 @@
 // Forms basic
-// Make input
-@mixin make-input($margin-bottom, $label-font-size, $label-active-font-size, $top, $prefix-font-size, $margin-left, $width, $margin-left-2) {
-    .validate {
-        margin-bottom: $margin-bottom;
-    }
-    label {
-        font-size: $label-font-size;
-        &.active {
-            font-size: $label-active-font-size;
-        }
-    }
-    .prefix {
-        top: $top;
-        font-size: $prefix-font-size;
-        ~input,
-        ~textarea {
-            width: $width;
-            margin-left: $margin-left;
-        }
-        ~label {
-            margin-left: $margin-left;
-        }
-        ~.form-text {
-            margin-left: $margin-left-2;
-        }
-    }
-}
-
 // Input +  label wrapper styles
 .sik-form-init {
     // Text inputs

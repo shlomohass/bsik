@@ -33,5 +33,6 @@ version:
 @import '../../bootstrap/dropdown';
 @import '../../bootstrap/forms';
 // 5. Add additional custom theme code here
+@import 'theme-mixins';
 @import 'theme-dyn-tables';
 @import 'theme-forms';

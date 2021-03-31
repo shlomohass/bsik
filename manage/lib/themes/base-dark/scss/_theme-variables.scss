@@ -2,6 +2,7 @@
 $admin-base-background: #151515;
 $admin-base-lighter-background: #242424;
 $admin-base-orange: #fbb040;
+$admin-base-color-actions: #34c3ff;
 $admin-white-text: #CECECE;
 $admin-grey-text: #6C6C6C;
 $admin-dark-text: #4f4f4f;
@@ -13,6 +14,11 @@ $dyn-table-hover-bg: rgba(0, 0, 0, .075);
 $dyn-table-background: #353535;
 $dyn-table-color: $admin-white-text;
 $dyn-table-dark-border-color: #4c4c4c;
+$dyn-table-toolbar-btn-bg: $admin-base-orange;
+$dyn-table-toolbar-btn-color: $admin-base-lighter-background;
+$dyn-table-pager-bg: #353535;
+$dyn-table-pager-border: #4c4c4c;
+$dyn-table-pager-focus: 0 0 7px 0.25rem rgba($admin-base-orange, .7);
 //Base variables used in bootstrap:
 $body-bg: $admin-base-background;
 $body-color: $admin-white-text;

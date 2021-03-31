@@ -6578,16 +6578,6 @@ version:
     -> initial.
 *******************************************************************************/
 /******************************  BOOTSTRAP TABLE  *****************************/
-.bootstrap-table .fixed-table-toolbar .btn-group .btn-secondary {
-  color: var(--admin-dark-text);
-  background-color: var(--admin-base-orange);
-  border-color: var(--admin-base-orange); }
-
-.bootstrap-table .fixed-table-toolbar .btn-group .btn-secondary:hover {
-  color: white;
-  box-shadow: 0px 0px 6px -1px #151515;
-  text-shadow: 0 0 1px black; }
-
 .bootstrap-table .fixed-table-toolbar::after {
   content: "";
   display: block;
@@ -6598,6 +6588,19 @@ version:
   position: relative;
   margin-top: 10px;
   margin-bottom: 10px; }
+.bootstrap-table .fixed-table-toolbar .columns > .btn,
+.bootstrap-table .fixed-table-toolbar .columns > .btn-group .btn {
+  color: #242424;
+  background-color: #fbb040;
+  border-color: #fbb040; }
+  .bootstrap-table .fixed-table-toolbar .columns > .btn.show, .bootstrap-table .fixed-table-toolbar .columns > .btn:focus,
+  .bootstrap-table .fixed-table-toolbar .columns > .btn-group .btn.show,
+  .bootstrap-table .fixed-table-toolbar .columns > .btn-group .btn:focus {
+    box-shadow: none;
+    background-color: #fcc572; }
+.bootstrap-table .fixed-table-toolbar .columns > .btn-group .btn-secondary:hover,
+.bootstrap-table .fixed-table-toolbar .columns > .btn-secondary:hover {
+  background-color: #fcc572; }
 .bootstrap-table .fixed-table-toolbar .columns .btn-group > .btn-group {
   display: inline-block;
   margin-left: -1px !important; }
@@ -6642,6 +6645,13 @@ version:
       vertical-align: middle;
       box-sizing: border-box;
       color: #CECECE; }
+    .bootstrap-table .fixed-table-container .table td > a {
+      font-size: 1.15rem;
+      color: #CECECE; }
+      .bootstrap-table .fixed-table-container .table td > a:hover {
+        color: #34c3ff; }
+      .bootstrap-table .fixed-table-container .table td > a > i {
+        margin-right: 10px; }
     .bootstrap-table .fixed-table-container .table thead th {
       vertical-align: bottom;
       padding: 0;
@@ -6730,7 +6740,7 @@ version:
         justify-content: center; }
         .bootstrap-table .fixed-table-container .fixed-table-body .fixed-table-loading .loading-wrap .loading-text {
           margin-right: 6px;
-          font-size: 1.5em !important;
+          font-size: 1.25rem !important;
           font-weight: 400; }
         .bootstrap-table .fixed-table-container .fixed-table-body .fixed-table-loading .loading-wrap .animation-wrap {
           align-items: center;
@@ -6780,6 +6790,11 @@ version:
     position: relative;
     display: inline-block;
     vertical-align: middle; }
+    .bootstrap-table .fixed-table-pagination > .pagination-detail .page-list .btn-group .btn-secondary {
+      background-color: #353535;
+      border-color: #4c4c4c; }
+      .bootstrap-table .fixed-table-pagination > .pagination-detail .page-list .btn-group .btn-secondary:focus, .bootstrap-table .fixed-table-pagination > .pagination-detail .page-list .btn-group .btn-secondary.show {
+        box-shadow: 0 0 7px 0.25rem rgba(251, 176, 64, 0.7); }
     .bootstrap-table .fixed-table-pagination > .pagination-detail .page-list .btn-group .dropdown-menu {
       margin-bottom: 0; }
 .bootstrap-table .fixed-table-pagination > .pagination ul.pagination {
