@@ -19,8 +19,10 @@ $CoreBlockRender = function(APage $APage, array $Values = []) {
     //Extend settings:
     $block_setting = array_merge_recursive($block_defaults, $Values);
 
-    $menu_tpl = "<li class='menu-entry %s' data-menuact='%s' title='%s'><i class='%s'></i>%s%s</li>".PHP_EOL;
+    $menu_tpl = "<li class='menu-entry %s %s %s' data-menuact='%s' title='%s'><span><i class='%s'></i>%s</span>%s</li>".PHP_EOL;
     $build_list = "<ul class='admin-menu'>".PHP_EOL;
+    $current = $APage->module->name;
+    $current_sub_menu   = $APage->module->which;
     foreach ($APage->menu as $entry) {
         $sub_menu = "<ul class='entry-sub-menu'>".PHP_EOL;
         $parts = $APage::std_arr_get_from($entry, ["text", "title", "icon", "action", "sub"], "");
@@ -29,7 +31,9 @@ $CoreBlockRender = function(APage $APage, array $Values = []) {
             foreach ($parts["sub"] as $sub) {
                 $sub_parts = $APage::std_arr_get_from($sub, ["text", "title", "icon", "action"], "");
                 $sub_menu .= sprintf($menu_tpl,
-                    "", 
+                    "",
+                    "",
+                    strtolower($parts["action"]) === $current && strtolower($sub_parts["action"]) === $current_sub_menu ? "is-loaded" : "",
                     $sub_parts["action"], 
                     $sub_parts["title"], 
                     $sub_parts["icon"], 
@@ -44,6 +48,8 @@ $CoreBlockRender = function(APage $APage, array $Values = []) {
         //Build Entry:
         $build_list .= sprintf($menu_tpl,
             !empty($sub_menu) ? "has-submenu" : "", 
+            strtolower($parts["action"]) === $current ? "is-loaded" : "",
+            !empty($sub_menu) && strtolower($parts["action"]) === $current ? "open-menu" : "",
             $parts["action"], 
             $parts["title"], 
             $parts["icon"], 

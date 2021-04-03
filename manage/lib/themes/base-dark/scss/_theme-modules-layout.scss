@@ -1,0 +1,33 @@
+/******************************************************************************/
+
+// Created by: shlomo hassid.
+// Release Version : 1.0.0
+// Creation Date: 2021-03-30
+// Copyright 2021, SIKTEC.
+
+/******************************************************************************/
+
+
+/*****************************      Changelog       ****************************
+version:
+    -> initial.
+*******************************************************************************/
+
+
+/******************************  MODULE CONTRNT BASE STYLING  *****************************/
+
+.container-module {
+    .module-header {
+        border-bottom: 1px solid $module-header-border-color;
+        padding-bottom: 10px;
+        margin: 0 !important;
+        .module-title {
+            font-size: $module-header-title-size;
+        }
+        .module-desc {
+            color: $admin-grey-text;
+            clear: left;
+        }
+        .dropdown {}
+    }
+}

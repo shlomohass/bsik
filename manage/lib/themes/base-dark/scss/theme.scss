@@ -34,5 +34,7 @@ version:
 @import '../../bootstrap/forms';
 // 5. Add additional custom theme code here
 @import 'theme-mixins';
+@import 'theme-buttons';
 @import 'theme-dyn-tables';
 @import 'theme-forms';
+@import 'theme-modules-layout';

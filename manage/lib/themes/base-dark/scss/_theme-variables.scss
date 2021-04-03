@@ -2,12 +2,21 @@
 $admin-base-background: #151515;
 $admin-base-lighter-background: #242424;
 $admin-base-orange: #fbb040;
-$admin-base-color-actions: #34c3ff;
+$admin-base-color-actions: #2d9ffd;
 $admin-white-text: #CECECE;
-$admin-grey-text: #6C6C6C;
+$admin-grey-text: #8b8b8b;
 $admin-dark-text: #4f4f4f;
 $admin-red-text: #ff8d8d;
 $admin-base-font-size: 14px;
+//Colors:
+$primary: $admin-base-color-actions;
+$secondary: #353535;
+$success: #198754;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: $admin-white-text;
+$dark: $admin-base-lighter-background;
 //Dyn Tables variables:
 $dyn-table-border-color: #4c4c4c;
 $dyn-table-hover-bg: rgba(0, 0, 0, .075);
@@ -18,10 +27,14 @@ $dyn-table-toolbar-btn-bg: $admin-base-orange;
 $dyn-table-toolbar-btn-color: $admin-base-lighter-background;
 $dyn-table-pager-bg: #353535;
 $dyn-table-pager-border: #4c4c4c;
-$dyn-table-pager-focus: 0 0 7px 0.25rem rgba($admin-base-orange, .7);
+$dyn-table-pager-focus: 0 0 1px 0.1rem rgba($admin-base-orange, .7);
+//Module content space
+$module-header-border-color:#484747;
+$module-header-title-size: 1.8rem;
 //Base variables used in bootstrap:
 $body-bg: $admin-base-background;
 $body-color: $admin-white-text;
+//Buttons:
 // 15. Forms
 // ===========================================================================
 $input-bg-color: rgb(247, 137, 137);

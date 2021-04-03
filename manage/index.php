@@ -58,24 +58,33 @@ Trace::add_step(__FILE__,"Loading and building page:");
 switch ($APage->request["type"]) {
     case "module": {
         //Must be signed in:
+        Trace::add_trace("Module type detected", __FILE__);
         if (!$Admin->is_signed) {
+            Trace::add_trace("Module requires Admin to be signed in - redirecting", __FILE__);
             require_once PLAT_PATH_MANAGE.DS."pages".DS."login.php";
         }
         //Make sure Module Exists:
         elseif (!$APage->isset_module()) {
+            Trace::add_trace("Requested module is not set", __FILE__);
             $APage::error_page("module_not_set");
         }
         //Make sure exists and is allowed?
         elseif (!$APage->is_allowed_to_use($Admin)) {
+            Trace::add_trace("Module requires privileges that admin does not have", __FILE__);
             $APage::error_page("admin_is_not_allowed");
         } else {
+            Trace::add_trace("Admin check successfully - signed, is-set, is-allowed", __FILE__);
             //Load the platform that will also render the module:
             $APage->load_module();
+            Trace::add_trace("Module loaded to Apage.", __FILE__);
+            Trace::reg_vars(["Loaded module" => $APage->module]);
+            Trace::reg_vars(["Loaded page settings (extended)" => $APage->settings]);
             require_once PLAT_PATH_MANAGE.DS."pages".DS."base.php";
         }
         Trace::expose_trace();
     } break;
     case "api": {
+        Trace::add_trace("Api type request detected", __FILE__);
         //Must be signed in:
         //Load core Api end points
         require_once PLAT_PATH_MANAGE.DS."core".DS."AdminApi.php";

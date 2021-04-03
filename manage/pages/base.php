@@ -34,11 +34,15 @@ $APage->body_tag("style=''");
 $loaded_libs = $APage->load_libs($global = true);
 
 //Module content:
+/******************************  Module content  *****************************/
+//Set module header:
+$module_header = $APage->render_module_header();
+
 //Empty on errors / Exception will be logged by the method:
 $module_content = $APage->render_module("", $Admin);
 
 //Load themes files:
-//$APage->include("head", "js", "link", ["name" => "http://unpkg.com/tableexport.jquery.plugin@1.10.22/tableExport.min.js"]);
+/* SH: added - 2021-04-03 => Add theme control from DB */
 if ($generic_lib = $APage::std_fs_file_exists("themes", ["base-dark", "theme.css"])) {
     $APage->include("head", "css", "link", ["name" => $generic_lib["url"]]);
     Trace::add_trace("Loaded theme plat stylesheet.", __FILE__.__LINE__);
@@ -100,7 +104,7 @@ printf($doc_tpl,
     $doc_head,
     $doc_admin_bar,
     $doc_side_menu,
-    $module_content,
+    $module_header.$module_content,
     "BSik by SIKTEC - Version: 1.0.1",
     $doc_end
 );

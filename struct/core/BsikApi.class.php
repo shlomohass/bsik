@@ -147,7 +147,8 @@ class BsikApi extends Base {
             $this->request->answer->errors[] = $error;
         }
     }
-    public function parse_request(array $input, array $ignore = ["type","module","request_type","request_token"]) {
+    /* SH: added - 2021-04-03 => make this documented that those request entries are reserved */
+    public function parse_request(array $input, array $ignore = ["type","module", "which", "request_type","request_token"]) {
         $this->request->token = $input["request_token"] ?? "";
         $this->request->type  = $input["request_type"] ?? "";
         $this->request->args  = self::std_arr_filter_out($input, $ignore);

@@ -74,6 +74,12 @@ ul.entry-sub-menu {
     margin: 0;
     font-size: 14px;
     list-style: none;
+    text-decoration: none;
+}
+
+ul.admin-menu>li.menu-entry.is-loaded>span,
+ul.admin-menu>li.menu-entry.is-loaded .is-loaded>span {
+    text-decoration: underline;
 }
 
 ul.entry-sub-menu {
@@ -91,7 +97,7 @@ ul.admin-menu ul.entry-sub-menu>li.menu-entry {
     cursor: pointer;
 }
 
-ul.admin-menu li.menu-entry>i {
+ul.admin-menu li.menu-entry>span i {
     margin-right: 10px;
 }
 

@@ -79,6 +79,7 @@ class APage extends Base
         $this->tokenize(); //Tokenize the page.
         $this->request["type"]      = $this->request_type(); //Get the request 
         $this->request["module"]    = $this->request_module($this::$conf["default-module"] ?? "");
+        $this->request["which"]     = $this->request_module_which($this::$conf["default-module-sub-entry"] ?? "");
         $this::$index_page_url      = $this->parse_slash_url_with($this::$conf["path"]["site_admin_url"]);
         $this->request["when"]      = self::std_time_datetime(); //Time stamp for debugging
         $this->fill_modules();
@@ -176,6 +177,17 @@ class APage extends Base
         $page = (isset($_REQUEST["module"]) && ctype_alnum($_REQUEST["module"])) ? $_REQUEST["module"] : $default;
         return self::std_str_filter_string($page, "A-Za-z0-9_-");
     }
+    /* Get and Set the page requested - sub entry of module.
+     *  @Default-params: none
+     *  @return String
+     *
+    */
+    private function request_module_which(string $default)
+    {
+        $which = (isset($_REQUEST["which"]) && ctype_alnum($_REQUEST["which"])) ? $_REQUEST["which"] : $default;
+        return self::std_str_filter_string($which, "A-Za-z0-9_-");
+    }
+
         
     /**
      * load_page
@@ -200,7 +212,8 @@ class APage extends Base
             $this->module = (object)[
                 "name"    => $loaded_module["name"] ?? null,
                 "version" => $loaded_module["version"] ?? null,
-                "path"    => $loaded_module["path"] ?? null
+                "path"    => $loaded_module["path"] ?? null,
+                "which"   =>$this->request["which"]
             ];
             //Parse settings if set:
             if (!empty($loaded_module) && !empty($loaded_module["settings"])) {
@@ -426,6 +439,7 @@ class APage extends Base
         }
         return $ele;
     }
+    
     /* Stich a url together for normalizing urls.
      *  @param $path => String - only the traverse folders
      *  @param $file => String - filename
@@ -507,6 +521,21 @@ class APage extends Base
         printf($tpl, $path, $name);
     }
 
+    public function render_module_header(array $controls = []) : string {
+        $header_tpl = "<div class='container'><div class='row'><div class='col-12 module-header sik-form-init'>%s%s%s</div></div></div>";
+        $module_title = $this->html_ele("h1.module-title.float-start",[], $this->settings["title"]);
+        $module_desc = $this->html_ele("span.module-desc.float-start",[], $this->settings["desc"]);
+        $module_control = $this->html_ele("div.float-end", [], 
+            $this->render_dropdown(
+                [
+                    ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 1"],
+                    ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 1"],
+                    ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 1"]
+                ],
+                "settings"
+            ));
+        return sprintf($header_tpl, implode($module_control), implode($module_title), implode($module_desc));
+    }
     public function render_module(string $module = "", $values = null) {
         $module = empty($module) ? $this->module->name : $module;
         $path = PLAT_PATH_MANAGE.DS."modules".DS.$module.DS."module.php";
@@ -522,6 +551,28 @@ class APage extends Base
         $this->logger->error("Could not find module content to render.", ["module" => $module, "path" => $path]);
         return "";
     } 
+    public function render_dropdown(array $buttons, string $text = "dropdown", string $id = "", array $class_main = [], array $class_list = []) : string {
+        $tmpl = '<div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle %s" type="button" id="%s" data-bs-toggle="dropdown" aria-expanded="false">
+                %s
+            </button>
+            <ul class="dropdown-menu %s" aria-labelledby="%s">
+                %s
+            </ul>
+        </div>';
+        $buttons_html = '';
+        foreach ($buttons as $b) {
+            $buttons_html .= "<li>".implode($this->html_ele(...$b))."</li>".PHP_EOL;
+        }
+        return sprintf($tmpl, 
+            implode(" ", $class_main), 
+            $id, 
+            $text,
+            implode(" ", $class_list),
+            $id, 
+            $buttons_html
+        );
+    }
     //See: https://live.bootstrap-table.com/example/welcome.html for example
     private array $defaults_dynamic_table = [ //NULL omits field option
         "field"             => null,        // Field name in db
