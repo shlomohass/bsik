@@ -35,8 +35,6 @@ $loaded_libs = $APage->load_libs($global = true);
 
 //Module content:
 /******************************  Module content  *****************************/
-//Set module header:
-$module_header = $APage->render_module_header();
 
 //Empty on errors / Exception will be logged by the method:
 $module_content = $APage->render_module("", $Admin);
@@ -85,7 +83,19 @@ require_once PLAT_PATH_MANAGE.DS."pages".DS."menu.php";
 $doc_side_menu = $CoreBlockRender($APage, []);
 Trace::add_trace("Loaded & Render side-menu structure", __FILE__.__LINE__);
 
-
+//Module header:
+require_once PLAT_PATH_MANAGE.DS."pages".DS."module-header.php";
+$doc_module_header = $CoreBlockRender($APage, [
+    "title"     => $APage->module->header["title"],
+    "which"     => $APage->module->header["which"],
+    "sub-title" => $APage->module->header["sub-title"],
+    "actions"   => [
+        ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 1"],
+        ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 2"],
+        ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 3"]
+    ] 
+]);
+Trace::add_trace("Loaded & Render module content header", __FILE__.__LINE__);
 
 $doc_tpl = <<<HTML
     %s
@@ -104,7 +114,7 @@ printf($doc_tpl,
     $doc_head,
     $doc_admin_bar,
     $doc_side_menu,
-    $module_header.$module_content,
+    $doc_module_header.$module_content,
     "BSik by SIKTEC - Version: 1.0.1",
     $doc_end
 );

@@ -174,7 +174,7 @@ class APage extends Base
     private function request_module(string $default)
     {
         // TODO: Log the requests given to the server.
-        $page = (isset($_REQUEST["module"]) && ctype_alnum($_REQUEST["module"])) ? $_REQUEST["module"] : $default;
+        $page = (isset($_REQUEST["module"])) ? $_REQUEST["module"] : $default;
         return self::std_str_filter_string($page, "A-Za-z0-9_-");
     }
     /* Get and Set the page requested - sub entry of module.
@@ -184,7 +184,7 @@ class APage extends Base
     */
     private function request_module_which(string $default)
     {
-        $which = (isset($_REQUEST["which"]) && ctype_alnum($_REQUEST["which"])) ? $_REQUEST["which"] : $default;
+        $which = (isset($_REQUEST["which"])) ? $_REQUEST["which"] : $default;
         return self::std_str_filter_string($which, "A-Za-z0-9_-");
     }
 
@@ -213,7 +213,9 @@ class APage extends Base
                 "name"    => $loaded_module["name"] ?? null,
                 "version" => $loaded_module["version"] ?? null,
                 "path"    => $loaded_module["path"] ?? null,
-                "which"   =>$this->request["which"]
+                "which"   => $this->request["which"],
+                "menu"    => json_decode($loaded_module["menu"], true),
+                "header"  => []
             ];
             //Parse settings if set:
             if (!empty($loaded_module) && !empty($loaded_module["settings"])) {
@@ -407,7 +409,7 @@ class APage extends Base
      * @param  mixed $selector
      * @param  mixed $add_attrs
      * @param  mixed $content
-     * @return void
+     * @return array
      */
     public function html_ele(string $selector = "div", array $add_attrs = [], string $content = "") : array {
         $parts = explode(".", $selector);
@@ -521,21 +523,6 @@ class APage extends Base
         printf($tpl, $path, $name);
     }
 
-    public function render_module_header(array $controls = []) : string {
-        $header_tpl = "<div class='container'><div class='row'><div class='col-12 module-header sik-form-init'>%s%s%s</div></div></div>";
-        $module_title = $this->html_ele("h1.module-title.float-start",[], $this->settings["title"]);
-        $module_desc = $this->html_ele("span.module-desc.float-start",[], $this->settings["desc"]);
-        $module_control = $this->html_ele("div.float-end", [], 
-            $this->render_dropdown(
-                [
-                    ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 1"],
-                    ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 1"],
-                    ["button.dropdown-item", ["type" => "button", "action" => "none"], "Action 1"]
-                ],
-                "settings"
-            ));
-        return sprintf($header_tpl, implode($module_control), implode($module_title), implode($module_desc));
-    }
     public function render_module(string $module = "", $values = null) {
         $module = empty($module) ? $this->module->name : $module;
         $path = PLAT_PATH_MANAGE.DS."modules".DS.$module.DS."module.php";

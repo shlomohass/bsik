@@ -77,8 +77,17 @@ ul.entry-sub-menu {
     text-decoration: none;
 }
 
-ul.admin-menu>li.menu-entry.is-loaded>span,
-ul.admin-menu>li.menu-entry.is-loaded .is-loaded>span {
+ul.admin-menu a,
+ul.admin-menu a:visited,
+ul.admin-menu a:active,
+ul.admin-menu a:hover {
+    color: inherit;
+    text-decoration: inherit;
+    display: block;
+}
+
+ul.admin-menu>li.menu-entry.is-loaded>a>span,
+ul.admin-menu>li.menu-entry.is-loaded .is-loaded>a>span {
     text-decoration: underline;
 }
 
@@ -97,7 +106,7 @@ ul.admin-menu ul.entry-sub-menu>li.menu-entry {
     cursor: pointer;
 }
 
-ul.admin-menu li.menu-entry>span i {
+ul.admin-menu li.menu-entry>a>span i {
     margin-right: 10px;
 }
 

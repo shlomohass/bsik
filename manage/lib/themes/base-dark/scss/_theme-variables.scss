@@ -29,7 +29,10 @@ $dyn-table-pager-bg: #353535;
 $dyn-table-pager-border: #4c4c4c;
 $dyn-table-pager-focus: 0 0 1px 0.1rem rgba($admin-base-orange, .7);
 //Module content space
-$module-header-border-color:#484747;
+$module-header-title-color :$admin-white-text;
+$module-header-which-color: lighten($admin-base-orange, 10%);
+$module-header-subtitle-color: #484747;
+$module-header-border-color: $admin-grey-text;
 $module-header-title-size: 1.8rem;
 //Base variables used in bootstrap:
 $body-bg: $admin-base-background;

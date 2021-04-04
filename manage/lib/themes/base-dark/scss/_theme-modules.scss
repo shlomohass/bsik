@@ -23,9 +23,16 @@ version:
         margin: 0 !important;
         .module-title {
             font-size: $module-header-title-size;
+            color: $module-header-title-color;
+            >span {
+                font-weight: 400;
+                font-size: 0.7em;
+                padding: 0px 10px;
+                color: $module-header-which-color;
+            }
         }
         .module-desc {
-            color: $admin-grey-text;
+            color: $module-header-border-color;
             clear: left;
         }
         .dropdown {}
