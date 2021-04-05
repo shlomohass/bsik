@@ -1,31 +1,54 @@
 {
+    "repositories": [{
+        "type": "package",
+        "package": [{
+                "name": "packages/raphael-js",
+                "version": "2.3.1",
+                "dist": {
+                    "url": "https://github.com/DmitryBaranovskiy/raphael/archive/refs/tags/v2.3.0.zip",
+                    "type": "zip"
+                }
+            },
+            {
+                "name": "packages/morris-js",
+                "version": "0.5.1",
+                "dist": {
+                    "url": "https://github.com/morrisjs/morris.js/archive/refs/tags/0.5.1.zip",
+                    "type": "zip"
+                }
+            }, {
+                "name": "packages/jquery",
+                "version": "3.6.0",
+                "dist": {
+                    "url": "https://github.com/jquery/jquery/archive/refs/tags/3.6.0.zip",
+                    "type": "zip"
+                }
+            }
+        ]
+    }, {
+        "type": "git",
+        "url": "https://github.com/shlomohass/morris-php.git"
+    }],
     "require": {
+        "php": ">=7.0.0",
+        "packages/jquery": "3.6.0",
+        "packages/raphael-js": "2.3.1",
+        "packages/morris-js": "0.5.1",
+        "siktec/morris-php": "0.6.*",
         "monolog/monolog": "2.2.0",
         "google/apiclient": "^2.4",
-        "components/jquery": "3.5.*",
         "fortawesome/font-awesome": "5.15.*",
         "twbs/bootstrap": "5.0.0-beta3",
         "wenzhixin/bootstrap-table": "1.18.*",
         "formr/formr": "1.1.*"
+
     },
     "scripts": {
         "post-install-cmd": [
 
         ],
         "post-update-cmd": [
-            "php -r \"echo 'SIK SAYS -> Root Path is : ['.__DIR__.PHP_EOL;\"",
-            "php -r \"echo 'SIK SAYS -> manage required is cleared...'.PHP_EOL;\"",
-            "php -r \"array_map( 'unlink', array_filter((array) glob('./manage/lib/required/*') ) );\"",
-            "php -r \"echo 'SIK SAYS -> Creating Folders for libs...'.PHP_EOL;\"",
-            "php -r \"array_map(fn($d) => mkdir('./manage/lib/required/'.$d), ['jquery', 'bootstrap', 'font-awesome', 'bootstrap-table']);\"",
-            "php -r \"echo 'SIK SAYS -> Copy required libs...'.PHP_EOL;\"",
-            "cp -r './vendor/components/jquery/' './manage/lib/required/'",
-            "cp -r './vendor/twbs/bootstrap/dist/.' './manage/lib/required/bootstrap/'",
-            "cp -r './vendor/wenzhixin/bootstrap-table/dist/.' './manage/lib/required/bootstrap-table/",
-            "cp -r './vendor/fortawesome/font-awesome/' './manage/lib/required/'",
-            "php -r \"echo 'SIK SAYS -> Creating Source SCSS of bootstrap...'.PHP_EOL;\"",
-            "php -r \"mkdir('./manage/lib/themes/bootstrap/');\"",
-            "cp -r './vendor/twbs/bootstrap/scss/.' './manage/lib/themes/bootstrap/'"
+            "php ./install/install"
         ]
     }
 

@@ -66,3 +66,7 @@ struct/conf.php
 
 import/
 !/import/help.txt
+node_modules/
+package.json
+package-lock.json
+manage/lib/themes/base-dark/scss/koala-config.json

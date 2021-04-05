@@ -4,9 +4,11 @@
 
 -> system requirements:
 1. php 8
-2. mod_rewrite
-3. mod_proxy
-4. curl php
-5. set ssl in php.ini for curl
-6. install cacert.pem in php extras/ssl
-7. enable openssl in php.ini
+2. composer
+3. npm
+4. mod_rewrite
+5. mod_proxy
+6. curl php
+7. set ssl in php.ini for curl
+8. install cacert.pem in php extras/ssl
+9. enable openssl in php.ini

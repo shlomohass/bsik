@@ -4,57 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "951a520f3662cef1f42dc7ed1b8e3ba8",
+    "content-hash": "826e73c66626ab4d3ca5a3fbe1fa6a64",
     "packages": [
-        {
-            "name": "components/jquery",
-            "version": "3.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/jquery.git",
-                "reference": "b33e8f0f9a1cb2ae390cf05d766a900b53d2125b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jquery/zipball/b33e8f0f9a1cb2ae390cf05d766a900b53d2125b",
-                "reference": "b33e8f0f9a1cb2ae390cf05d766a900b53d2125b",
-                "shasum": ""
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "jquery.js"
-                    ],
-                    "files": [
-                        "jquery.min.js",
-                        "jquery.min.map",
-                        "jquery.slim.js",
-                        "jquery.slim.min.js",
-                        "jquery.slim.min.map"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "JS Foundation and other contributors"
-                }
-            ],
-            "description": "jQuery JavaScript Library",
-            "homepage": "http://jquery.com",
-            "support": {
-                "forum": "http://forum.jquery.com",
-                "irc": "irc://irc.freenode.org/jquery",
-                "issues": "https://github.com/jquery/jquery/issues",
-                "source": "https://github.com/jquery/jquery",
-                "wiki": "http://docs.jquery.com/"
-            },
-            "time": "2020-05-05T13:21:02+00:00"
-        },
         {
             "name": "firebase/php-jwt",
             "version": "v5.2.1",
@@ -723,6 +674,33 @@
             "time": "2020-12-14T13:15:25+00:00"
         },
         {
+            "name": "packages/jquery",
+            "version": "3.6.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/jquery/jquery/archive/refs/tags/3.6.0.zip"
+            },
+            "type": "library"
+        },
+        {
+            "name": "packages/morris-js",
+            "version": "0.5.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/morrisjs/morris.js/archive/refs/tags/0.5.1.zip"
+            },
+            "type": "library"
+        },
+        {
+            "name": "packages/raphael-js",
+            "version": "2.3.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/DmitryBaranovskiy/raphael/archive/refs/tags/v2.3.0.zip"
+            },
+            "type": "library"
+        },
+        {
             "name": "paragonie/constant_time_encoding",
             "version": "v2.4.0",
             "source": {
@@ -1199,6 +1177,46 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+            "name": "siktec/morris-php",
+            "version": "0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shlomohass/morris-php.git",
+                "reference": "1900672c67ee9c5d84e2bf4f5d66812d67db2196"
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "morris-php": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SIKTEC - Based on: Giovambattista Fazioli",
+                    "email": "dev@siktec.com"
+                }
+            ],
+            "description": "PHP helper classes for morris.js",
+            "homepage": "https://github.com/shlomohass/morris-php",
+            "keywords": [
+                "charts",
+                "javascript",
+                "morris",
+                "php"
+            ],
+            "support": {
+                "email": "dev@siktec.com",
+                "issues": "https://github.com/shlomohass/morris-php/issues"
+            },
+            "time": "2021-04-04T21:33:22+00:00"
+        },
+        {
             "name": "twbs/bootstrap",
             "version": "v5.0.0-beta3",
             "source": {
@@ -1326,7 +1344,9 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.0.0"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
 }
