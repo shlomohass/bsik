@@ -97,7 +97,7 @@ ul.entry-sub-menu {
 
 ul.admin-menu>li.menu-entry {
     position: relative;
-    padding: 15px 10px;
+    padding: 10px 10px;
     cursor: pointer;
 }
 
@@ -115,7 +115,7 @@ ul.admin-menu>li.menu-entry.has-submenu::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     right: 15px;
-    top: 16px;
+    top: 11px;
     content: '\f107';
     transition: transform ease .2s;
 }
@@ -127,6 +127,11 @@ ul.admin-menu>li.menu-entry.has-submenu.open-menu::after {
 
 ul.admin-menu>li.menu-entry.has-submenu>.entry-sub-menu {
     display: none;
+    padding-bottom: 0px;
+}
+
+ul.admin-menu>li.menu-entry.has-submenu.open-menu {
+    padding-bottom: 0px;
 }
 
 ul.admin-menu>li.menu-entry.has-submenu.open-menu>.entry-sub-menu {

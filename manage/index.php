@@ -88,7 +88,7 @@ switch ($APage->request["type"]) {
         Trace::add_trace("Api type request detected", __FILE__);
         //Must be signed in:
         //Load core Api end points
-        require_once PLAT_PATH_MANAGE.DS."core".DS."AdminApi.php";
+        require_once PLAT_PATH_MANAGE.DS."core".DS."AdminApi.class.php";
         //Load module extended methods:
     } break;
     case "error": {

@@ -20,7 +20,6 @@ use Monolog\Handler\StreamHandler;
 
 class APage extends Base
 {   
-
     //Logger:
     public Logger $logger;
     public static $user_string;
@@ -488,7 +487,15 @@ class APage extends Base
 
 
     /******************************  RENDER ELEMENTS  *****************************/
-    
+    private function render_inline_error(string $text, string $icon = "fa-exclamation-triangle") : string {
+        $styles = [
+            "color:lightcoral",
+            "padding:15px",
+            "clear:both"
+        ];
+        $icon_html = "<i class='fas $icon'></i>";
+        return sprintf("<span style='%s'>%s&nbsp;%s</span>", implode(';', $styles), $icon_html, $text);
+    }
     public function render_libs(string $type, string $pos) {
         $tpl = [
             "css" => '<link rel="stylesheet" href="%s" />'.PHP_EOL,
@@ -532,10 +539,10 @@ class APage extends Base
                 return $ModuleBlockRender($this, $values);
             } catch (Throwable $e) {
                 $this->logger->error("Error captured on module render [{$e->getMessage()}].", ["module" => $module, "path" => $path]);
-                return "Error in module - check logs.";
+                return $this->render_inline_error(text:"Error in module - check logs.");
             }
         }
-        $this->logger->error("Could not find module content to render.", ["module" => $module, "path" => $path]);
+        $this->logger->error("Could not find module content to render.", context: ["module" => $module, "path" => $path]);
         return "";
     } 
     public function render_dropdown(array $buttons, string $text = "dropdown", string $id = "", array $class_main = [], array $class_list = []) : string {

@@ -1,596 +1,233 @@
 // Forms basic
 // Input +  label wrapper styles
+$input-padding-y: 0.85rem;
+$input-padding-x: 1rem;
+$input-padding-y-sm: $input-padding-y * 0.75;
+$input-padding-x-sm: $input-padding-x * 0.75;
+$input-padding-y-lg: $input-padding-y * 1.25;
+$input-padding-x-lg: $input-padding-x * 1.25;
+$form-file-button-color: $admin-base-text-sub;
+$form-file-button-bg: lighten($admin-base-background, 10%);
+$form-file-button-hover-bg: lighten($admin-base-background, 20%);
+$sikform-input-color: $admin-base-text-main;
+$sikform-input-placeholder-color: $admin-base-text-sub;
+$sikform-input-bg: lighten($admin-base-background, 5%);
+$sikform-input-bg-focus: lighten($admin-base-background, 5%);
+$sikform-input-border: 2px solid lighten($admin-base-primary-color, 10%);
+$sikform-input-border-focus: 2px solid lighten($admin-base-primary-color, 20%);
+$sikform-input-transition: border-color .15s ease-in-out,
+box-shadow .15s ease-in-out;
+$sikform-input-caret-color: $admin-base-text-main;
+$sikform-input-caret-focus-color: lighten($admin-base-primary-color, 20%);
+$sikform-input-caret-stroke-color: $admin-base-background;
+$sikform-input-caret-stroke-width: 25;
+$sikform-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$admin-base-text-main}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+$sikform-select-indicator-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{darken($admin-base-text-main, 30%)}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+$sikform-input-caret-svg: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 700'><path fill='#{$sikform-input-caret-color}' stroke='#{$sikform-input-caret-stroke-color}' stroke-width='#{$sikform-input-caret-stroke-width}' d='M 285.476 377.971 L 91.132 572.314 c -9.373 9.373 -24.569 9.373 -33.941 0 l -22.667 -22.667 c -9.357 -9.357 -9.375 -24.522 -0.04 -33.901 L 188.505 361 L 34.484 206.255 c -9.335 -9.379 -9.317 -24.544 0.04 -33.901 l 22.667 -22.667 c 9.373 -9.373 24.569 -9.373 33.941 0 L 285.475 344.03 c 9.373 9.372 9.373 24.568 0.001 33.941 z'/></svg>";
+$sikform-input-caret-focus-svg: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 700'><path fill='#{$sikform-input-caret-focus-color}' stroke='#{$sikform-input-caret-stroke-color}' stroke-width='#{$sikform-input-caret-stroke-width}' d='M 285.476 377.971 L 91.132 572.314 c -9.373 9.373 -24.569 9.373 -33.941 0 l -22.667 -22.667 c -9.357 -9.357 -9.375 -24.522 -0.04 -33.901 L 188.505 361 L 34.484 206.255 c -9.335 -9.379 -9.317 -24.544 0.04 -33.901 l 22.667 -22.667 c 9.373 -9.373 24.569 -9.373 33.941 0 L 285.475 344.03 c 9.373 9.372 9.373 24.568 0.001 33.941 z'/></svg>";
+$sikform-input-icon-caret: "M 285.476 377.971 L 91.132 572.314 c -9.373 9.373 -24.569 9.373 -33.941 0 l -22.667 -22.667 c -9.357 -9.357 -9.375 -24.522 -0.04 -33.901 L 188.505 361 L 34.484 206.255 c -9.335 -9.379 -9.317 -24.544 0.04 -33.901 l 22.667 -22.667 c 9.373 -9.373 24.569 -9.373 33.941 0 L 285.475 344.03 c 9.373 9.372 9.373 24.568 0.001 33.941 z";
+$sikform-formtext-color: $admin-base-text-sub;
 .sik-form-init {
-    // Text inputs
-    input:not([type]),
-    input[type="text"]:not(.browser-default),
-    input[type="password"]:not(.browser-default),
-    input[type="email"]:not(.browser-default),
-    input[type="url"]:not(.browser-default),
-    input[type="time"]:not(.browser-default),
-    input[type="date"]:not(.browser-default),
-    input[type="datetime"]:not(.browser-default),
-    input[type="datetime-local"]:not(.browser-default),
-    input[type="tel"]:not(.browser-default),
-    input[type="number"]:not(.browser-default),
-    input[type="search"]:not(.browser-default),
-    input[type="phone"]:not(.browser-default),
-    input[type="search-sik"],
-    textarea.sik-textarea {
-        // General Styles
-        box-sizing: content-box;
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid $input-border-color;
-        border-radius: 0;
-        outline: none;
-        box-shadow: none;
-        transition: $input-transition;
-        // Focused input style
-        &:focus:not([readonly]) {
-            border-bottom: 1px solid $input-sik-focus-color;
-            box-shadow: 0 2px 0 0 $input-sik-focus-color;
-            // Focused label style
-            +label {
-                color: $input-sik-focus-color;
-            }
-        }
-        // Form message shared styles
-        +label::after {
-            position: absolute;
-            top: $input-label-after-top;
-            display: block;
-            content: "";
-            opacity: 0;
-            transition: $input-label-after-transition;
-        }
-        // Valid input style
-        &.valid,
-        &:focus.valid {
-            border-bottom: 1px solid $input-success-color;
-            box-shadow: 0 1px 0 0 $input-success-color;
-        }
-        &.valid+label:after,
-        &:focus.valid+label:after {
-            color: $input-success-color;
-            content: attr(data-success);
-            opacity: 1;
-        }
-        // Invalid input style
-        &.invalid,
-        &:focus.invalid {
-            border-bottom: 1px solid $input-error-color;
-            box-shadow: 0 1px 0 0 $input-error-color;
-        }
-        &.invalid+label:after,
-        &:focus.invalid+label:after {
-            color: $input-error-color;
-            content: attr(data-error);
-            opacity: 1;
-        }
-        &.form-control.valid+label:after,
-        &.form-control:focus.valid+label:after {
-            top: $input-label-valid-top;
-        }
-        &.form-control.invalid+label:after,
-        &.form-control:focus.invalid+label:after {
-            top: $input-label-invalid-top;
-        }
-        &.form-control-lg.valid+label:after,
-        &.form-control-lg:focus.valid+label:after {
-            top: $input-label-valid-top-lg;
-        }
-        &.form-control-lg.invalid+label:after,
-        &.form-control-lg:focus.invalid+label:after {
-            top: $input-label-invalid-top-lg;
-        }
-        &.form-control-sm.valid+label:after,
-        &.form-control-sm:focus.valid+label:after {
-            top: $input-label-valid-top-sm;
-        }
-        &.form-control-sm.invalid+label:after,
-        &.form-control-sm:focus.invalid+label:after {
-            top: $input-label-invalid-top-sm;
-        }
-    }
-    >input[type="date"]:not(.browser-default)+label {
-        transform-origin: 0 0;
-    }
-    >input[type]:-webkit-autofill:not(.browser-default):not([type="search"])+label,
-    >input[type="time"]:not(.browser-default)+label {
-        font-size: .8rem;
-        transform: translateY(-25px);
-        transform-origin: 0 0;
-    }
-    .was-validated {
-        input[type="text"] {
-            &:valid {
-                +label {
-                    color: $input-success-color !important;
-                }
-            }
-            &:invalid {
-                +label {
-                    color: $input-error-color !important;
-                }
-            }
-        }
-        .form-control {
-            &:valid:focus {
-                box-shadow: 0 1px 0 0 $input-success-color !important;
-            }
-            &:valid {
-                border-color: $input-success-color !important;
-            }
-            &:invalid:focus {
-                box-shadow: 0 1px 0 0 $input-error-color !important;
-            }
-            &:invalid {
-                border-color: $input-error-color !important;
-            }
-        }
-    }
-    // Input with label
+    //
+    // Form Control
+    //
     .form-control {
-        height: auto;
-        padding: $input-form-control-padding-top 0 $input-form-control-padding-bottom 0;
-        margin: 0 0 $input-form-control-margin-bottom 0;
-        background-color: transparent;
-        border-radius: 0;
-        &:focus {
-            box-shadow: none;
+        position: relative;
+        color: $sikform-input-color;
+        background-color: $sikform-input-bg;
+        border: 0;
+        padding: $input-padding-y $input-padding-x;
+        border-radius: 0.35rem;
+        box-shadow: none;
+        @include transition($sikform-input-transition);
+        &[type="file"] {
+            overflow: hidden; // prevent pseudo element button overlap
+            &:not(:disabled):not([readonly]) {
+                cursor: pointer;
+            }
         }
+        // Customize the `:focus` state to imitate native WebKit styles.
+        &:focus {
+            color: $sikform-input-color;
+            border-color: inherit;
+            background-color: $sikform-input-bg-focus;
+            outline: 0;
+            box-shadow: none;
+            box-shadow: 0px 4px 3px -0.2rem lighten($admin-base-primary-color, 20%);
+        }
+        // Add some height to date inputs on iOS
+        &::-webkit-date-and-time-value {
+            height: if(unit($input-line-height)=="", $input-line-height * 1em, $input-line-height);
+        }
+        // Placeholder
+        &::placeholder {
+            color: $sikform-input-placeholder-color;
+            opacity: 1;
+        }
+        // Disabled and read-only inputs
         &:disabled,
         &[readonly] {
-            background-color: transparent;
-            border-bottom: 1px solid $input-readonly-border-color;
+            background-color: darken($sikform-input-bg, 2%);
+            border-color: $input-disabled-border-color;
+            opacity: 1;
         }
-        &.is-valid {
-            border-color: $input-success-color;
-            &:focus {
-                border-color: $input-success-color !important;
-                box-shadow: 0 1px 0 0 $input-success-color !important;
-            }
+        // File input buttons theming
+        &::file-selector-button {
+            padding: $input-padding-y $input-padding-x;
+            margin: (-$input-padding-y) (-$input-padding-x);
+            margin-inline-end: $input-padding-x;
+            color: $form-file-button-color;
+            @include gradient-bg($form-file-button-bg);
+            pointer-events: none;
+            border-color: inherit;
+            border-style: solid;
+            border-width: 0;
+            border-inline-end-width: $input-border-width;
+            border-radius: 0; // stylelint-disable-line property-disallowed-list
+            @include transition($btn-transition);
         }
-        &.is-invalid {
-            border-color: $input-error-color;
-            &:focus {
-                border-color: $input-error-color !important;
-                box-shadow: 0 1px 0 0 $input-error-color !important;
-            }
+        &:hover:not(:disabled):not([readonly])::file-selector-button {
+            background-color: $form-file-button-hover-bg;
+            color: lighten($admin-base-primary-color, 20%);
         }
-        &.is-valid,
-        &.is-invalid {
-            background-position: center right !important;
+        &::-webkit-file-upload-button {
+            padding: $input-padding-y $input-padding-x;
+            margin: (-$input-padding-y) (-$input-padding-x);
+            margin-inline-end: $input-padding-x;
+            color: $form-file-button-color;
+            @include gradient-bg($form-file-button-bg);
+            pointer-events: none;
+            border-color: inherit;
+            border-style: solid;
+            border-width: 0;
+            border-inline-end-width: $input-border-width;
+            border-radius: 0; // stylelint-disable-line property-disallowed-list
+            @include transition($btn-transition);
         }
-    }
-    @include make-input($input-validate-mb, $input-label-font-size, $input-label-active-font-size, $input-prefix-top, $input-prefix-font-size, $input-prefix-margin-left, $input-prefix-width, $input-form-text-ml);
-    position: relative;
-    margin-top: $input-sik-form-margin-top;
-    margin-bottom: $input-sik-form-margin-bottom;
-    label:not(.dropdown-item) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-size: 1rem;
-        color: $input-label-color;
-        cursor: text;
-        transition: transform .2s ease-out, color .2s ease-out;
-        transform: translateY(12px);
-        transform-origin: 0% 100%;
-        &.active {
-            transform: translateY(-14px) scale(.8);
-        }
-    }
-    .prefix {
-        position: absolute;
-        transition: $input-prefix-transition;
-        &.active {
-            color: $input-sik-focus-color;
+        &:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+            background-color: $form-file-button-hover-bg;
+            color: lighten($admin-base-primary-color, 5%);
         }
     }
-    &.form-lg {
-        @include make-input($input-validate-mb-lg, $input-label-font-size-lg, $input-label-active-font-size-lg, $input-prefix-top-lg, $input-prefix-font-size-lg, $input-prefix-margin-left-lg, $input-prefix-width-lg, $input-form-text-ml-lg);
+    //
+    // Form text
+    //
+    .form-text {
+        color: $sikform-formtext-color;
     }
-    &.form-sm {
-        @include make-input($input-validate-mb-sm, $input-label-font-size-sm, $input-label-active-font-size-sm, $input-prefix-top-sm, $input-prefix-font-size-sm, $input-prefix-margin-left-sm, $input-prefix-width-sm, $input-form-text-ml-sm);
+    // Readonly controls as plain text
+    .form-control-plaintext {
+        display: block;
+        width: 100%;
+        padding: $input-padding-y 0;
+        margin-bottom: 0; // match inputs if this class comes on inputs with default margins
+        line-height: $input-line-height;
+        color: $input-plaintext-color;
+        background-color: transparent;
+        border: solid transparent;
+        border-width: $input-border-width 0;
+        &.form-control-sm,
+        &.form-control-lg {
+            padding-right: 0;
+            padding-left: 0;
+        }
     }
-    // Textarea
+    .form-control-sm {
+        padding: $input-padding-y-sm $input-padding-x-sm;
+        &::file-selector-button {
+            padding: $input-padding-y-sm $input-padding-x-sm;
+            margin: (-$input-padding-y-sm) (-$input-padding-x-sm);
+            margin-inline-end: $input-padding-x-sm;
+        }
+        &::-webkit-file-upload-button {
+            padding: $input-padding-y-sm $input-padding-x-sm;
+            margin: (-$input-padding-y-sm) (-$input-padding-x-sm);
+            margin-inline-end: $input-padding-x-sm;
+        }
+    }
+    .form-control-lg {
+        padding: $input-padding-y-lg $input-padding-x-lg;
+        &::file-selector-button {
+            padding: $input-padding-y-lg $input-padding-x-lg;
+            margin: (-$input-padding-y-lg) (-$input-padding-x-lg);
+            margin-inline-end: $input-padding-x-lg;
+        }
+        &::-webkit-file-upload-button {
+            padding: $input-padding-y-lg $input-padding-x-lg;
+            margin: (-$input-padding-y-lg) (-$input-padding-x-lg);
+            margin-inline-end: $input-padding-x-lg;
+        }
+    }
+    // Make sure textareas don't shrink too much when resized
     textarea {
-        &.sik-textarea {
-            padding: 0;
-            overflow-y: hidden;
-            &+label {
-                top: -0.6rem;
-            }
-        }
-        &.sik-textarea-auto {
-            padding: 0;
-            padding-top: $textarea-padding;
-            &+label {
-                top: 0;
-            }
-        }
-    }
-    &.sik-outline {
-        position: relative;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-        input[type="text"],
-        input[type="password"],
-        input[type="email"],
-        input[type="url"],
-        input[type="time"],
-        input[type="date"],
-        input[type="datetime-local"],
-        input[type="tel"],
-        input[type="number"],
-        input[type="search-sik"],
-        input[type="search"],
-        textarea.sik-textarea {
-            // General Styles
-            box-sizing: border-box;
-            background-color: transparent;
-            border: 1px solid #dadce0;
-            border-radius: 4px;
-            outline: none;
-            box-shadow: none;
-            transition: all .3s;
-            // Focused input style
-            &:focus:not([readonly]) {
-                border-color: #4285f4;
-                box-shadow: inset 0 0 0 1px #4285f4;
-                // Focused label style
-                +label {
-                    color: #4285f4;
-                }
-            }
-            // Valid input style
-            &.valid,
-            &:focus.valid {
-                border-color: $input-success-color;
-                box-shadow: inset 0 0 0 1px $input-success-color;
-            }
-            &:focus:not([readonly]).valid+label,
-            &.valid+label:after,
-            &:focus.valid+label:after {
-                color: $input-success-color;
-                content: attr(data-success);
-                opacity: 1;
-            }
-            // Invalid input style
-            &.invalid,
-            &:focus.invalid {
-                border-color: $input-error-color;
-                box-shadow: inset 0 0 0 1px $input-error-color;
-            }
-            &:focus:not([readonly]).invalid+label,
-            &.invalid+label:after,
-            &:focus.invalid+label:after {
-                color: $input-error-color;
-                content: attr(data-error);
-                opacity: 1;
-            }
-            &.form-control.valid+label:after,
-            &.form-control:focus.valid+label:after {
-                position: absolute;
-                top: 4rem;
-                left: 0;
-            }
-            &.form-control.invalid+label:after,
-            &.form-control:focus.invalid+label:after {
-                position: absolute;
-                top: 4rem;
-                left: 0;
-            }
-        }
-        >input[type]:-webkit-autofill:not(.browser-default):not([type="search"])+label,
-        >input[type="time"]:not(.browser-default)+label {
-            left: 8px;
-            padding-right: 5px;
-            padding-left: 5px;
-            font-size: 1rem;
-            font-weight: 500;
-            background: #fff;
-            transform: translateY(-9px) scale(.8);
-            transform-origin: 0 0;
-        }
-        >input[type]:-webkit-autofill:not(.browser-default):not([type="search"])+label.active,
-        >input[type="time"]:not(.browser-default)+label.active {
-            transform: translateY(-9px) scale(.8);
-            transform-origin: 0 0;
-        }
-        @-webkit-keyframes autofill {
-            to {
-                color: #495057;
-                background: transparent;
-            }
-        }
-        @keyframes autofill {
-            to {
-                color: #495057;
-                background: transparent;
-            }
-        }
-        input:-webkit-autofill {
-            -webkit-animation-name: autofill;
-            animation-name: autofill;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-        }
-        .form-control {
-            padding: .375rem .75rem;
-        }
-        label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding-left: 10px;
-            font-size: 1rem;
-            color: #757575;
-            cursor: text;
-            transition: transform .2s ease-out, color .2s ease-out;
-            transform: translateY(9px);
-            transform-origin: 0% 100%;
-            &.active {
-                left: 8px;
-                padding-right: 5px;
-                padding-left: 5px;
-                font-weight: 500;
-                background: #fff;
-                transform: translateY(-13px) scale(.8);
-            }
-        }
-        &.form-lg {
-            .form-control {
-                &.form-control-lg {
-                    padding: .5rem .725rem;
-                }
-            }
-            label {
-                font-size: 1.25rem;
-                transform: translateY(10px);
-                &.active {
-                    font-size: 1.1rem;
-                    transform: translateY(-14px) scale(.8);
-                }
-            }
-            .prefix {
-                top: .65rem;
-                font-size: 25px;
-                ~input,
-                ~textarea {
-                    width: calc(100% - 2.2rem);
-                    margin-left: 2.2rem;
-                }
-                ~label {
-                    margin-left: 2.2rem;
-                }
-                ~.form-text {
-                    margin-left: 2.3rem;
-                }
-            }
-        }
-        &.form-sm {
-            .form-control {
-                &.form-control-sm {
-                    padding: .25rem .625rem;
-                }
-            }
-            label {
-                font-size: .8rem;
-                transform: translateY(8px);
-                &.active {
-                    font-size: .85rem;
-                    transform: translateY(-12px) scale(.8);
-                }
-            }
-            .prefix {
-                top: .5rem;
-                font-size: 15px;
-                ~input,
-                ~textarea {
-                    width: calc(100% - 1.6rem);
-                    margin-left: 1.6rem;
-                }
-                ~label {
-                    margin-left: 1.6rem;
-                }
-                ~.form-text {
-                    margin-left: 1.7rem;
-                }
-            }
-        }
-        .prefix {
-            position: absolute;
-            top: .6rem;
-            font-size: 20px;
-            transition: color .2s;
-            &:focus {
-                color: #4285f4;
-            }
-            ~input,
-            ~textarea {
-                width: calc(100% - 2rem);
-                margin-left: 2rem;
-            }
-            ~label {
-                margin-left: 2rem;
-            }
-            ~.form-text {
-                margin-left: 2.1rem;
-            }
-        }
-        .character-counter {
-            margin-top: -.5rem;
-        }
-    }
-    &.sik-bg {
-        input[type="text"],
-        input[type="password"],
-        input[type="email"],
-        input[type="url"],
-        input[type="time"],
-        input[type="date"],
-        input[type="datetime-local"],
-        input[type="tel"],
-        input[type="number"],
-        input[type="search-sik"],
-        input[type="search"],
-        textarea.sik-textarea {
-            &:focus:not([readonly]) {
-                border-bottom: none;
-                box-shadow: none;
-            }
-            box-sizing: border-box;
-            padding: 10px 5px;
-            background: #f5f5f5 no-repeat;
-            background-image: linear-gradient(to bottom, $input-sik-focus-color, $input-sik-focus-color),
-            linear-gradient(to bottom, $input-border-color, $input-border-color);
-            background-position: 50% 100%,
-            50% 100%;
-            background-size: 0 2px,
-            100% 1px;
+        &.form-control {
             border: 0;
-            border-top-left-radius: .3rem;
-            border-top-right-radius: .3rem;
-            transition: background-size .3s cubic-bezier(.64, .09, .08, 1);
-            &:focus {
-                background-color: #dcdcdc;
-                background-size: 100% 2px, 100% 1px;
-                outline: none;
+        }
+    }
+    // stylelint-enable selector-no-qualifying-type
+    .form-control-color {
+        max-width: 4rem;
+        height: auto; // Override fixed browser height
+        padding: $input-padding-y;
+        &:not(:disabled):not([readonly]) {
+            cursor: pointer;
+        }
+        &::-moz-color-swatch {
+            height: if(unit($input-line-height)=="", $input-line-height * 1em, $input-line-height);
+            @include border-radius($input-border-radius);
+        }
+        &::-webkit-color-swatch {
+            height: if(unit($input-line-height)=="", $input-line-height * 1em, $input-line-height);
+            @include border-radius($input-border-radius);
+        }
+    }
+    //
+    // Form Select
+    //
+    // Replaces the browser default select with a custom one, mostly pulled from
+    .form-select {
+        display: block;
+        width: 100%;
+        color: $sikform-input-color;
+        background-color: $sikform-input-bg;
+        border: 0;
+        padding: $input-padding-y $input-padding-x;
+        border-radius: 0.35rem;
+        background-image: escape-svg($sikform-select-indicator);
+        background-repeat: no-repeat;
+        &:focus {
+            border-color: $form-select-focus-border-color;
+            outline: 0;
+            @if $enable-shadows {
+                @include box-shadow($form-select-box-shadow,
+                $form-select-focus-box-shadow);
+            }
+            @else {
+                box-shadow: $form-select-focus-box-shadow;
             }
         }
-        >input[type="date"]:not(.browser-default)+label {
-            transform-origin: 0 0;
+        &[multiple],
+        &[size]:not([size="1"]) {
+            padding-right: $form-select-padding-x;
+            background-image: none;
         }
-        >input[type]:-webkit-autofill:not(.browser-default):not([type="search"])+label,
-        >input[type="time"]:not(.browser-default)+label {
-            font-size: .8rem;
-            transform: translateY(-12px);
-            transform-origin: 0 0;
+        &:disabled {
+            color: darken($sikform-input-color, 40%);
+            background-color: darken($sikform-input-bg, 2%);
+            background-image: escape-svg($sikform-select-indicator-disabled);
         }
-        .form-control {
-            padding: 1.1rem .7rem .4rem !important;
-        }
-        label {
-            top: 0;
-            padding-left: .7rem;
-            font-size: 1rem;
-            transition: transform .2s ease-out, color .2s ease-out;
-            transform: translateY(13px);
-            transform-origin: 0% 100%;
-            &.active {
-                padding-left: .75rem;
-                font-weight: 500;
-                transform: translateY(-3px) scale(.8);
-            }
-        }
-        &.form-lg {
-            label {
-                transform: translateY(16px);
-                &.active {
-                    transform: translateY(-4px) scale(.8);
-                }
-            }
-        }
-        &.form-sm {
-            label {
-                transform: translateY(11px);
-                &.active {
-                    transform: translateY(-2px) scale(.8);
-                }
-            }
+        // Remove outline from select box in FF
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 $form-select-color;
         }
     }
-}
-
-.sik-form-init .form-control.is-invalid,
-.was-validated .sik-form-init .form-control:invalid {
-    padding-right: 0;
-}
-
-.sik-form-init .form-control.is-valid,
-.was-validated .sik-form-init .form-control:valid {
-    padding-right: 0;
-}
-
-.needs-validation .sik-form-init label {
-    left: .3rem;
-}
-
-// Custom file input browser support
-// @each $lang,
-// $text in $custom-sik-file-text {
-//     .custom-file-input {
-//         &:lang(#{$lang}) {
-//             &~.custom-file-label {
-//                 &::after {
-//                     content: $text;
-//                 }
-//             }
-//         }
-//     }
-// }
-.sik-form-init {
-    &>label {
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .form-select-sm {
+        padding: $input-padding-y-sm $input-padding-x-sm;
+        @include font-size($form-select-font-size-sm);
     }
-    .form-control {
-        box-sizing: border-box !important;
-    }
-    .form-control.valid+label,
-    .form-control.invalid+label {
-        overflow: visible;
-    }
-    .input-prefix {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: $input-prefix-transition;
-        color: rgba(0, 0, 0, .87);
-        pointer-events: none;
-        &.active {
-            color: $input-sik-focus-color;
-        }
-    }
-    &.input-with-pre-icon {
-        label {
-            left: 36px;
-            right: initial;
-        }
-        .input-prefix {
-            left: 16px;
-            right: initial;
-        }
-        .form-control {
-            padding-left: 2.7rem !important;
-        }
-    }
-    &.input-with-post-icon {
-        .input-prefix {
-            right: 16px;
-            left: initial;
-        }
-        .form-control {
-            padding-right: 2.7rem !important;
-        }
-    }
-    &.input-with-post-icon.input-with-pre-icon {
-        .input-prefix {
-            right: 16px;
-            left: initial;
-        }
-        .input-prefix:first-of-type {
-            left: 16px;
-            right: initial;
-        }
-        .form-control {
-            padding-left: 2.5rem !important;
-            padding-right: 2.5rem !important;
-        }
+    .form-select-lg {
+        padding: $input-padding-y-lg $input-padding-x-lg;
+        @include font-size($form-select-font-size-lg);
     }
 }

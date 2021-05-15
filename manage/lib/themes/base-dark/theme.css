@@ -19,15 +19,15 @@ version:
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
-  --bs-primary: #2d9ffd;
+  --bs-primary: #fbb040;
   --bs-secondary: #353535;
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
+  --bs-success: #55e9a4;
+  --bs-info: #61d6ee;
+  --bs-warning: #ec8cff;
+  --bs-danger: #cf3342;
   --bs-light: #CECECE;
   --bs-dark: #242424;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); }
 
@@ -195,11 +195,11 @@ sup {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_reboot\.scss}line{font-family:\00003246}}
 a {
-  color: #2d9ffd;
+  color: #fbb040;
   text-decoration: underline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_reboot\.scss}line{font-family:\00003250}}
   a:hover {
-    color: #247fca; }
+    color: #c98d33; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_reboot\.scss}line{font-family:\00003262}}
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -560,10 +560,10 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000032}}
 .link-primary {
-  color: #2d9ffd; }
+  color: #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000036}}
   .link-primary:hover, .link-primary:focus {
-    color: #57b2fd; }
+    color: #fcc066; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000032}}
 .link-secondary {
@@ -574,31 +574,31 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000032}}
 .link-success {
-  color: #198754; }
+  color: #55e9a4; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000036}}
   .link-success:hover, .link-success:focus {
-    color: #146c43; }
+    color: #77edb6; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000032}}
 .link-info {
-  color: #0dcaf0; }
+  color: #61d6ee; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000036}}
   .link-info:hover, .link-info:focus {
-    color: #3dd5f3; }
+    color: #81def1; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000032}}
 .link-warning {
-  color: #ffc107; }
+  color: #ec8cff; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000036}}
   .link-warning:hover, .link-warning:focus {
-    color: #ffcd39; }
+    color: #f0a3ff; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000032}}
 .link-danger {
-  color: #dc3545; }
+  color: #cf3342; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000036}}
   .link-danger:hover, .link-danger:focus {
-    color: #b02a37; }
+    color: #a62935; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/helpers\/_colored-links\.scss}line{font-family:\000032}}
 .link-light {
@@ -958,7 +958,7 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .border-primary {
-  border-color: #2d9ffd !important; }
+  border-color: #fbb040 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .border-secondary {
@@ -966,19 +966,19 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .border-success {
-  border-color: #198754 !important; }
+  border-color: #55e9a4 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .border-info {
-  border-color: #0dcaf0 !important; }
+  border-color: #61d6ee !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .border-warning {
-  border-color: #ffc107 !important; }
+  border-color: #ec8cff !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .border-danger {
-  border-color: #dc3545 !important; }
+  border-color: #cf3342 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .border-light {
@@ -1787,7 +1787,7 @@ progress {
 /* rtl:end:remove */
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .text-primary {
-  color: #2d9ffd !important; }
+  color: #fbb040 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .text-secondary {
@@ -1795,19 +1795,19 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .text-success {
-  color: #198754 !important; }
+  color: #55e9a4 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .text-info {
-  color: #0dcaf0 !important; }
+  color: #61d6ee !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .text-warning {
-  color: #ffc107 !important; }
+  color: #ec8cff !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .text-danger {
-  color: #dc3545 !important; }
+  color: #cf3342 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .text-light {
@@ -1843,7 +1843,7 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .bg-primary {
-  background-color: #2d9ffd !important; }
+  background-color: #fbb040 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .bg-secondary {
@@ -1851,19 +1851,19 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .bg-success {
-  background-color: #198754 !important; }
+  background-color: #55e9a4 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .bg-info {
-  background-color: #0dcaf0 !important; }
+  background-color: #61d6ee !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .bg-warning {
-  background-color: #ffc107 !important; }
+  background-color: #ec8cff !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .bg-danger {
-  background-color: #dc3545 !important; }
+  background-color: #cf3342 !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_utilities\.scss}line{font-family:\0000350}}
 .bg-light {
@@ -6685,15 +6685,15 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_table-variants\.scss}line{font-family:\000033}}
 .table-primary {
-  --bs-table-bg: #d5ecff;
-  --bs-table-striped-bg: #cae0f2;
+  --bs-table-bg: #feefd9;
+  --bs-table-striped-bg: #f1e3ce;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #c0d4e6;
+  --bs-table-active-bg: #e5d7c3;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #c5daec;
+  --bs-table-hover-bg: #ebddc9;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #c0d4e6; }
+  border-color: #e5d7c3; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_table-variants\.scss}line{font-family:\000033}}
 .table-secondary {
@@ -6709,51 +6709,51 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_table-variants\.scss}line{font-family:\000033}}
 .table-success {
-  --bs-table-bg: #d1e7dd;
-  --bs-table-striped-bg: #c7dbd2;
+  --bs-table-bg: #ddfbed;
+  --bs-table-striped-bg: #d2eee1;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #bcd0c7;
+  --bs-table-active-bg: #c7e2d5;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #c1d6cc;
+  --bs-table-hover-bg: #cce8db;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #bcd0c7; }
+  border-color: #c7e2d5; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_table-variants\.scss}line{font-family:\000033}}
 .table-info {
-  --bs-table-bg: #cff4fc;
-  --bs-table-striped-bg: #c5e8ef;
+  --bs-table-bg: #dff7fc;
+  --bs-table-striped-bg: #d4ebef;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #badce3;
+  --bs-table-active-bg: #c9dee3;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #bfe2e9;
+  --bs-table-hover-bg: #cee4e9;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #badce3; }
+  border-color: #c9dee3; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_table-variants\.scss}line{font-family:\000033}}
 .table-warning {
-  --bs-table-bg: #fff3cd;
-  --bs-table-striped-bg: #f2e7c3;
+  --bs-table-bg: #fbe8ff;
+  --bs-table-striped-bg: #eedcf2;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #e6dbb9;
+  --bs-table-active-bg: #e2d1e6;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #ece1be;
+  --bs-table-hover-bg: #e8d7ec;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #e6dbb9; }
+  border-color: #e2d1e6; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_table-variants\.scss}line{font-family:\000033}}
 .table-danger {
-  --bs-table-bg: #f8d7da;
-  --bs-table-striped-bg: #eccccf;
+  --bs-table-bg: #f5d6d9;
+  --bs-table-striped-bg: #e9cbce;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dfc2c4;
+  --bs-table-active-bg: #ddc1c3;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e5c7ca;
+  --bs-table-hover-bg: #e3c6c9;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #dfc2c4; }
+  border-color: #ddc1c3; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_table-variants\.scss}line{font-family:\000033}}
 .table-light {
@@ -6836,7 +6836,7 @@ progress {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000327}}
   .btn-check:focus + .btn, .btn:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(45, 159, 253, 0.25); }
+    box-shadow: 0 0 0 0.25rem rgba(251, 176, 64, 0.25); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000344}}
   .btn:disabled, .btn.disabled, fieldset:disabled .btn {
     pointer-events: none;
@@ -6845,32 +6845,32 @@ progress {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000360}}
 .btn-primary {
   color: #000;
-  background-color: #2d9ffd;
-  border-color: #2d9ffd; }
+  background-color: #fbb040;
+  border-color: #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000326}}
   .btn-primary:hover {
     color: #000;
-    background-color: #4dadfd;
-    border-color: #42a9fd; }
+    background-color: #fcbc5d;
+    border-color: #fbb853; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000332}}
   .btn-check:focus + .btn-primary, .btn-primary:focus {
     color: #000;
-    background-color: #4dadfd;
-    border-color: #42a9fd;
-    box-shadow: 0 0 0 0.25rem rgba(38, 135, 215, 0.5); }
+    background-color: #fcbc5d;
+    border-color: #fbb853;
+    box-shadow: 0 0 0 0.25rem rgba(213, 150, 54, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000345}}
   .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
     color: #000;
-    background-color: #57b2fd;
-    border-color: #42a9fd; }
+    background-color: #fcc066;
+    border-color: #fbb853; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000356}}
     .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(38, 135, 215, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(213, 150, 54, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000366}}
   .btn-primary:disabled, .btn-primary.disabled {
     color: #000;
-    background-color: #2d9ffd;
-    border-color: #2d9ffd; }
+    background-color: #fbb040;
+    border-color: #fbb040; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000360}}
 .btn-secondary {
@@ -6904,123 +6904,123 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000360}}
 .btn-success {
-  color: #fff;
-  background-color: #198754;
-  border-color: #198754; }
+  color: #000;
+  background-color: #55e9a4;
+  border-color: #55e9a4; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000326}}
   .btn-success:hover {
-    color: #fff;
-    background-color: #157347;
-    border-color: #146c43; }
+    color: #000;
+    background-color: #6fecb2;
+    border-color: #66ebad; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000332}}
   .btn-check:focus + .btn-success, .btn-success:focus {
-    color: #fff;
-    background-color: #157347;
-    border-color: #146c43;
-    box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5); }
+    color: #000;
+    background-color: #6fecb2;
+    border-color: #66ebad;
+    box-shadow: 0 0 0 0.25rem rgba(72, 198, 139, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000345}}
   .btn-check:checked + .btn-success, .btn-check:active + .btn-success, .btn-success:active, .btn-success.active, .show > .btn-success.dropdown-toggle {
-    color: #fff;
-    background-color: #146c43;
-    border-color: #13653f; }
+    color: #000;
+    background-color: #77edb6;
+    border-color: #66ebad; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000356}}
     .btn-check:checked + .btn-success:focus, .btn-check:active + .btn-success:focus, .btn-success:active:focus, .btn-success.active:focus, .show > .btn-success.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(72, 198, 139, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000366}}
   .btn-success:disabled, .btn-success.disabled {
-    color: #fff;
-    background-color: #198754;
-    border-color: #198754; }
+    color: #000;
+    background-color: #55e9a4;
+    border-color: #55e9a4; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000360}}
 .btn-info {
   color: #000;
-  background-color: #0dcaf0;
-  border-color: #0dcaf0; }
+  background-color: #61d6ee;
+  border-color: #61d6ee; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000326}}
   .btn-info:hover {
     color: #000;
-    background-color: #31d2f2;
-    border-color: #25cff2; }
+    background-color: #79dcf1;
+    border-color: #71daf0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000332}}
   .btn-check:focus + .btn-info, .btn-info:focus {
     color: #000;
-    background-color: #31d2f2;
-    border-color: #25cff2;
-    box-shadow: 0 0 0 0.25rem rgba(11, 172, 204, 0.5); }
+    background-color: #79dcf1;
+    border-color: #71daf0;
+    box-shadow: 0 0 0 0.25rem rgba(82, 182, 202, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000345}}
   .btn-check:checked + .btn-info, .btn-check:active + .btn-info, .btn-info:active, .btn-info.active, .show > .btn-info.dropdown-toggle {
     color: #000;
-    background-color: #3dd5f3;
-    border-color: #25cff2; }
+    background-color: #81def1;
+    border-color: #71daf0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000356}}
     .btn-check:checked + .btn-info:focus, .btn-check:active + .btn-info:focus, .btn-info:active:focus, .btn-info.active:focus, .show > .btn-info.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(11, 172, 204, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(82, 182, 202, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000366}}
   .btn-info:disabled, .btn-info.disabled {
     color: #000;
-    background-color: #0dcaf0;
-    border-color: #0dcaf0; }
+    background-color: #61d6ee;
+    border-color: #61d6ee; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000360}}
 .btn-warning {
   color: #000;
-  background-color: #ffc107;
-  border-color: #ffc107; }
+  background-color: #ec8cff;
+  border-color: #ec8cff; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000326}}
   .btn-warning:hover {
     color: #000;
-    background-color: #ffca2c;
-    border-color: #ffc720; }
+    background-color: #ef9dff;
+    border-color: #ee98ff; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000332}}
   .btn-check:focus + .btn-warning, .btn-warning:focus {
     color: #000;
-    background-color: #ffca2c;
-    border-color: #ffc720;
-    box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5); }
+    background-color: #ef9dff;
+    border-color: #ee98ff;
+    box-shadow: 0 0 0 0.25rem rgba(201, 119, 217, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000345}}
   .btn-check:checked + .btn-warning, .btn-check:active + .btn-warning, .btn-warning:active, .btn-warning.active, .show > .btn-warning.dropdown-toggle {
     color: #000;
-    background-color: #ffcd39;
-    border-color: #ffc720; }
+    background-color: #f0a3ff;
+    border-color: #ee98ff; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000356}}
     .btn-check:checked + .btn-warning:focus, .btn-check:active + .btn-warning:focus, .btn-warning:active:focus, .btn-warning.active:focus, .show > .btn-warning.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(201, 119, 217, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000366}}
   .btn-warning:disabled, .btn-warning.disabled {
     color: #000;
-    background-color: #ffc107;
-    border-color: #ffc107; }
+    background-color: #ec8cff;
+    border-color: #ec8cff; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000360}}
 .btn-danger {
   color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545; }
+  background-color: #cf3342;
+  border-color: #cf3342; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000326}}
   .btn-danger:hover {
     color: #fff;
-    background-color: #bb2d3b;
-    border-color: #b02a37; }
+    background-color: #b02b38;
+    border-color: #a62935; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000332}}
   .btn-check:focus + .btn-danger, .btn-danger:focus {
     color: #fff;
-    background-color: #bb2d3b;
-    border-color: #b02a37;
-    box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5); }
+    background-color: #b02b38;
+    border-color: #a62935;
+    box-shadow: 0 0 0 0.25rem rgba(214, 82, 94, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000345}}
   .btn-check:checked + .btn-danger, .btn-check:active + .btn-danger, .btn-danger:active, .btn-danger.active, .show > .btn-danger.dropdown-toggle {
     color: #fff;
-    background-color: #b02a37;
-    border-color: #a52834; }
+    background-color: #a62935;
+    border-color: #9b2632; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000356}}
     .btn-check:checked + .btn-danger:focus, .btn-check:active + .btn-danger:focus, .btn-danger:active:focus, .btn-danger.active:focus, .show > .btn-danger.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(214, 82, 94, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000366}}
   .btn-danger:disabled, .btn-danger.disabled {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545; }
+    background-color: #cf3342;
+    border-color: #cf3342; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000360}}
 .btn-light {
@@ -7084,27 +7084,27 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000366}}
 .btn-outline-primary {
-  color: #2d9ffd;
-  border-color: #2d9ffd; }
+  color: #fbb040;
+  border-color: #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000388}}
   .btn-outline-primary:hover {
     color: #000;
-    background-color: #2d9ffd;
-    border-color: #2d9ffd; }
+    background-color: #fbb040;
+    border-color: #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000394}}
   .btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
-    box-shadow: 0 0 0 0.25rem rgba(45, 159, 253, 0.5); }
+    box-shadow: 0 0 0 0.25rem rgba(251, 176, 64, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000399}}
   .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
     color: #000;
-    background-color: #2d9ffd;
-    border-color: #2d9ffd; }
+    background-color: #fbb040;
+    border-color: #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003108}}
     .btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus {
-      box-shadow: 0 0 0 0.25rem rgba(45, 159, 253, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(251, 176, 64, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003118}}
   .btn-outline-primary:disabled, .btn-outline-primary.disabled {
-    color: #2d9ffd;
+    color: #fbb040;
     background-color: transparent; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000366}}
@@ -7134,102 +7134,102 @@ progress {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000366}}
 .btn-outline-success {
-  color: #198754;
-  border-color: #198754; }
+  color: #55e9a4;
+  border-color: #55e9a4; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000388}}
   .btn-outline-success:hover {
-    color: #fff;
-    background-color: #198754;
-    border-color: #198754; }
+    color: #000;
+    background-color: #55e9a4;
+    border-color: #55e9a4; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000394}}
   .btn-check:focus + .btn-outline-success, .btn-outline-success:focus {
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5); }
+    box-shadow: 0 0 0 0.25rem rgba(85, 233, 164, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000399}}
   .btn-check:checked + .btn-outline-success, .btn-check:active + .btn-outline-success, .btn-outline-success:active, .btn-outline-success.active, .btn-outline-success.dropdown-toggle.show {
-    color: #fff;
-    background-color: #198754;
-    border-color: #198754; }
+    color: #000;
+    background-color: #55e9a4;
+    border-color: #55e9a4; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003108}}
     .btn-check:checked + .btn-outline-success:focus, .btn-check:active + .btn-outline-success:focus, .btn-outline-success:active:focus, .btn-outline-success.active:focus, .btn-outline-success.dropdown-toggle.show:focus {
-      box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(85, 233, 164, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003118}}
   .btn-outline-success:disabled, .btn-outline-success.disabled {
-    color: #198754;
+    color: #55e9a4;
     background-color: transparent; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000366}}
 .btn-outline-info {
-  color: #0dcaf0;
-  border-color: #0dcaf0; }
+  color: #61d6ee;
+  border-color: #61d6ee; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000388}}
   .btn-outline-info:hover {
     color: #000;
-    background-color: #0dcaf0;
-    border-color: #0dcaf0; }
+    background-color: #61d6ee;
+    border-color: #61d6ee; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000394}}
   .btn-check:focus + .btn-outline-info, .btn-outline-info:focus {
-    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.5); }
+    box-shadow: 0 0 0 0.25rem rgba(97, 214, 238, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000399}}
   .btn-check:checked + .btn-outline-info, .btn-check:active + .btn-outline-info, .btn-outline-info:active, .btn-outline-info.active, .btn-outline-info.dropdown-toggle.show {
     color: #000;
-    background-color: #0dcaf0;
-    border-color: #0dcaf0; }
+    background-color: #61d6ee;
+    border-color: #61d6ee; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003108}}
     .btn-check:checked + .btn-outline-info:focus, .btn-check:active + .btn-outline-info:focus, .btn-outline-info:active:focus, .btn-outline-info.active:focus, .btn-outline-info.dropdown-toggle.show:focus {
-      box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(97, 214, 238, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003118}}
   .btn-outline-info:disabled, .btn-outline-info.disabled {
-    color: #0dcaf0;
+    color: #61d6ee;
     background-color: transparent; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000366}}
 .btn-outline-warning {
-  color: #ffc107;
-  border-color: #ffc107; }
+  color: #ec8cff;
+  border-color: #ec8cff; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000388}}
   .btn-outline-warning:hover {
     color: #000;
-    background-color: #ffc107;
-    border-color: #ffc107; }
+    background-color: #ec8cff;
+    border-color: #ec8cff; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000394}}
   .btn-check:focus + .btn-outline-warning, .btn-outline-warning:focus {
-    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.5); }
+    box-shadow: 0 0 0 0.25rem rgba(236, 140, 255, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000399}}
   .btn-check:checked + .btn-outline-warning, .btn-check:active + .btn-outline-warning, .btn-outline-warning:active, .btn-outline-warning.active, .btn-outline-warning.dropdown-toggle.show {
     color: #000;
-    background-color: #ffc107;
-    border-color: #ffc107; }
+    background-color: #ec8cff;
+    border-color: #ec8cff; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003108}}
     .btn-check:checked + .btn-outline-warning:focus, .btn-check:active + .btn-outline-warning:focus, .btn-outline-warning:active:focus, .btn-outline-warning.active:focus, .btn-outline-warning.dropdown-toggle.show:focus {
-      box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(236, 140, 255, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003118}}
   .btn-outline-warning:disabled, .btn-outline-warning.disabled {
-    color: #ffc107;
+    color: #ec8cff;
     background-color: transparent; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000366}}
 .btn-outline-danger {
-  color: #dc3545;
-  border-color: #dc3545; }
+  color: #cf3342;
+  border-color: #cf3342; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000388}}
   .btn-outline-danger:hover {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545; }
+    background-color: #cf3342;
+    border-color: #cf3342; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000394}}
   .btn-check:focus + .btn-outline-danger, .btn-outline-danger:focus {
-    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.5); }
+    box-shadow: 0 0 0 0.25rem rgba(207, 51, 66, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000399}}
   .btn-check:checked + .btn-outline-danger, .btn-check:active + .btn-outline-danger, .btn-outline-danger:active, .btn-outline-danger.active, .btn-outline-danger.dropdown-toggle.show {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545; }
+    background-color: #cf3342;
+    border-color: #cf3342; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003108}}
     .btn-check:checked + .btn-outline-danger:focus, .btn-check:active + .btn-outline-danger:focus, .btn-outline-danger:active:focus, .btn-outline-danger.active:focus, .btn-outline-danger.dropdown-toggle.show:focus {
-      box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.5); }
+      box-shadow: 0 0 0 0.25rem rgba(207, 51, 66, 0.5); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\00003118}}
   .btn-outline-danger:disabled, .btn-outline-danger.disabled {
-    color: #dc3545;
+    color: #cf3342;
     background-color: transparent; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000366}}
@@ -7285,11 +7285,11 @@ progress {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000378}}
 .btn-link {
   font-weight: 400;
-  color: #2d9ffd;
+  color: #fbb040;
   text-decoration: underline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000383}}
   .btn-link:hover {
-    color: #247fca; }
+    color: #c98d33; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_buttons\.scss}line{font-family:\0000392}}
   .btn-link:disabled, .btn-link.disabled {
     color: #6c757d; }
@@ -7652,7 +7652,7 @@ progress {
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #2d9ffd; }
+    background-color: #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_dropdown\.scss}line{font-family:\00003176}}
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #adb5bd;
@@ -7693,7 +7693,7 @@ progress {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_dropdown\.scss}line{font-family:\00003223}}
     .dropdown-menu-dark .dropdown-item.active, .dropdown-menu-dark .dropdown-item:active {
       color: #fff;
-      background-color: #2d9ffd; }
+      background-color: #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_dropdown\.scss}line{font-family:\00003229}}
     .dropdown-menu-dark .dropdown-item.disabled, .dropdown-menu-dark .dropdown-item:disabled {
       color: #adb5bd; }
@@ -7748,10 +7748,10 @@ progress {
   color: #CECECE;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ffc773;
+  border: 1px solid #ced4da;
   appearance: none;
   border-radius: 0.25rem;
-  transition: all 0.3s; }
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-control\.scss}line{font-family:\000035}}
     .form-control {
@@ -7766,9 +7766,9 @@ progress {
   .form-control:focus {
     color: #CECECE;
     background-color: #fff;
-    border-color: #96cffe;
+    border-color: #fdd8a0;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(45, 159, 253, 0.25); }
+    box-shadow: 0 0 0 0.25rem rgba(251, 176, 64, 0.25); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-control\.scss}line{font-family:\0000350}}
   .form-control::-webkit-date-and-time-value {
     height: 1.5em; }
@@ -7914,14 +7914,14 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 1px solid #ffc773;
+  border: 1px solid #ced4da;
   border-radius: 0.25rem;
   appearance: none; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-select\.scss}line{font-family:\0000325}}
   .form-select:focus {
-    border-color: #96cffe;
+    border-color: #fdd8a0;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(45, 159, 253, 0.25); }
+    box-shadow: 0 0 0 0.25rem rgba(251, 176, 64, 0.25); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-select\.scss}line{font-family:\0000336}}
   .form-select[multiple], .form-select[size]:not([size="1"]) {
     padding-right: 0.75rem;
@@ -7983,13 +7983,13 @@ textarea.form-control-lg {
     filter: brightness(90%); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-check\.scss}line{font-family:\0000344}}
   .form-check-input:focus {
-    border-color: #96cffe;
+    border-color: #fdd8a0;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(45, 159, 253, 0.25); }
+    box-shadow: 0 0 0 0.25rem rgba(251, 176, 64, 0.25); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-check\.scss}line{font-family:\0000350}}
   .form-check-input:checked {
-    background-color: #2d9ffd;
-    border-color: #2d9ffd; }
+    background-color: #fbb040;
+    border-color: #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-check\.scss}line{font-family:\0000354}}
     .form-check-input:checked[type="checkbox"] {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e"); }
@@ -7998,8 +7998,8 @@ textarea.form-control-lg {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e"); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-check\.scss}line{font-family:\0000371}}
   .form-check-input[type="checkbox"]:indeterminate {
-    background-color: #2d9ffd;
-    border-color: #2d9ffd;
+    background-color: #fbb040;
+    border-color: #fbb040;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e"); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-check\.scss}line{font-family:\0000382}}
   .form-check-input:disabled {
@@ -8027,7 +8027,7 @@ textarea.form-control-lg {
         transition: none; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-check\.scss}line{font-family:\00003118}}
     .form-switch .form-check-input:focus {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2396cffe'/%3e%3c/svg%3e"); }
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fdd8a0'/%3e%3c/svg%3e"); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-check\.scss}line{font-family:\00003122}}
     .form-switch .form-check-input:checked {
       background-position: right center;
@@ -8061,10 +8061,10 @@ textarea.form-control-lg {
     outline: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-range\.scss}line{font-family:\0000319}}
     .form-range:focus::-webkit-slider-thumb {
-      box-shadow: 0 0 0 1px #151515, 0 0 0 0.25rem rgba(45, 159, 253, 0.25); }
+      box-shadow: 0 0 0 1px #151515, 0 0 0 0.25rem rgba(251, 176, 64, 0.25); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-range\.scss}line{font-family:\0000320}}
     .form-range:focus::-moz-range-thumb {
-      box-shadow: 0 0 0 1px #151515, 0 0 0 0.25rem rgba(45, 159, 253, 0.25); }
+      box-shadow: 0 0 0 1px #151515, 0 0 0 0.25rem rgba(251, 176, 64, 0.25); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-range\.scss}line{font-family:\0000323}}
   .form-range::-moz-focus-outer {
     border: 0; }
@@ -8073,7 +8073,7 @@ textarea.form-control-lg {
     width: 1rem;
     height: 1rem;
     margin-top: -0.25rem;
-    background-color: #2d9ffd;
+    background-color: #fbb040;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -8084,7 +8084,7 @@ textarea.form-control-lg {
         transition: none; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-range\.scss}line{font-family:\0000338}}
     .form-range::-webkit-slider-thumb:active {
-      background-color: #c0e2fe; }
+      background-color: #fee7c6; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-range\.scss}line{font-family:\0000343}}
   .form-range::-webkit-slider-runnable-track {
     width: 100%;
@@ -8098,7 +8098,7 @@ textarea.form-control-lg {
   .form-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background-color: #2d9ffd;
+    background-color: #fbb040;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -8109,7 +8109,7 @@ textarea.form-control-lg {
         transition: none; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-range\.scss}line{font-family:\0000364}}
     .form-range::-moz-range-thumb:active {
-      background-color: #c0e2fe; }
+      background-color: #fee7c6; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_form-range\.scss}line{font-family:\0000369}}
   .form-range::-moz-range-track {
     width: 100%;
@@ -8216,7 +8216,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   background-color: #e9ecef;
-  border: 1px solid #ffc773;
+  border: 1px solid #ced4da;
   border-radius: 0.25rem; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/forms\/_input-group\.scss}line{font-family:\0000366}}
@@ -8264,7 +8264,7 @@ textarea.form-control-lg {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #198754; }
+  color: #55e9a4; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\0000335}}
 .valid-tooltip {
@@ -8276,8 +8276,8 @@ textarea.form-control-lg {
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
   font-size: 0.875rem;
-  color: #fff;
-  background-color: rgba(25, 135, 84, 0.9);
+  color: #000;
+  background-color: rgba(85, 233, 164, 0.9);
   border-radius: 0.25rem; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\0000351}}
@@ -8289,16 +8289,16 @@ textarea.form-control-lg {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\000037}}
 .was-validated .form-control:valid, .form-control.is-valid {
-  border-color: #198754;
+  border-color: #55e9a4;
   padding-right: calc(1.5em + 0.75rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2355e9a4' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\0000369}}
   .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
-    border-color: #198754;
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25); }
+    border-color: #55e9a4;
+    box-shadow: 0 0 0 0.25rem rgba(85, 233, 164, 0.25); }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\000037}}
 .was-validated textarea.form-control:valid, textarea.form-control.is-valid {
@@ -8307,28 +8307,28 @@ textarea.form-control-lg {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\000037}}
 .was-validated .form-select:valid, .form-select.is-valid {
-  border-color: #198754;
+  border-color: #55e9a4;
   padding-right: 4.125rem;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2355e9a4' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\0000397}}
   .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
-    border-color: #198754;
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25); }
+    border-color: #55e9a4;
+    box-shadow: 0 0 0 0.25rem rgba(85, 233, 164, 0.25); }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\000037}}
 .was-validated .form-check-input:valid, .form-check-input.is-valid {
-  border-color: #198754; }
+  border-color: #55e9a4; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\00003108}}
   .was-validated .form-check-input:valid:checked, .form-check-input.is-valid:checked {
-    background-color: #198754; }
+    background-color: #55e9a4; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\00003112}}
   .was-validated .form-check-input:valid:focus, .form-check-input.is-valid:focus {
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25); }
+    box-shadow: 0 0 0 0.25rem rgba(85, 233, 164, 0.25); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\00003116}}
   .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-    color: #198754; }
+    color: #55e9a4; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\00003122}}
 .form-check-inline .form-check-input ~ .valid-feedback {
@@ -8346,7 +8346,7 @@ textarea.form-control-lg {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #dc3545; }
+  color: #cf3342; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\0000335}}
 .invalid-tooltip {
@@ -8359,7 +8359,7 @@ textarea.form-control-lg {
   margin-top: .1rem;
   font-size: 0.875rem;
   color: #fff;
-  background-color: rgba(220, 53, 69, 0.9);
+  background-color: rgba(207, 51, 66, 0.9);
   border-radius: 0.25rem; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\0000351}}
@@ -8371,16 +8371,16 @@ textarea.form-control-lg {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\000037}}
 .was-validated .form-control:invalid, .form-control.is-invalid {
-  border-color: #dc3545;
+  border-color: #cf3342;
   padding-right: calc(1.5em + 0.75rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23cf3342'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23cf3342' stroke='none'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\0000369}}
   .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
-    border-color: #dc3545;
-    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); }
+    border-color: #cf3342;
+    box-shadow: 0 0 0 0.25rem rgba(207, 51, 66, 0.25); }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\000037}}
 .was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
@@ -8389,28 +8389,28 @@ textarea.form-control-lg {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\000037}}
 .was-validated .form-select:invalid, .form-select.is-invalid {
-  border-color: #dc3545;
+  border-color: #cf3342;
   padding-right: 4.125rem;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23cf3342'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23cf3342' stroke='none'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\0000397}}
   .was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
-    border-color: #dc3545;
-    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); }
+    border-color: #cf3342;
+    box-shadow: 0 0 0 0.25rem rgba(207, 51, 66, 0.25); }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\000037}}
 .was-validated .form-check-input:invalid, .form-check-input.is-invalid {
-  border-color: #dc3545; }
+  border-color: #cf3342; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\00003108}}
   .was-validated .form-check-input:invalid:checked, .form-check-input.is-invalid:checked {
-    background-color: #dc3545; }
+    background-color: #cf3342; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\00003112}}
   .was-validated .form-check-input:invalid:focus, .form-check-input.is-invalid:focus {
-    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); }
+    box-shadow: 0 0 0 0.25rem rgba(207, 51, 66, 0.25); }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\00003116}}
   .was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
-    color: #dc3545; }
+    color: #cf3342; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_forms\.scss}line{font-family:\00003122}}
 .form-check-inline .form-check-input ~ .invalid-feedback {
@@ -8809,1097 +8809,189 @@ div.fixed-table-scroll-outer {
     opacity: 1; }
   to {
     opacity: 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\000033}}
-.sik-form-init {
-  position: relative;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\000035}}
-  .sik-form-init input:not([type]),
-  .sik-form-init input[type="text"]:not(.browser-default),
-  .sik-form-init input[type="password"]:not(.browser-default),
-  .sik-form-init input[type="email"]:not(.browser-default),
-  .sik-form-init input[type="url"]:not(.browser-default),
-  .sik-form-init input[type="time"]:not(.browser-default),
-  .sik-form-init input[type="date"]:not(.browser-default),
-  .sik-form-init input[type="datetime"]:not(.browser-default),
-  .sik-form-init input[type="datetime-local"]:not(.browser-default),
-  .sik-form-init input[type="tel"]:not(.browser-default),
-  .sik-form-init input[type="number"]:not(.browser-default),
-  .sik-form-init input[type="search"]:not(.browser-default),
-  .sik-form-init input[type="phone"]:not(.browser-default),
-  .sik-form-init input[type="search-sik"],
-  .sik-form-init textarea.sik-textarea {
-    box-sizing: content-box;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #ffc773;
-    border-radius: 0;
-    outline: none;
-    box-shadow: none;
-    transition: all 0.3s; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000330}}
-    .sik-form-init input:not([type]):focus:not([readonly]),
-    .sik-form-init input[type="text"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="password"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="email"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="url"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="time"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="date"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="datetime"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="datetime-local"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="tel"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="number"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="search"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="phone"]:not(.browser-default):focus:not([readonly]),
-    .sik-form-init input[type="search-sik"]:focus:not([readonly]),
-    .sik-form-init textarea.sik-textarea:focus:not([readonly]) {
-      border-bottom: 1px solid #fbb040;
-      box-shadow: 0 2px 0 0 #fbb040; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000334}}
-      .sik-form-init input:not([type]):focus:not([readonly]) + label,
-      .sik-form-init input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="password"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="email"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="url"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="time"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="date"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="datetime"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="datetime-local"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="tel"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="number"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="search"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="phone"]:not(.browser-default):focus:not([readonly]) + label,
-      .sik-form-init input[type="search-sik"]:focus:not([readonly]) + label,
-      .sik-form-init textarea.sik-textarea:focus:not([readonly]) + label {
-        color: #fbb040; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000339}}
-    .sik-form-init input:not([type]) + label::after,
-    .sik-form-init input[type="text"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="password"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="email"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="url"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="time"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="date"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="datetime"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="tel"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="number"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="search"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="phone"]:not(.browser-default) + label::after,
-    .sik-form-init input[type="search-sik"] + label::after,
-    .sik-form-init textarea.sik-textarea + label::after {
-      position: absolute;
-      top: 65px;
-      display: block;
-      content: "";
-      opacity: 0;
-      transition: 0.2s opacity ease-out, 0.2s color ease-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000348}}
-    .sik-form-init input:not([type]).valid, .sik-form-init input:not([type]):focus.valid,
-    .sik-form-init input[type="text"]:not(.browser-default).valid,
-    .sik-form-init input[type="text"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="password"]:not(.browser-default).valid,
-    .sik-form-init input[type="password"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="email"]:not(.browser-default).valid,
-    .sik-form-init input[type="email"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="url"]:not(.browser-default).valid,
-    .sik-form-init input[type="url"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="time"]:not(.browser-default).valid,
-    .sik-form-init input[type="time"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="date"]:not(.browser-default).valid,
-    .sik-form-init input[type="date"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="datetime"]:not(.browser-default).valid,
-    .sik-form-init input[type="datetime"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).valid,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="tel"]:not(.browser-default).valid,
-    .sik-form-init input[type="tel"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="number"]:not(.browser-default).valid,
-    .sik-form-init input[type="number"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="search"]:not(.browser-default).valid,
-    .sik-form-init input[type="search"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="phone"]:not(.browser-default).valid,
-    .sik-form-init input[type="phone"]:not(.browser-default):focus.valid,
-    .sik-form-init input[type="search-sik"].valid,
-    .sik-form-init input[type="search-sik"]:focus.valid,
-    .sik-form-init textarea.sik-textarea.valid,
-    .sik-form-init textarea.sik-textarea:focus.valid {
-      border-bottom: 1px solid #1bff7a;
-      box-shadow: 0 1px 0 0 #1bff7a; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000353}}
-    .sik-form-init input:not([type]).valid + label:after, .sik-form-init input:not([type]):focus.valid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).valid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default):focus.valid + label:after,
-    .sik-form-init input[type="search-sik"].valid + label:after,
-    .sik-form-init input[type="search-sik"]:focus.valid + label:after,
-    .sik-form-init textarea.sik-textarea.valid + label:after,
-    .sik-form-init textarea.sik-textarea:focus.valid + label:after {
-      color: #1bff7a;
-      content: attr(data-success);
-      opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000360}}
-    .sik-form-init input:not([type]).invalid, .sik-form-init input:not([type]):focus.invalid,
-    .sik-form-init input[type="text"]:not(.browser-default).invalid,
-    .sik-form-init input[type="text"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="password"]:not(.browser-default).invalid,
-    .sik-form-init input[type="password"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="email"]:not(.browser-default).invalid,
-    .sik-form-init input[type="email"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="url"]:not(.browser-default).invalid,
-    .sik-form-init input[type="url"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="time"]:not(.browser-default).invalid,
-    .sik-form-init input[type="time"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="date"]:not(.browser-default).invalid,
-    .sik-form-init input[type="date"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="datetime"]:not(.browser-default).invalid,
-    .sik-form-init input[type="datetime"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).invalid,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="tel"]:not(.browser-default).invalid,
-    .sik-form-init input[type="tel"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="number"]:not(.browser-default).invalid,
-    .sik-form-init input[type="number"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="search"]:not(.browser-default).invalid,
-    .sik-form-init input[type="search"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="phone"]:not(.browser-default).invalid,
-    .sik-form-init input[type="phone"]:not(.browser-default):focus.invalid,
-    .sik-form-init input[type="search-sik"].invalid,
-    .sik-form-init input[type="search-sik"]:focus.invalid,
-    .sik-form-init textarea.sik-textarea.invalid,
-    .sik-form-init textarea.sik-textarea:focus.invalid {
-      border-bottom: 1px solid #ff7c7c;
-      box-shadow: 0 1px 0 0 #ff7c7c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000365}}
-    .sik-form-init input:not([type]).invalid + label:after, .sik-form-init input:not([type]):focus.invalid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).invalid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default):focus.invalid + label:after,
-    .sik-form-init input[type="search-sik"].invalid + label:after,
-    .sik-form-init input[type="search-sik"]:focus.invalid + label:after,
-    .sik-form-init textarea.sik-textarea.invalid + label:after,
-    .sik-form-init textarea.sik-textarea:focus.invalid + label:after {
-      color: #ff7c7c;
-      content: attr(data-error);
-      opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000371}}
-    .sik-form-init input:not([type]).form-control.valid + label:after, .sik-form-init input:not([type]).form-control:focus.valid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control.valid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control:focus.valid + label:after,
-    .sik-form-init input[type="search-sik"].form-control.valid + label:after,
-    .sik-form-init input[type="search-sik"].form-control:focus.valid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control.valid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control:focus.valid + label:after {
-      top: 4.1rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000375}}
-    .sik-form-init input:not([type]).form-control.invalid + label:after, .sik-form-init input:not([type]).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control.invalid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control:focus.invalid + label:after,
-    .sik-form-init input[type="search-sik"].form-control.invalid + label:after,
-    .sik-form-init input[type="search-sik"].form-control:focus.invalid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control.invalid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control:focus.invalid + label:after {
-      top: 4rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000379}}
-    .sik-form-init input:not([type]).form-control-lg.valid + label:after, .sik-form-init input:not([type]).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control-lg.valid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control-lg:focus.valid + label:after,
-    .sik-form-init input[type="search-sik"].form-control-lg.valid + label:after,
-    .sik-form-init input[type="search-sik"].form-control-lg:focus.valid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control-lg.valid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control-lg:focus.valid + label:after {
-      top: 4.6rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000383}}
-    .sik-form-init input:not([type]).form-control-lg.invalid + label:after, .sik-form-init input:not([type]).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control-lg.invalid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control-lg:focus.invalid + label:after,
-    .sik-form-init input[type="search-sik"].form-control-lg.invalid + label:after,
-    .sik-form-init input[type="search-sik"].form-control-lg:focus.invalid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control-lg.invalid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control-lg:focus.invalid + label:after {
-      top: 4.6rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000387}}
-    .sik-form-init input:not([type]).form-control-sm.valid + label:after, .sik-form-init input:not([type]).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control-sm.valid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control-sm:focus.valid + label:after,
-    .sik-form-init input[type="search-sik"].form-control-sm.valid + label:after,
-    .sik-form-init input[type="search-sik"].form-control-sm:focus.valid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control-sm.valid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control-sm:focus.valid + label:after {
-      top: 3.7rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000391}}
-    .sik-form-init input:not([type]).form-control-sm.invalid + label:after, .sik-form-init input:not([type]).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="text"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="password"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="email"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="url"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="time"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="date"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="datetime"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="datetime-local"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="tel"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="number"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="search"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control-sm.invalid + label:after,
-    .sik-form-init input[type="phone"]:not(.browser-default).form-control-sm:focus.invalid + label:after,
-    .sik-form-init input[type="search-sik"].form-control-sm.invalid + label:after,
-    .sik-form-init input[type="search-sik"].form-control-sm:focus.invalid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control-sm.invalid + label:after,
-    .sik-form-init textarea.sik-textarea.form-control-sm:focus.invalid + label:after {
-      top: 3.6rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000396}}
-  .sik-form-init > input[type="date"]:not(.browser-default) + label {
-    transform-origin: 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000399}}
-  .sik-form-init > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
-  .sik-form-init > input[type="time"]:not(.browser-default) + label {
-    font-size: .8rem;
-    transform: translateY(-25px);
-    transform-origin: 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003108}}
-  .sik-form-init .was-validated input[type="text"]:valid + label {
-    color: #1bff7a !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003113}}
-  .sik-form-init .was-validated input[type="text"]:invalid + label {
-    color: #ff7c7c !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003119}}
-  .sik-form-init .was-validated .form-control:valid:focus {
-    box-shadow: 0 1px 0 0 #1bff7a !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003122}}
-  .sik-form-init .was-validated .form-control:valid {
-    border-color: #1bff7a !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003125}}
-  .sik-form-init .was-validated .form-control:invalid:focus {
-    box-shadow: 0 1px 0 0 #ff7c7c !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003128}}
-  .sik-form-init .was-validated .form-control:invalid {
-    border-color: #ff7c7c !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003134}}
-  .sik-form-init .form-control {
-    height: auto;
-    padding: 0.6rem 0 0.4rem 0;
-    margin: 0 0 0.5rem 0;
-    background-color: transparent;
-    border-radius: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003140}}
-    .sik-form-init .form-control:focus {
-      box-shadow: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003143}}
-    .sik-form-init .form-control:disabled, .sik-form-init .form-control[readonly] {
-      background-color: transparent;
-      border-bottom: 1px solid #dbe4ec; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003148}}
-    .sik-form-init .form-control.is-valid {
-      border-color: #1bff7a; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003150}}
-      .sik-form-init .form-control.is-valid:focus {
-        border-color: #1bff7a !important;
-        box-shadow: 0 1px 0 0 #1bff7a !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003155}}
-    .sik-form-init .form-control.is-invalid {
-      border-color: #ff7c7c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003157}}
-      .sik-form-init .form-control.is-invalid:focus {
-        border-color: #ff7c7c !important;
-        box-shadow: 0 1px 0 0 #ff7c7c !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003162}}
-    .sik-form-init .form-control.is-valid, .sik-form-init .form-control.is-invalid {
-      background-position: center right !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000033}}
-  .sik-form-init .validate {
-    margin-bottom: 2.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000036}}
-  .sik-form-init label {
-    font-size: 1rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000038}}
-    .sik-form-init label.active {
-      font-size: 1rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000312}}
-  .sik-form-init .prefix {
-    top: 0.25rem;
-    font-size: 1.75rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000315}}
-    .sik-form-init .prefix ~ input,
-    .sik-form-init .prefix ~ textarea {
-      width: calc(100% - 2.5rem);
-      margin-left: 2.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000320}}
-    .sik-form-init .prefix ~ label {
-      margin-left: 2.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000323}}
-    .sik-form-init .prefix ~ .form-text {
-      margin-left: 2.6rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003171}}
-  .sik-form-init label:not(.dropdown-item) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 1rem;
-    color: #757575;
-    cursor: text;
-    transition: transform .2s ease-out, color .2s ease-out;
-    transform: translateY(12px);
-    transform-origin: 0% 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003181}}
-    .sik-form-init label:not(.dropdown-item).active {
-      transform: translateY(-14px) scale(0.8); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003185}}
-  .sik-form-init .prefix {
-    position: absolute;
-    transition: color 0.2s; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003188}}
-    .sik-form-init .prefix.active {
-      color: #fbb040; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000033}}
-  .sik-form-init.form-lg .validate {
-    margin-bottom: 2.8rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000036}}
-  .sik-form-init.form-lg label {
-    font-size: 1.25rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000038}}
-    .sik-form-init.form-lg label.active {
-      font-size: 1.15rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000312}}
-  .sik-form-init.form-lg .prefix {
-    top: 0.4rem;
-    font-size: 2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000315}}
-    .sik-form-init.form-lg .prefix ~ input,
-    .sik-form-init.form-lg .prefix ~ textarea {
-      width: calc(100% - 3rem);
-      margin-left: 3rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000320}}
-    .sik-form-init.form-lg .prefix ~ label {
-      margin-left: 3rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000323}}
-    .sik-form-init.form-lg .prefix ~ .form-text {
-      margin-left: 3.1rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000033}}
-  .sik-form-init.form-sm .validate {
-    margin-bottom: 2.3rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000036}}
-  .sik-form-init.form-sm label {
-    font-size: 0.875rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\000038}}
-    .sik-form-init.form-sm label.active {
-      font-size: 0.95rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000312}}
-  .sik-form-init.form-sm .prefix {
-    top: 0.35rem;
-    font-size: 1.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000315}}
-    .sik-form-init.form-sm .prefix ~ input,
-    .sik-form-init.form-sm .prefix ~ textarea {
-      width: calc(100% - 2rem);
-      margin-left: 2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000320}}
-    .sik-form-init.form-sm .prefix ~ label {
-      margin-left: 2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-mixins\.scss}line{font-family:\0000323}}
-    .sik-form-init.form-sm .prefix ~ .form-text {
-      margin-left: 2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003200}}
-  .sik-form-init textarea.sik-textarea {
-    padding: 0;
-    overflow-y: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003203}}
-    .sik-form-init textarea.sik-textarea + label {
-      top: -0.6rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003207}}
-  .sik-form-init textarea.sik-textarea-auto {
-    padding: 0;
-    padding-top: 1.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003210}}
-    .sik-form-init textarea.sik-textarea-auto + label {
-      top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003215}}
-  .sik-form-init.sik-outline {
-    position: relative;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003219}}
-    .sik-form-init.sik-outline input[type="text"],
-    .sik-form-init.sik-outline input[type="password"],
-    .sik-form-init.sik-outline input[type="email"],
-    .sik-form-init.sik-outline input[type="url"],
-    .sik-form-init.sik-outline input[type="time"],
-    .sik-form-init.sik-outline input[type="date"],
-    .sik-form-init.sik-outline input[type="datetime-local"],
-    .sik-form-init.sik-outline input[type="tel"],
-    .sik-form-init.sik-outline input[type="number"],
-    .sik-form-init.sik-outline input[type="search-sik"],
-    .sik-form-init.sik-outline input[type="search"],
-    .sik-form-init.sik-outline textarea.sik-textarea {
-      box-sizing: border-box;
-      background-color: transparent;
-      border: 1px solid #dadce0;
-      border-radius: 4px;
-      outline: none;
-      box-shadow: none;
-      transition: all .3s; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003240}}
-      .sik-form-init.sik-outline input[type="text"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="password"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="email"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="url"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="time"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="date"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="datetime-local"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="tel"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="number"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="search-sik"]:focus:not([readonly]),
-      .sik-form-init.sik-outline input[type="search"]:focus:not([readonly]),
-      .sik-form-init.sik-outline textarea.sik-textarea:focus:not([readonly]) {
-        border-color: #4285f4;
-        box-shadow: inset 0 0 0 1px #4285f4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003244}}
-        .sik-form-init.sik-outline input[type="text"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="password"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="email"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="url"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="time"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="date"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="datetime-local"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="tel"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="number"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="search-sik"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline input[type="search"]:focus:not([readonly]) + label,
-        .sik-form-init.sik-outline textarea.sik-textarea:focus:not([readonly]) + label {
-          color: #4285f4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003249}}
-      .sik-form-init.sik-outline input[type="text"].valid, .sik-form-init.sik-outline input[type="text"]:focus.valid,
-      .sik-form-init.sik-outline input[type="password"].valid,
-      .sik-form-init.sik-outline input[type="password"]:focus.valid,
-      .sik-form-init.sik-outline input[type="email"].valid,
-      .sik-form-init.sik-outline input[type="email"]:focus.valid,
-      .sik-form-init.sik-outline input[type="url"].valid,
-      .sik-form-init.sik-outline input[type="url"]:focus.valid,
-      .sik-form-init.sik-outline input[type="time"].valid,
-      .sik-form-init.sik-outline input[type="time"]:focus.valid,
-      .sik-form-init.sik-outline input[type="date"].valid,
-      .sik-form-init.sik-outline input[type="date"]:focus.valid,
-      .sik-form-init.sik-outline input[type="datetime-local"].valid,
-      .sik-form-init.sik-outline input[type="datetime-local"]:focus.valid,
-      .sik-form-init.sik-outline input[type="tel"].valid,
-      .sik-form-init.sik-outline input[type="tel"]:focus.valid,
-      .sik-form-init.sik-outline input[type="number"].valid,
-      .sik-form-init.sik-outline input[type="number"]:focus.valid,
-      .sik-form-init.sik-outline input[type="search-sik"].valid,
-      .sik-form-init.sik-outline input[type="search-sik"]:focus.valid,
-      .sik-form-init.sik-outline input[type="search"].valid,
-      .sik-form-init.sik-outline input[type="search"]:focus.valid,
-      .sik-form-init.sik-outline textarea.sik-textarea.valid,
-      .sik-form-init.sik-outline textarea.sik-textarea:focus.valid {
-        border-color: #1bff7a;
-        box-shadow: inset 0 0 0 1px #1bff7a; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003254}}
-      .sik-form-init.sik-outline input[type="text"]:focus:not([readonly]).valid + label, .sik-form-init.sik-outline input[type="text"].valid + label:after, .sik-form-init.sik-outline input[type="text"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="password"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="password"].valid + label:after,
-      .sik-form-init.sik-outline input[type="password"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="email"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="email"].valid + label:after,
-      .sik-form-init.sik-outline input[type="email"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="url"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="url"].valid + label:after,
-      .sik-form-init.sik-outline input[type="url"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="time"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="time"].valid + label:after,
-      .sik-form-init.sik-outline input[type="time"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="date"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="date"].valid + label:after,
-      .sik-form-init.sik-outline input[type="date"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="datetime-local"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="datetime-local"].valid + label:after,
-      .sik-form-init.sik-outline input[type="datetime-local"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="tel"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="tel"].valid + label:after,
-      .sik-form-init.sik-outline input[type="tel"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="number"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="number"].valid + label:after,
-      .sik-form-init.sik-outline input[type="number"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="search-sik"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="search-sik"].valid + label:after,
-      .sik-form-init.sik-outline input[type="search-sik"]:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="search"]:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline input[type="search"].valid + label:after,
-      .sik-form-init.sik-outline input[type="search"]:focus.valid + label:after,
-      .sik-form-init.sik-outline textarea.sik-textarea:focus:not([readonly]).valid + label,
-      .sik-form-init.sik-outline textarea.sik-textarea.valid + label:after,
-      .sik-form-init.sik-outline textarea.sik-textarea:focus.valid + label:after {
-        color: #1bff7a;
-        content: attr(data-success);
-        opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003262}}
-      .sik-form-init.sik-outline input[type="text"].invalid, .sik-form-init.sik-outline input[type="text"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="password"].invalid,
-      .sik-form-init.sik-outline input[type="password"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="email"].invalid,
-      .sik-form-init.sik-outline input[type="email"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="url"].invalid,
-      .sik-form-init.sik-outline input[type="url"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="time"].invalid,
-      .sik-form-init.sik-outline input[type="time"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="date"].invalid,
-      .sik-form-init.sik-outline input[type="date"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="datetime-local"].invalid,
-      .sik-form-init.sik-outline input[type="datetime-local"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="tel"].invalid,
-      .sik-form-init.sik-outline input[type="tel"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="number"].invalid,
-      .sik-form-init.sik-outline input[type="number"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="search-sik"].invalid,
-      .sik-form-init.sik-outline input[type="search-sik"]:focus.invalid,
-      .sik-form-init.sik-outline input[type="search"].invalid,
-      .sik-form-init.sik-outline input[type="search"]:focus.invalid,
-      .sik-form-init.sik-outline textarea.sik-textarea.invalid,
-      .sik-form-init.sik-outline textarea.sik-textarea:focus.invalid {
-        border-color: #ff7c7c;
-        box-shadow: inset 0 0 0 1px #ff7c7c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003267}}
-      .sik-form-init.sik-outline input[type="text"]:focus:not([readonly]).invalid + label, .sik-form-init.sik-outline input[type="text"].invalid + label:after, .sik-form-init.sik-outline input[type="text"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="password"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="password"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="password"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="email"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="email"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="email"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="url"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="url"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="url"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="time"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="time"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="time"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="date"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="date"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="date"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="datetime-local"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="datetime-local"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="datetime-local"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="tel"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="tel"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="tel"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="number"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="number"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="number"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="search-sik"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="search-sik"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="search-sik"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="search"]:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline input[type="search"].invalid + label:after,
-      .sik-form-init.sik-outline input[type="search"]:focus.invalid + label:after,
-      .sik-form-init.sik-outline textarea.sik-textarea:focus:not([readonly]).invalid + label,
-      .sik-form-init.sik-outline textarea.sik-textarea.invalid + label:after,
-      .sik-form-init.sik-outline textarea.sik-textarea:focus.invalid + label:after {
-        color: #ff7c7c;
-        content: attr(data-error);
-        opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003274}}
-      .sik-form-init.sik-outline input[type="text"].form-control.valid + label:after, .sik-form-init.sik-outline input[type="text"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="password"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="password"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="email"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="email"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="url"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="url"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="time"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="time"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="date"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="date"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="datetime-local"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="datetime-local"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="tel"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="tel"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="number"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="number"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="search-sik"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="search-sik"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline input[type="search"].form-control.valid + label:after,
-      .sik-form-init.sik-outline input[type="search"].form-control:focus.valid + label:after,
-      .sik-form-init.sik-outline textarea.sik-textarea.form-control.valid + label:after,
-      .sik-form-init.sik-outline textarea.sik-textarea.form-control:focus.valid + label:after {
-        position: absolute;
-        top: 4rem;
-        left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003280}}
-      .sik-form-init.sik-outline input[type="text"].form-control.invalid + label:after, .sik-form-init.sik-outline input[type="text"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="password"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="password"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="email"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="email"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="url"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="url"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="time"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="time"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="date"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="date"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="datetime-local"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="datetime-local"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="tel"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="tel"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="number"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="number"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="search-sik"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="search-sik"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline input[type="search"].form-control.invalid + label:after,
-      .sik-form-init.sik-outline input[type="search"].form-control:focus.invalid + label:after,
-      .sik-form-init.sik-outline textarea.sik-textarea.form-control.invalid + label:after,
-      .sik-form-init.sik-outline textarea.sik-textarea.form-control:focus.invalid + label:after {
-        position: absolute;
-        top: 4rem;
-        left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003287}}
-    .sik-form-init.sik-outline > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
-    .sik-form-init.sik-outline > input[type="time"]:not(.browser-default) + label {
-      left: 8px;
-      padding-right: 5px;
-      padding-left: 5px;
-      font-size: 1rem;
-      font-weight: 500;
-      background: #fff;
-      transform: translateY(-9px) scale(0.8);
-      transform-origin: 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003298}}
-    .sik-form-init.sik-outline > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label.active,
-    .sik-form-init.sik-outline > input[type="time"]:not(.browser-default) + label.active {
-      transform: translateY(-9px) scale(0.8);
-      transform-origin: 0 0; }
-@-webkit-keyframes autofill {
-  to {
-    color: #495057;
-    background: transparent; } }
-@keyframes autofill {
-  to {
-    color: #495057;
-    background: transparent; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003315}}
-    .sik-form-init.sik-outline input:-webkit-autofill {
-      -webkit-animation-name: autofill;
-      animation-name: autofill;
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003321}}
-    .sik-form-init.sik-outline .form-control {
-      padding: .375rem .75rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003324}}
-    .sik-form-init.sik-outline label {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding-left: 10px;
-      font-size: 1rem;
-      color: #757575;
-      cursor: text;
-      transition: transform .2s ease-out, color .2s ease-out;
-      transform: translateY(9px);
-      transform-origin: 0% 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003335}}
-      .sik-form-init.sik-outline label.active {
-        left: 8px;
-        padding-right: 5px;
-        padding-left: 5px;
-        font-weight: 500;
-        background: #fff;
-        transform: translateY(-13px) scale(0.8); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003346}}
-    .sik-form-init.sik-outline.form-lg .form-control.form-control-lg {
-      padding: .5rem .725rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003350}}
-    .sik-form-init.sik-outline.form-lg label {
-      font-size: 1.25rem;
-      transform: translateY(10px); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003353}}
-      .sik-form-init.sik-outline.form-lg label.active {
-        font-size: 1.1rem;
-        transform: translateY(-14px) scale(0.8); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003358}}
-    .sik-form-init.sik-outline.form-lg .prefix {
-      top: .65rem;
-      font-size: 25px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003361}}
-      .sik-form-init.sik-outline.form-lg .prefix ~ input,
-      .sik-form-init.sik-outline.form-lg .prefix ~ textarea {
-        width: calc(100% - 2.2rem);
-        margin-left: 2.2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003366}}
-      .sik-form-init.sik-outline.form-lg .prefix ~ label {
-        margin-left: 2.2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003369}}
-      .sik-form-init.sik-outline.form-lg .prefix ~ .form-text {
-        margin-left: 2.3rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003376}}
-    .sik-form-init.sik-outline.form-sm .form-control.form-control-sm {
-      padding: .25rem .625rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003380}}
-    .sik-form-init.sik-outline.form-sm label {
-      font-size: .8rem;
-      transform: translateY(8px); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003383}}
-      .sik-form-init.sik-outline.form-sm label.active {
-        font-size: .85rem;
-        transform: translateY(-12px) scale(0.8); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003388}}
-    .sik-form-init.sik-outline.form-sm .prefix {
-      top: .5rem;
-      font-size: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003391}}
-      .sik-form-init.sik-outline.form-sm .prefix ~ input,
-      .sik-form-init.sik-outline.form-sm .prefix ~ textarea {
-        width: calc(100% - 1.6rem);
-        margin-left: 1.6rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003396}}
-      .sik-form-init.sik-outline.form-sm .prefix ~ label {
-        margin-left: 1.6rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003399}}
-      .sik-form-init.sik-outline.form-sm .prefix ~ .form-text {
-        margin-left: 1.7rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003404}}
-    .sik-form-init.sik-outline .prefix {
-      position: absolute;
-      top: .6rem;
-      font-size: 20px;
-      transition: color .2s; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003409}}
-      .sik-form-init.sik-outline .prefix:focus {
-        color: #4285f4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003412}}
-      .sik-form-init.sik-outline .prefix ~ input,
-      .sik-form-init.sik-outline .prefix ~ textarea {
-        width: calc(100% - 2rem);
-        margin-left: 2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003417}}
-      .sik-form-init.sik-outline .prefix ~ label {
-        margin-left: 2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003420}}
-      .sik-form-init.sik-outline .prefix ~ .form-text {
-        margin-left: 2.1rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003424}}
-    .sik-form-init.sik-outline .character-counter {
-      margin-top: -.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003429}}
-  .sik-form-init.sik-bg input[type="text"],
-  .sik-form-init.sik-bg input[type="password"],
-  .sik-form-init.sik-bg input[type="email"],
-  .sik-form-init.sik-bg input[type="url"],
-  .sik-form-init.sik-bg input[type="time"],
-  .sik-form-init.sik-bg input[type="date"],
-  .sik-form-init.sik-bg input[type="datetime-local"],
-  .sik-form-init.sik-bg input[type="tel"],
-  .sik-form-init.sik-bg input[type="number"],
-  .sik-form-init.sik-bg input[type="search-sik"],
-  .sik-form-init.sik-bg input[type="search"],
-  .sik-form-init.sik-bg textarea.sik-textarea {
-    box-sizing: border-box;
-    padding: 10px 5px;
-    background: #f5f5f5 no-repeat;
-    background-image: linear-gradient(to bottom, #fbb040, #fbb040), linear-gradient(to bottom, #ffc773, #ffc773);
-    background-position: 50% 100%, 50% 100%;
-    background-size: 0 2px, 100% 1px;
-    border: 0;
-    border-top-left-radius: .3rem;
-    border-top-right-radius: .3rem;
-    transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003441}}
-    .sik-form-init.sik-bg input[type="text"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="password"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="email"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="url"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="time"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="date"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="datetime-local"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="tel"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="number"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="search-sik"]:focus:not([readonly]),
-    .sik-form-init.sik-bg input[type="search"]:focus:not([readonly]),
-    .sik-form-init.sik-bg textarea.sik-textarea:focus:not([readonly]) {
-      border-bottom: none;
-      box-shadow: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003458}}
-    .sik-form-init.sik-bg input[type="text"]:focus,
-    .sik-form-init.sik-bg input[type="password"]:focus,
-    .sik-form-init.sik-bg input[type="email"]:focus,
-    .sik-form-init.sik-bg input[type="url"]:focus,
-    .sik-form-init.sik-bg input[type="time"]:focus,
-    .sik-form-init.sik-bg input[type="date"]:focus,
-    .sik-form-init.sik-bg input[type="datetime-local"]:focus,
-    .sik-form-init.sik-bg input[type="tel"]:focus,
-    .sik-form-init.sik-bg input[type="number"]:focus,
-    .sik-form-init.sik-bg input[type="search-sik"]:focus,
-    .sik-form-init.sik-bg input[type="search"]:focus,
-    .sik-form-init.sik-bg textarea.sik-textarea:focus {
-      background-color: #dcdcdc;
-      background-size: 100% 2px, 100% 1px;
-      outline: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003464}}
-  .sik-form-init.sik-bg > input[type="date"]:not(.browser-default) + label {
-    transform-origin: 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003467}}
-  .sik-form-init.sik-bg > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
-  .sik-form-init.sik-bg > input[type="time"]:not(.browser-default) + label {
-    font-size: .8rem;
-    transform: translateY(-12px);
-    transform-origin: 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003473}}
-  .sik-form-init.sik-bg .form-control {
-    padding: 1.1rem .7rem .4rem !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003476}}
-  .sik-form-init.sik-bg label {
-    top: 0;
-    padding-left: .7rem;
-    font-size: 1rem;
-    transition: transform .2s ease-out, color .2s ease-out;
-    transform: translateY(13px);
-    transform-origin: 0% 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003483}}
-    .sik-form-init.sik-bg label.active {
-      padding-left: .75rem;
-      font-weight: 500;
-      transform: translateY(-3px) scale(0.8); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003490}}
-  .sik-form-init.sik-bg.form-lg label {
-    transform: translateY(16px); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003492}}
-    .sik-form-init.sik-bg.form-lg label.active {
-      transform: translateY(-4px) scale(0.8); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003498}}
-  .sik-form-init.sik-bg.form-sm label {
-    transform: translateY(11px); }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003500}}
-    .sik-form-init.sik-bg.form-sm label.active {
-      transform: translateY(-2px) scale(0.8); }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003508}}
-.sik-form-init .form-control.is-invalid,
-.was-validated .sik-form-init .form-control:invalid {
-  padding-right: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003513}}
-.sik-form-init .form-control.is-valid,
-.was-validated .sik-form-init .form-control:valid {
-  padding-right: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003518}}
-.needs-validation .sik-form-init label {
-  left: .3rem; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003536}}
-.sik-form-init > label {
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003542}}
 .sik-form-init .form-control {
-  box-sizing: border-box !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003545}}
-.sik-form-init .form-control.valid + label,
-.sik-form-init .form-control.invalid + label {
-  overflow: visible; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003549}}
-.sik-form-init .input-prefix {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: color 0.2s;
-  color: rgba(0, 0, 0, 0.87);
-  pointer-events: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003556}}
-  .sik-form-init .input-prefix.active {
-    color: #fbb040; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003561}}
-.sik-form-init.input-with-pre-icon label {
-  left: 36px;
-  right: initial; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003565}}
-.sik-form-init.input-with-pre-icon .input-prefix {
-  left: 16px;
-  right: initial; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003569}}
-.sik-form-init.input-with-pre-icon .form-control {
-  padding-left: 2.7rem !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003574}}
-.sik-form-init.input-with-post-icon .input-prefix {
-  right: 16px;
-  left: initial; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003578}}
-.sik-form-init.input-with-post-icon .form-control {
-  padding-right: 2.7rem !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003583}}
-.sik-form-init.input-with-post-icon.input-with-pre-icon .input-prefix {
-  right: 16px;
-  left: initial; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003587}}
-.sik-form-init.input-with-post-icon.input-with-pre-icon .input-prefix:first-of-type {
-  left: 16px;
-  right: initial; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003591}}
-.sik-form-init.input-with-post-icon.input-with-pre-icon .form-control {
-  padding-left: 2.5rem !important;
-  padding-right: 2.5rem !important; }
+  position: relative;
+  color: #CECECE;
+  background-color: #222222;
+  border: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.35rem;
+  box-shadow: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+  @media (prefers-reduced-motion: reduce) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000334}}
+    .sik-form-init .form-control {
+      transition: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000343}}
+  .sik-form-init .form-control[type="file"] {
+    overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000345}}
+    .sik-form-init .form-control[type="file"]:not(:disabled):not([readonly]) {
+      cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000350}}
+  .sik-form-init .form-control:focus {
+    color: #CECECE;
+    border-color: inherit;
+    background-color: #222222;
+    outline: 0;
+    box-shadow: none;
+    box-shadow: 0px 4px 3px -0.2rem #fdd9a4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000359}}
+  .sik-form-init .form-control::-webkit-date-and-time-value {
+    height: 1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000363}}
+  .sik-form-init .form-control::placeholder {
+    color: #8b8b8b;
+    opacity: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000368}}
+  .sik-form-init .form-control:disabled, .sik-form-init .form-control[readonly] {
+    background-color: #1d1d1d;
+    opacity: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000375}}
+  .sik-form-init .form-control::file-selector-button {
+    padding: 0.85rem 1rem;
+    margin: -0.85rem -1rem;
+    margin-inline-end: 1rem;
+    color: #8b8b8b;
+    background-color: #2f2f2f;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: 1px;
+    border-radius: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+    @media (prefers-reduced-motion: reduce) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000375}}
+      .sik-form-init .form-control::file-selector-button {
+        transition: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000389}}
+  .sik-form-init .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+    background-color: #484848;
+    color: #fdd9a4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000393}}
+  .sik-form-init .form-control::-webkit-file-upload-button {
+    padding: 0.85rem 1rem;
+    margin: -0.85rem -1rem;
+    margin-inline-end: 1rem;
+    color: #8b8b8b;
+    background-color: #2f2f2f;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: 1px;
+    border-radius: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+    @media (prefers-reduced-motion: reduce) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\0000393}}
+      .sik-form-init .form-control::-webkit-file-upload-button {
+        transition: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003107}}
+  .sik-form-init .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+    background-color: #484848;
+    color: #fcba59; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003115}}
+.sik-form-init .form-text {
+  color: #8b8b8b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003119}}
+.sik-form-init .form-control-plaintext {
+  display: block;
+  width: 100%;
+  padding: 0.85rem 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #CECECE;
+  background-color: transparent;
+  border: solid transparent;
+  border-width: 1px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003129}}
+  .sik-form-init .form-control-plaintext.form-control-sm, .sik-form-init .form-control-plaintext.form-control-lg {
+    padding-right: 0;
+    padding-left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003135}}
+.sik-form-init .form-control-sm {
+  padding: 0.6375rem 0.75rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003137}}
+  .sik-form-init .form-control-sm::file-selector-button {
+    padding: 0.6375rem 0.75rem;
+    margin: -0.6375rem -0.75rem;
+    margin-inline-end: 0.75rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003142}}
+  .sik-form-init .form-control-sm::-webkit-file-upload-button {
+    padding: 0.6375rem 0.75rem;
+    margin: -0.6375rem -0.75rem;
+    margin-inline-end: 0.75rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003148}}
+.sik-form-init .form-control-lg {
+  padding: 1.0625rem 1.25rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003150}}
+  .sik-form-init .form-control-lg::file-selector-button {
+    padding: 1.0625rem 1.25rem;
+    margin: -1.0625rem -1.25rem;
+    margin-inline-end: 1.25rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003155}}
+  .sik-form-init .form-control-lg::-webkit-file-upload-button {
+    padding: 1.0625rem 1.25rem;
+    margin: -1.0625rem -1.25rem;
+    margin-inline-end: 1.25rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003163}}
+.sik-form-init textarea.form-control {
+  border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003168}}
+.sik-form-init .form-control-color {
+  max-width: 4rem;
+  height: auto;
+  padding: 0.85rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003172}}
+  .sik-form-init .form-control-color:not(:disabled):not([readonly]) {
+    cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003175}}
+  .sik-form-init .form-control-color::-moz-color-swatch {
+    height: 1.5em;
+    border-radius: 0.25rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003179}}
+  .sik-form-init .form-control-color::-webkit-color-swatch {
+    height: 1.5em;
+    border-radius: 0.25rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003188}}
+.sik-form-init .form-select {
+  display: block;
+  width: 100%;
+  color: #CECECE;
+  background-color: #222222;
+  border: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.35rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23CECECE' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003198}}
+  .sik-form-init .form-select:focus {
+    border-color: #fdd8a0;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(251, 176, 64, 0.25); }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003209}}
+  .sik-form-init .form-select[multiple], .sik-form-init .form-select[size]:not([size="1"]) {
+    padding-right: 0.75rem;
+    background-image: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003214}}
+  .sik-form-init .form-select:disabled {
+    color: #686868;
+    background-color: #1d1d1d;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23828282' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003220}}
+  .sik-form-init .form-select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #CECECE; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003225}}
+.sik-form-init .form-select-sm {
+  padding: 0.6375rem 0.75rem;
+  font-size: 0.875rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-forms\.scss}line{font-family:\00003229}}
+.sik-form-init .form-select-lg {
+  padding: 1.0625rem 1.25rem;
+  font-size: 1.25rem; }
 
 /******************************************************************************/
 /******************************************************************************/
@@ -9909,21 +9001,33 @@ version:
 *******************************************************************************/
 /******************************  MODULE CONTRNT BASE STYLING  *****************************/
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000320}}
+.container-module .module-title {
+  font-size: 1.4rem;
+  padding: 8px 10px;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #8b8b8b;
+  color: #fcc572;
+  box-shadow: 0px 10px 12px -10px black, inset -1px -15px 11px -21px #8b8b8b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000328}}
 .container-module .module-header {
   border-bottom: 1px solid #8b8b8b;
   padding-bottom: 10px;
   margin: 0 !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000332}}
   .container-module .module-header .module-title {
     font-size: 1.8rem;
-    color: #CECECE; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000327}}
+    color: #CECECE;
+    margin-bottom: 0.7rem;
+    padding: 0;
+    border-bottom: 0;
+    box-shadow: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000339}}
     .container-module .module-header .module-title > span {
       font-weight: 400;
       font-size: 0.7em;
       padding: 0px 10px;
       color: #fcc572; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000346}}
   .container-module .module-header .module-desc {
     color: #8b8b8b;
     clear: left; }

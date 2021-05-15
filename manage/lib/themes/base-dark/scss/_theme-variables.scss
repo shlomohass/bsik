@@ -1,103 +1,182 @@
+//
+// Base theme override
+//
+$font-family-sans-serif : // Safari for OS X and iOS (San Francisco)
+-apple-system, // Chrome < 56 for OS X (San Francisco)
+BlinkMacSystemFont, // Windows
+"Roboto", // Android
+"Roboto", // Basic web fallback
+"Helvetica Neue",
+Arial,
+sans-serif, // Emoji fonts
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol" !default;
+//
 //Color base:
+//
 $admin-base-background: #151515;
 $admin-base-lighter-background: #242424;
-$admin-base-orange: #fbb040;
-$admin-base-color-actions: #2d9ffd;
-$admin-white-text: #CECECE;
-$admin-grey-text: #8b8b8b;
-$admin-dark-text: #4f4f4f;
-$admin-red-text: #ff8d8d;
-$admin-base-font-size: 14px;
+$admin-base-primary-color: #fbb040;
+$admin-base-secondary-color: #353535;
+$admin-base-actions-color: #2d9ffd;
+$admin-base-text-main: #CECECE;
+$admin-base-text-sub: #8b8b8b;
+$admin-base-text-light: #4f4f4f;
+$admin-base-text-error: #ff8d8d;
+$admin-base-font-weight: 400;
+$admin-base-font-size: 1rem;
+//
 //Colors:
-$primary: $admin-base-color-actions;
-$secondary: #353535;
-$success: #198754;
-$info: #0dcaf0;
-$warning: #ffc107;
-$danger: #dc3545;
-$light: $admin-white-text;
+//
+$primary: $admin-base-primary-color;
+$secondary: $admin-base-secondary-color;
+$success: #55e9a4;
+$info: #61d6ee;
+$warning: #ec8cff;
+$danger: #cf3342;
+$light: $admin-base-text-main;
 $dark: $admin-base-lighter-background;
+//
 //Dyn Tables variables:
+//
 $dyn-table-border-color: #4c4c4c;
 $dyn-table-hover-bg: rgba(0, 0, 0, .075);
-$dyn-table-background: #353535;
-$dyn-table-color: $admin-white-text;
+$dyn-table-background: $admin-base-secondary-color;
+$dyn-table-color: $admin-base-text-main;
 $dyn-table-dark-border-color: #4c4c4c;
-$dyn-table-toolbar-btn-bg: $admin-base-orange;
+$dyn-table-toolbar-btn-bg: $admin-base-primary-color;
 $dyn-table-toolbar-btn-color: $admin-base-lighter-background;
-$dyn-table-pager-bg: #353535;
+$dyn-table-actions-color: $admin-base-actions-color;
+$dyn-table-pager-bg: $admin-base-secondary-color;
 $dyn-table-pager-border: #4c4c4c;
-$dyn-table-pager-focus: 0 0 1px 0.1rem rgba($admin-base-orange, .7);
+$dyn-table-pager-focus: 0 0 1px 0.1rem rgba($admin-base-primary-color, .7);
+//
 //Module content space
-$module-header-title-color :$admin-white-text;
-$module-header-which-color: lighten($admin-base-orange, 10%);
-$module-header-subtitle-color: #484747;
-$module-header-border-color: $admin-grey-text;
+//
+$module-header-title-color: $admin-base-text-main;
 $module-header-title-size: 1.8rem;
-//Base variables used in bootstrap:
-$body-bg: $admin-base-background;
-$body-color: $admin-white-text;
-//Buttons:
-// 15. Forms
+$module-header-which-color: lighten($admin-base-primary-color, 10%);
+$module-header-subtitle-color: #484747;
+$module-header-border-color: $admin-base-text-sub;
+$module-title-color :lighten($admin-base-primary-color, 10%);
+$module-title-size: 1.4rem;
+$module-title-border-color: $admin-base-text-sub;
+$module-title-shadow-color: black;
+$module-title-inner-shadow-color: $admin-base-text-sub;
 // ===========================================================================
-$input-bg-color: rgb(247, 137, 137);
-$label-font-size: .8rem !default;
-$input-transition: all .3s !default;
-$input-disabled-color: rgba(0, 0, 0, .46) !default;
-$input-sik-focus-color: $admin-base-orange !default;
-$input-error-color: rgb(255, 124, 124) !default;
-$input-success-color: rgb(27, 255, 122) !default;
-$input-label-after-top: 65px !default;
-$input-label-after-transition: .2s opacity ease-out,
-.2s color ease-out !default;
-$input-border-color: #ffc773 !default;
-$input-label-transition: .2s ease-out !default;
-$input-label-color: #757575 !default;
-$input-label-top: .65rem !default;
-$input-label-active-transform: translateY(-14px) !default;
-$input-prefix-transition: color .2s !default;
-$input-sik-form-margin-top: 1.5rem !default;
-$input-sik-form-margin-bottom: $input-sik-form-margin-top !default;
-$input-label-font-size: 1rem !default;
-$input-label-active-font-size: 1rem !default;
-$input-prefix-top: .25rem !default;
-$input-prefix-font-size: 1.75rem !default;
-$input-prefix-margin-left: 2.5rem !default;
-$input-prefix-width: calc(100% - 2.5rem) !default;
-$input-group-addon-font-size: 1.4rem !default;
-$input-form-text-ml: 2.6rem !default;
-$input-validate-mb: 2.5rem !default;
-$input-label-valid-top: 4.1rem !default;
-$input-label-invalid-top: 4rem !default;
-$input-label-font-size-lg: 1.25rem !default;
-$input-label-active-font-size-lg: 1.15rem !default;
-$input-prefix-top-lg: .4rem !default;
-$input-prefix-font-size-lg: 2rem !default;
-$input-prefix-margin-left-lg: 3rem !default;
-$input-prefix-width-lg: calc(100% - 3rem) !default;
-$input-group-addon-font-size-lg: 1.65rem !default;
-$input-form-text-ml-lg: 3.1rem !default;
-$input-validate-mb-lg: 2.8rem !default;
-$input-label-valid-top-lg: 4.6rem !default;
-$input-label-invalid-top-lg: 4.6rem !default;
-$input-label-font-size-sm: .875rem !default;
-$input-label-active-font-size-sm: .95rem !default;
-$input-prefix-top-sm: .35rem !default;
-$input-prefix-font-size-sm: 1.5rem !default;
-$input-prefix-margin-left-sm: 2rem !default;
-$input-prefix-width-sm: calc(100% - 2rem) !default;
-$input-group-addon-font-size-sm: 1.15rem !default;
-$input-form-text-ml-sm: 2rem !default;
-$input-validate-mb-sm: 2.3rem !default;
-$input-label-valid-top-sm: 3.7rem !default;
-$input-label-invalid-top-sm: 3.6rem !default;
-$textarea-padding: 1.5rem !default;
-$input-form-control-margin-bottom: .5rem !default;
-$input-form-control-padding-top: .6rem !default;
-$input-form-control-padding-bottom: .4rem !default;
-$input-disabled-solid-color: #bdbdbd !default;
-$input-readonly-border-color: #dbe4ec !default;
-// Input group
-$input-group-text-bgc: #e0e0e0 !default;
-$input-group-form-control-px: .75rem !default;
-$input-group-form-control-py: .375rem !default;
+// Overwrite bootstrap base variables:
+// ===========================================================================
+// Bootstraps Base:
+$body-bg: $admin-base-background;
+$body-color: $admin-base-text-main;
+$font-weight-base: $admin-base-font-weight;
+$font-size-base: $admin-base-font-size; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * .875;
+$font-size-lg: $font-size-base * 1.25;
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+$border-radius: .25rem !default;
+$border-radius-sm: .2rem !default;
+$border-radius-lg: .3rem !default;
+$border-radius-pill: 50rem !default;
+// $box-shadow: 0 .5rem 1rem rgba(#000, .15) !default;
+// $box-shadow-sm: 0 .125rem .25rem rgba(#000, .075) !default;
+// $box-shadow-lg: 0 1rem 3rem rgba(#000, .175) !default;
+// $box-shadow-inset: inset 0 1px 2px rgba(#000, .075) !default;
+// // Bootstrap  Buttons:
+// $component-active-color: #fff;
+// $component-active-bg: rgb(87, 88, 168);
+// ===========================================================================
+// Bootstrap Forms
+// ===========================================================================
+// $input-btn-padding-y: .375rem;
+// $input-btn-padding-x: .75rem;
+// $input-btn-font-family: null;
+// $input-btn-font-size: $admin-base-font-size;
+// $input-btn-line-height: $line-height-base;
+// $input-btn-focus-width: .25rem;
+// $input-btn-focus-color-opacity: .25;
+// $input-btn-focus-color: rgba($component-active-bg, $input-btn-focus-color-opacity);
+// $input-btn-focus-blur: 0;
+// $input-btn-focus-box-shadow: 0 0 0 0.25rem rgba(38, 135, 215, .5);
+// $input-btn-padding-y-sm: .25rem;
+// $input-btn-padding-x-sm: .5rem;
+// $input-btn-font-size-sm: $font-size-sm;
+// $input-btn-padding-y-lg: .5rem;
+// $input-btn-padding-x-lg: 1rem;
+// $input-btn-font-size-lg: $font-size-lg;
+// $input-btn-border-width: 1px;
+// //Form controls:
+// $input-padding-y: $input-btn-padding-y;
+// $input-padding-x: $input-btn-padding-x;
+// $input-font-family: $input-btn-font-family;
+// $input-font-size: $input-btn-font-size;
+// $input-font-weight: $font-weight-base;
+// $input-line-height: $input-btn-line-height;
+// $input-padding-y-sm: $input-btn-padding-y-sm;
+// $input-padding-x-sm: $input-btn-padding-x-sm;
+// $input-font-size-sm: $input-btn-font-size-sm;
+// $input-padding-y-lg: $input-btn-padding-y-lg;
+// $input-padding-x-lg: $input-btn-padding-x-lg;
+// $input-font-size-lg: $input-btn-font-size-lg;
+// $input-bg: #fff;
+// $input-disabled-bg: rgb(92, 92, 92);
+// $input-disabled-border-color: null;
+// $input-color: $body-color;
+// $input-border-color: rgb(77, 77, 77);
+// $input-border-width: $input-btn-border-width;
+// $input-box-shadow: $box-shadow-inset;
+// $input-border-radius: $border-radius;
+// $input-border-radius-sm: $border-radius-sm;
+// $input-border-radius-lg: $border-radius-lg;
+// $input-focus-bg: $input-bg;
+// $input-focus-border-color: tint-color($component-active-bg, 50%);
+// $input-focus-color: $input-color;
+// $input-focus-width: $input-btn-focus-width;
+// $input-focus-box-shadow: $input-btn-focus-box-shadow;
+// $input-placeholder-color: rgb(59, 59, 59);
+// $input-plaintext-color: $body-color;
+// $input-height-border: $input-border-width * 2;
+// $input-height-inner: add($input-line-height * 1em, $input-padding-y * 2);
+// $input-height-inner-half: add($input-line-height * .5em, $input-padding-y);
+// $input-height-inner-quarter: add($input-line-height * .25em, $input-padding-y / 2);
+// $input-height: add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
+// $input-height-sm: add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
+// $input-height-lg: add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
+// $input-transition: border-color .15s ease-in-out,
+// box-shadow .15s ease-in-out;
+// //Form select:
+// $form-select-padding-y: $input-padding-y;
+// $form-select-padding-x: $input-padding-x;
+// $form-select-font-family: $input-font-family;
+// $form-select-font-size: $input-font-size;
+// $form-select-indicator-padding: $form-select-padding-x * 3; // Extra padding for background-image
+// $form-select-font-weight: $input-font-weight;
+// $form-select-line-height: $input-line-height;
+// $form-select-color: $input-color;
+// $form-select-bg: $input-bg;
+// $form-select-disabled-color: null;
+// $form-select-disabled-bg: rgb(92, 92, 92);
+// $form-select-disabled-border-color: $input-disabled-border-color;
+// $form-select-bg-position: right $form-select-padding-x center;
+// $form-select-bg-size: 16px 12px; // In pixels because image dimensions
+// $form-select-indicator-color: rgb(59, 59, 59);
+// $form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+// $form-select-feedback-icon-padding-end: $form-select-padding-x * 2.5+$form-select-indicator-padding;
+// $form-select-feedback-icon-position: center right $form-select-indicator-padding;
+// $form-select-feedback-icon-size: $input-height-inner-half $input-height-inner-half;
+// $form-select-border-width: $input-border-width;
+// $form-select-border-color: $input-border-color;
+// $form-select-border-radius: $border-radius;
+// $form-select-box-shadow: $box-shadow-inset;
+// $form-select-focus-border-color: $input-focus-border-color;
+// $form-select-focus-width: $input-focus-width;
+// $form-select-focus-box-shadow: 0 0 0 $form-select-focus-width $input-btn-focus-color;
+// $form-select-padding-y-sm: $input-padding-y-sm;
+// $form-select-padding-x-sm: $input-padding-x-sm;
+// $form-select-font-size-sm: $input-font-size-sm;
+// $form-select-padding-y-lg: $input-padding-y-lg;
+// $form-select-padding-x-lg: $input-padding-x-lg;
+// $form-select-font-size-lg: $input-font-size-lg;

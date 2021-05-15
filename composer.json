@@ -34,6 +34,7 @@
         "packages/jquery": "3.6.0",
         "packages/raphael-js": "2.3.1",
         "packages/morris-js": "0.5.1",
+        "ezyang/htmlpurifier": "4.*",
         "siktec/morris-php": "0.6.*",
         "monolog/monolog": "2.2.0",
         "google/apiclient": "^2.4",
@@ -42,6 +43,9 @@
         "wenzhixin/bootstrap-table": "1.18.*",
         "formr/formr": "1.1.*"
 
+    },
+    "autoload": {
+        "classmap": ["manage/core/"]
     },
     "scripts": {
         "post-install-cmd": [
