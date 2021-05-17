@@ -178,10 +178,11 @@ ul.admin-menu li.menu-entry:hover:not(.has-submenu.open-menu) {
 /******************************  FOOTER  *****************************/
 
 .container-footer {
-    padding: 0px 10px;
+    padding: 0px 0px 0px 10px;
     text-align: left;
     line-height: var(--bottom-admin-footer-height);
     color: var(--admin-grey-text);
+    overflow: hidden;
 }
 
 

@@ -105,9 +105,28 @@ $doc_tpl = <<<HTML
             <div class="container-side-menu noselect">%s</div>
             <div class="container-module">%s</div>
         </div>
-        <div class="container-footer">%s<div class="console-messages"><ul></ul></div></div>
+        <div class="container-footer">
+            %s
+        <div class="console-messages">
+            <span>
+                <i class="fas fa-comment-alt"></i>
+                &nbsp;&nbsp;Console Log
+                <i class="fas fa-angle-up open-icon"></i>
+            </span>
+            <ul>
+                <li><span class='notify-info'>some messages words not wrappped lksjdflkj jsdf kjsdfkjj slkdfjlsdf lkjsdf<i class="fas fa-times"></i></span></li>
+                <li><span class='notify-warn'>some messages words not wrappped<i class="fas fa-times"></i></span></li>
+                <li><span class='notify-error'>some messages words not wrappped lksjdflkj jsdf kjsdfkjj slkdfjlsdf lkjsdf<i class="fas fa-times"></i></span></li>
+            </ul>
+        </div></div>
     </div>
     %s
+    <div class="bsik-notify notify-info">
+        <span class='notify-title'>System Information</span>
+        <span class='notify-message'>Updated all required modules of the selected list - Total 13 modules.</span>
+        <span class='notify-time'>12/05/2021 00:45:32</span>
+        <span class='notify-release'>X</span>
+    </div>
 HTML;
 
 printf($doc_tpl,
