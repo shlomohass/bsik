@@ -105,7 +105,7 @@ $doc_tpl = <<<HTML
             <div class="container-side-menu noselect">%s</div>
             <div class="container-module">%s</div>
         </div>
-        <div class="container-footer">%s</div>
+        <div class="container-footer">%s<div class="console-messages"><ul></ul></div></div>
     </div>
     %s
 HTML;

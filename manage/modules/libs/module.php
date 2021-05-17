@@ -107,89 +107,41 @@ if (in_array($APage->module->which, ["overview", "default"])) {
 <div class='container mt-3'>
     <div class='row'>
         <div class='col-5 sik-form-init'>
-            <h2 class='module-title'>Search on 'npm'</h2>
-            <div class='col-12 npm-search-results sik-form-init'>
+            <h2 class='module-title'>Search Libraries And Modules</h2>
+            <div class='col-12 sik-form-init'>
                 <form>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="search-term" aria-describedby="search-help" />
+                            <button id="search-npm" type="button" class="btn btn-primary">Search</button>
+                        </div>
+                        <div id="search-help" class="form-text">Search npm compatible repositories.</div>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg">
-                        <input class="form-control" type="text" placeholder="Default input" aria-label="default input">
-                        <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm">
-                    </div>
-                    <div class="mb-3">
-                        <input class="form-control" type="text" placeholder="Readonly input here..." aria-label="readonly input example" readonly>
-                        <input class="form-control" type="text" placeholder="Disabled input" aria-label="Disabled input example" disabled>
-                        <input class="form-control" type="text" placeholder="Disabled readonly input" aria-label="Disabled input example" disabled readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label">Default file input example</label>
-                        <input class="form-control" type="file" id="formFile">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-                        <input class="form-control" type="file" id="formFileMultiple" multiple>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFileDisabled" class="form-label">Disabled file input example</label>
-                        <input class="form-control" type="file" id="formFileDisabled" disabled>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFileSm" class="form-label">Small file input example</label>
-                        <input class="form-control form-control-sm" id="formFileSm" type="file">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFileLg" class="form-label">Large file input example</label>
-                        <input class="form-control form-control-lg" id="formFileLg" type="file">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleColorInput" class="form-label">Color picker</label>
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleDataList" class="form-label">Datalist example</label>
-                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-                        <datalist id="datalistOptions">
-                            <option value="San Francisco">
-                            <option value="New York">
-                            <option value="Seattle">
-                            <option value="Los Angeles">
-                            <option value="Chicago">
-                        </datalist>
-                    </div>
-                    <div class="mb-3">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <select class="form-select" aria-label="Default select example" disabled>
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    
                 </form>
+            </div>
+            <div class='col-12 npm-search-results'>
+                <p class="text-info text-end fs-6 m-0"><small>Found 0 Libraries / Modules</small></p>
+                <div class='wrap-results list-group'>
+                    <ul class='list-group list-group-flush'>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <span>Title of library </span>
+                            <span class="badge bg-info text-dark">Info</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <span>Title of library </span>
+                            <span class="badge bg-info text-dark">Info</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <span>Title of library </span>
+                            <span class="badge bg-info text-dark">Info</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <span>Title of library </span>
+                            <span class="badge bg-info text-dark">Info</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class='col-7 sik-form-init'>

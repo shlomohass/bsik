@@ -52,6 +52,7 @@ $content = <<<HTML
         <meta name="description"            content="{$APage->meta('description')}" />
         <meta http-equiv="X-UA-Compatible"  content="IE=7" />
         {$APage->token["meta"]}
+        <meta name="api"            content="{$APage->meta('api')}" />
         $head_favicon
         $ex_meta
         <title>{$APage->meta("title")}</title>

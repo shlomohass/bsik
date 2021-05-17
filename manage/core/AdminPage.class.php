@@ -52,7 +52,8 @@ class APage extends Base
         "author"                => "",
         "description"           => "",
         "title"                 => "",
-        "icon"                  => ""
+        "icon"                  => "",
+        "api"                   => "",
     );
     public $additional_meta = array();
     private $custom_body_tag = "";
@@ -76,10 +77,12 @@ class APage extends Base
         string $logger_stream = PLAT_LOG_DIRECTORY
     ) {
         $this->tokenize(); //Tokenize the page.
+        
         $this->request["type"]      = $this->request_type(); //Get the request 
         $this->request["module"]    = $this->request_module($this::$conf["default-module"] ?? "");
         $this->request["which"]     = $this->request_module_which($this::$conf["default-module-sub-entry"] ?? "");
         $this::$index_page_url      = $this->parse_slash_url_with($this::$conf["path"]["site_admin_url"]);
+        $this->meta("api", $this::$index_page_url."/api/".$this->request["module"]);
         $this->request["when"]      = self::std_time_datetime(); //Time stamp for debugging
         $this->fill_modules();
         $this->load_plat_settings("global", true);

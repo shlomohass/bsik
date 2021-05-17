@@ -165,7 +165,7 @@ class Admin extends Base {
         /* SH: added - 2021-03-03 => Check if its an error - why? not equal */
         if ($ip === "127.0.0.1") 
             $ip = @file_get_contents("http://ipecho.net/plain");
-        $purpose    = str_replace(array("name", "\n", "\t", " ", "-", "_"), null, strtolower(trim($purpose)));
+        $purpose    = str_replace(array("name", "\n", "\t", " ", "-", "_"), "", strtolower(trim($purpose)));
         $support    = array("country", "countrycode", "state", "region", "city", "location", "address");
         $continents = array(
             "AF" => "Africa",

@@ -32,4 +32,42 @@
     };
     console.log("module script");
 
+    /************* Search libs api *******************************/
+    $(function() {
+        $("#search-npm").on("click", function() {
+            let data = {
+                "search": $("#search-term").val()
+            };
+            sikbase.apiRequest(
+                false, // FALSE = auto add url
+                "search_frontend_libs",
+                data, {
+                    success: function(res) {
+                        console.log(res);
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        console.log(jqXhr);
+                        if ('responseJSON' in jqXhr && 'code' in jqXhr.responseJSON && 'message' in jqXhr.responseJSON) {
+                            switch (jqXhr.responseJSON.code) {
+                                case 400:
+                                    {
+                                        alert("Search is empty");
+                                    }
+                                    break;
+                                default:
+                                    {
+                                        alert("API Error occurred - Refresh the page and try again.")
+                                    }
+                            }
+                        } else {
+                            alert("API Internal Server Error occurred - Refresh the page and try again.")
+                        }
+                    }
+                }
+            );
+        });
+    });
+
+
+
 })(jQuery, this, document, sikbase);

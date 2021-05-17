@@ -20,14 +20,14 @@ require_once PLAT_PATH_CORE.DS.'BsikApi.class.php';
 /****************************  INITIATE  ************************************/
 /****************************************************************************/
 //This will make sure that errors are logged but not displayed
-ini_set("display_errors", "on");
+ini_set("display_errors", "off");
 
 //Initialize Api instance:
 if (!isset($AApi)) {
     $AApi = new BsikApi(
-        Base::get_session("csrftoken"),     //CSRF TOKEN
-        PLAT_ADMIN_PANEL_API_DEBUG_MODE,    //Operation Mode
-        "bsikapi-manage"                   //logger chanel
+        Base::get_session("csrftoken"),     // CSRF TOKEN
+        PLAT_ADMIN_PANEL_API_DEBUG_MODE,    // Operation Mode
+        "bsikapi-manage"                    // logger chanel
     );
 }
 
@@ -131,19 +131,13 @@ $AApi->register_endpoint(new BsikApiEndPoint(
 ));
 
 
-
+/****************************************************************************/
+/**********************  LOAD API  ***************************/
+/****************************************************************************/
 
 /****************************************************************************/
 /*************************  EXECUTE API REQUEST  ****************************/
 /****************************************************************************/
-
-$_REQUEST["request_type"]  = "get_for_datatable";
-$_REQUEST["request_token"] = Base::get_session("csrftoken");
-$_REQUEST["limit"]         = 1;
-$_REQUEST["table_name"]    = " @#$%users@#$@$ ";
-$AApi->parse_request($_REQUEST);
-$AApi->execute();
-$AApi->answer(true);
 
 //$AApi->logger->info("Testing logger", ["value" => "SIKTEC"]);
 

@@ -8422,6 +8422,356 @@ textarea.form-control-lg {
 .input-group .form-select.is-invalid {
   z-index: 3; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_badge\.scss}line{font-family:\000036}}
+.badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_badge\.scss}line{font-family:\0000320}}
+  .badge:empty {
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_badge\.scss}line{font-family:\0000326}}
+.btn .badge {
+  position: relative;
+  top: -1px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\000035}}
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000315}}
+.list-group-numbered {
+  list-style-type: none;
+  counter-reset: section; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000319}}
+  .list-group-numbered > li::before {
+    content: counters(section,".") ". ";
+    counter-increment: section; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000332}}
+.list-group-item-action {
+  width: 100%;
+  color: #CECECE;
+  text-align: inherit; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000338}}
+  .list-group-item-action:hover, .list-group-item-action:focus {
+    z-index: 1;
+    color: #CECECE;
+    text-decoration: none;
+    background-color: #242424; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000346}}
+  .list-group-item-action:active {
+    color: #CECECE;
+    background-color: #e9ecef; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000357}}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #CECECE;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid gray; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000366}}
+  .list-group-item:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000370}}
+  .list-group-item:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000374}}
+  .list-group-item.disabled, .list-group-item:disabled {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000382}}
+  .list-group-item.active {
+    z-index: 2;
+    color: #CECECE;
+    background-color: #242424;
+    border-color: #242424; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000389}}
+  .list-group-item + .list-group-item {
+    border-top-width: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000392}}
+    .list-group-item + .list-group-item.active {
+      margin-top: -1px;
+      border-top-width: 1px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003108}}
+.list-group-horizontal {
+  flex-direction: row; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
+  .list-group-horizontal > .list-group-item:first-child {
+    border-bottom-left-radius: 0.25rem;
+    border-top-right-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
+  .list-group-horizontal > .list-group-item:last-child {
+    border-top-right-radius: 0.25rem;
+    border-bottom-left-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
+  .list-group-horizontal > .list-group-item.active {
+    margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003126}}
+  .list-group-horizontal > .list-group-item + .list-group-item {
+    border-top-width: 1px;
+    border-left-width: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003130}}
+    .list-group-horizontal > .list-group-item + .list-group-item.active {
+      margin-left: -1px;
+      border-left-width: 1px; }
+
+@media (min-width: 576px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003108}}
+  .list-group-horizontal-sm {
+    flex-direction: row; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
+    .list-group-horizontal-sm > .list-group-item:first-child {
+      border-bottom-left-radius: 0.25rem;
+      border-top-right-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
+    .list-group-horizontal-sm > .list-group-item:last-child {
+      border-top-right-radius: 0.25rem;
+      border-bottom-left-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
+    .list-group-horizontal-sm > .list-group-item.active {
+      margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003126}}
+    .list-group-horizontal-sm > .list-group-item + .list-group-item {
+      border-top-width: 1px;
+      border-left-width: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003130}}
+      .list-group-horizontal-sm > .list-group-item + .list-group-item.active {
+        margin-left: -1px;
+        border-left-width: 1px; } }
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003108}}
+  .list-group-horizontal-md {
+    flex-direction: row; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
+    .list-group-horizontal-md > .list-group-item:first-child {
+      border-bottom-left-radius: 0.25rem;
+      border-top-right-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
+    .list-group-horizontal-md > .list-group-item:last-child {
+      border-top-right-radius: 0.25rem;
+      border-bottom-left-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
+    .list-group-horizontal-md > .list-group-item.active {
+      margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003126}}
+    .list-group-horizontal-md > .list-group-item + .list-group-item {
+      border-top-width: 1px;
+      border-left-width: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003130}}
+      .list-group-horizontal-md > .list-group-item + .list-group-item.active {
+        margin-left: -1px;
+        border-left-width: 1px; } }
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003108}}
+  .list-group-horizontal-lg {
+    flex-direction: row; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
+    .list-group-horizontal-lg > .list-group-item:first-child {
+      border-bottom-left-radius: 0.25rem;
+      border-top-right-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
+    .list-group-horizontal-lg > .list-group-item:last-child {
+      border-top-right-radius: 0.25rem;
+      border-bottom-left-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
+    .list-group-horizontal-lg > .list-group-item.active {
+      margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003126}}
+    .list-group-horizontal-lg > .list-group-item + .list-group-item {
+      border-top-width: 1px;
+      border-left-width: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003130}}
+      .list-group-horizontal-lg > .list-group-item + .list-group-item.active {
+        margin-left: -1px;
+        border-left-width: 1px; } }
+@media (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003108}}
+  .list-group-horizontal-xl {
+    flex-direction: row; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
+    .list-group-horizontal-xl > .list-group-item:first-child {
+      border-bottom-left-radius: 0.25rem;
+      border-top-right-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
+    .list-group-horizontal-xl > .list-group-item:last-child {
+      border-top-right-radius: 0.25rem;
+      border-bottom-left-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
+    .list-group-horizontal-xl > .list-group-item.active {
+      margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003126}}
+    .list-group-horizontal-xl > .list-group-item + .list-group-item {
+      border-top-width: 1px;
+      border-left-width: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003130}}
+      .list-group-horizontal-xl > .list-group-item + .list-group-item.active {
+        margin-left: -1px;
+        border-left-width: 1px; } }
+@media (min-width: 1400px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003108}}
+  .list-group-horizontal-xxl {
+    flex-direction: row; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
+    .list-group-horizontal-xxl > .list-group-item:first-child {
+      border-bottom-left-radius: 0.25rem;
+      border-top-right-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
+    .list-group-horizontal-xxl > .list-group-item:last-child {
+      border-top-right-radius: 0.25rem;
+      border-bottom-left-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
+    .list-group-horizontal-xxl > .list-group-item.active {
+      margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003126}}
+    .list-group-horizontal-xxl > .list-group-item + .list-group-item {
+      border-top-width: 1px;
+      border-left-width: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003130}}
+      .list-group-horizontal-xxl > .list-group-item + .list-group-item.active {
+        margin-left: -1px;
+        border-left-width: 1px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003146}}
+.list-group-flush {
+  border-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003149}}
+  .list-group-flush > .list-group-item {
+    border-width: 0 0 1px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003152}}
+    .list-group-flush > .list-group-item:last-child {
+      border-bottom-width: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000035}}
+.list-group-item-primary {
+  color: #64461a;
+  background-color: #feefd9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000310}}
+  .list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
+    color: #64461a;
+    background-color: #e5d7c3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000316}}
+  .list-group-item-primary.list-group-item-action.active {
+    color: #fff;
+    background-color: #64461a;
+    border-color: #64461a; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000035}}
+.list-group-item-secondary {
+  color: #202020;
+  background-color: #d7d7d7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000310}}
+  .list-group-item-secondary.list-group-item-action:hover, .list-group-item-secondary.list-group-item-action:focus {
+    color: #202020;
+    background-color: #c2c2c2; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000316}}
+  .list-group-item-secondary.list-group-item-action.active {
+    color: #fff;
+    background-color: #202020;
+    border-color: #202020; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000035}}
+.list-group-item-success {
+  color: #225d42;
+  background-color: #ddfbed; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000310}}
+  .list-group-item-success.list-group-item-action:hover, .list-group-item-success.list-group-item-action:focus {
+    color: #225d42;
+    background-color: #c7e2d5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000316}}
+  .list-group-item-success.list-group-item-action.active {
+    color: #fff;
+    background-color: #225d42;
+    border-color: #225d42; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000035}}
+.list-group-item-info {
+  color: #27565f;
+  background-color: #dff7fc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000310}}
+  .list-group-item-info.list-group-item-action:hover, .list-group-item-info.list-group-item-action:focus {
+    color: #27565f;
+    background-color: #c9dee3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000316}}
+  .list-group-item-info.list-group-item-action.active {
+    color: #fff;
+    background-color: #27565f;
+    border-color: #27565f; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000035}}
+.list-group-item-warning {
+  color: #8e5499;
+  background-color: #fbe8ff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000310}}
+  .list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {
+    color: #8e5499;
+    background-color: #e2d1e6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000316}}
+  .list-group-item-warning.list-group-item-action.active {
+    color: #fff;
+    background-color: #8e5499;
+    border-color: #8e5499; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000035}}
+.list-group-item-danger {
+  color: #7c1f28;
+  background-color: #f5d6d9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000310}}
+  .list-group-item-danger.list-group-item-action:hover, .list-group-item-danger.list-group-item-action:focus {
+    color: #7c1f28;
+    background-color: #ddc1c3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000316}}
+  .list-group-item-danger.list-group-item-action.active {
+    color: #fff;
+    background-color: #7c1f28;
+    border-color: #7c1f28; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000035}}
+.list-group-item-light {
+  color: #525252;
+  background-color: whitesmoke; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000310}}
+  .list-group-item-light.list-group-item-action:hover, .list-group-item-light.list-group-item-action:focus {
+    color: #525252;
+    background-color: #dddddd; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000316}}
+  .list-group-item-light.list-group-item-action.active {
+    color: #fff;
+    background-color: #525252;
+    border-color: #525252; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000035}}
+.list-group-item-dark {
+  color: #161616;
+  background-color: lightgray; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000310}}
+  .list-group-item-dark.list-group-item-action:hover, .list-group-item-dark.list-group-item-action:focus {
+    color: #161616;
+    background-color: #bebebe; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\0000316}}
+  .list-group-item-dark.list-group-item-action.active {
+    color: #fff;
+    background-color: #161616;
+    border-color: #161616; }
+
 /******************************************************************************/
 /******************************************************************************/
 /*****************************      Changelog       ****************************
@@ -9003,7 +9353,7 @@ version:
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000320}}
 .container-module .module-title {
   font-size: 1.4rem;
-  padding: 8px 10px;
+  padding: 8px 0px;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #8b8b8b;
   color: #fcc572;

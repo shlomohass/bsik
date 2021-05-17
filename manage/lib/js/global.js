@@ -23,6 +23,8 @@ let sikbase = {
 
     },
     apiRequest: function(url, req, _data, handlers) {
+        //Set url:
+        url = url ? url : $('meta[name=api]').attr('content');
         //Required data:
         let data = {
             'request_token': $('meta[name=csrf-token]').attr('content'),
@@ -44,7 +46,8 @@ let sikbase = {
         //Extend settings & handlers:
         $.extend(ajaxSet, handlers);
         //Execute:
-        console.log(ajaxSet);
+        /* SH: added - 2021-05-17 => Remove later this is for dev */
+        console.log(url, ajaxSet);
         return $.ajax(url, ajaxSet);
     },
     ajaxDataTable: function(url, req, params) {
@@ -121,6 +124,10 @@ let sikbase = {
         return Object.keys(object).find(key => object[key] === value);
     },
     /*******************  GENERIC EVENTS ***************************** */
+    alert() {
+        console.log("alert");
+        console.log("alert");
+    },
     scrollToAnimated(selector, speed = 800) {
         $([document.documentElement, document.body]).animate({
             scrollTop: $(selector).eq(0).offset().top
