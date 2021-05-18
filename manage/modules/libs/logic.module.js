@@ -8,14 +8,14 @@
 1.0.0:
     ->initial 
 *******************************************************************************/
-(function($, window, document, sikbase, undefined) {
+(function($, window, document, Bsik, undefined) {
 
 
     /************ Initiate the base js object: ******************/
-    sikbase.init();
+    Bsik.core.init();
 
     /************* Add dynamic table operation handler **********/
-    sikbase.tableOperateEvents = {
+    Bsik.core.tableOperateEvents = {
         'click .like': function(e, value, row, index) {
             console.log('You click like action, row: ' + JSON.stringify(row));
         },
@@ -38,7 +38,7 @@
             let data = {
                 "search": $("#search-term").val()
             };
-            sikbase.apiRequest(
+            Bsik.core.apiRequest(
                 false, // FALSE = auto add url
                 "search_frontend_libs",
                 data, {
@@ -70,4 +70,4 @@
 
 
 
-})(jQuery, this, document, sikbase);
+})(jQuery, this, document, Bsik);

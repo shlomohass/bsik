@@ -334,6 +334,12 @@ class APage extends Base
                                         "pos"  => $lib_obj["pos"]
                                     ];
                                 } break;
+                                case "module": {
+                                    $this->lib_toload[$type]["path".$this->static_links_counter] = [
+                                        "name" => PLAT_FULL_DOMAIN."/manage/lib/".$lib_obj["path"],
+                                        "pos"  => $lib_obj["pos"]
+                                    ];
+                                } break;
                             }
                         }
                     }
@@ -349,7 +355,7 @@ class APage extends Base
      * @param  bool $page - whether to load page specific libs?
      * @return int
      */
-    public function load_libs(bool $global, bool $module = false) : int {
+    public function load_libs(bool $global) : int {
         
         //Build libs:
         if ($global && !empty($this->platform_libs)) 
@@ -501,15 +507,28 @@ class APage extends Base
     }
     public function render_libs(string $type, string $pos) {
         $tpl = [
-            "css" => '<link rel="stylesheet" href="%s" />'.PHP_EOL,
-            "js"  => '<script type="text/javascript" src="%s"></script>'.PHP_EOL
+            "css"       => '<link rel="stylesheet" href="%s" />'.PHP_EOL,
+            "js"        => '<script type="text/javascript" src="%s"></script>'.PHP_EOL,
+            "module"    => '<script type="module" src="%s"></script>'.PHP_EOL
         ];
         $use = $tpl[$type];
         foreach ($this->includes[$pos][$type] ?? [] as $lib) {
+
             if (is_array($lib["path"])) {
-                array_walk($lib["path"], fn($p) => printf($use, $p));
+                //array_walk($lib["path"], fn($p) => printf($use, $p));
+                array_walk($lib["path"], function($p) use($use, $tpl) {
+                    if (strpos($p,".module.")) {
+                        printf($tpl["module"], $p);
+                    } else {
+                        printf($use, $p);
+                    }
+                });
             } else {
-                printf($use, $lib["path"]);
+                if (strpos($lib["path"],".module.")) {
+                    printf($tpl["module"], $lib["path"]);
+                } else {
+                    printf($use,$lib["path"]);
+                }
             }
         }
     }

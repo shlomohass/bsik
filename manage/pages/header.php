@@ -56,9 +56,15 @@ $content = <<<HTML
         $head_favicon
         $ex_meta
         <title>{$APage->meta("title")}</title>
+        <script type="text/javascript">
+            /** Set bsik app global object **/
+            window["bsik"] = {};
+            let Bsik = window.bsik;
+        </script>
         <!-- START : Head includes -->
         $top_includes
         <!-- END : Head includes -->
+        
     </head>
     <body {$APage->body_tag()} >
         <!-- START : Body includes -->

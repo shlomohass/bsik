@@ -9382,7 +9382,7 @@ version:
     color: #8b8b8b;
     clear: left; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000316}}
 .bsik-notify {
   display: none;
   position: fixed;
@@ -9391,32 +9391,32 @@ version:
   padding: 0.5rem;
   width: 25%;
   max-width: 300px;
-  z-index: 9999; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000329}}
+  z-index: 9999;
+  cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000326}}
   .bsik-notify span {
     display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000328}}
     .bsik-notify span.notify-title {
       font-weight: 600;
       font-size: 1.05rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000332}}
     .bsik-notify span.notify-message {
       font-style: italic;
       font-size: 0.85rem;
       padding-left: 2.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000337}}
     .bsik-notify span.notify-time {
       font-size: 0.65rem;
       text-align: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000341}}
     .bsik-notify span.notify-release {
-      cursor: pointer;
       position: absolute;
       top: 0;
       right: 0;
       font-weight: 600;
       padding: 0.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000349}}
   .bsik-notify::after {
     display: inline-block;
     font-style: normal;
@@ -9430,29 +9430,29 @@ version:
     top: 1.85rem;
     font-size: 2rem;
     opacity: .6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000363}}
   .bsik-notify.notify-info {
     background-color: #94deec;
     color: #1b8599; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000366}}
     .bsik-notify.notify-info::after {
       content: "\f129"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000370}}
   .bsik-notify.notify-warn {
     background-color: #e9c98d;
     color: #8f671c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000373}}
     .bsik-notify.notify-warn::after {
       content: "\f12a"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000377}}
   .bsik-notify.notify-error {
     background-color: #e07d87;
     color: #751c25; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000380}}
     .bsik-notify.notify-error::after {
       content: "\f00d"; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000387}}
 .console-messages {
   width: 25%;
   display: block;
@@ -9461,7 +9461,7 @@ version:
   height: 100%;
   max-width: 300px;
   border-left: 1px solid #353535; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\0000395}}
   .console-messages > span {
     display: inline-block;
     width: 100%;
@@ -9469,21 +9469,31 @@ version:
     padding-right: 1rem;
     cursor: pointer;
     line-height: inherit; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003102}}
+    .console-messages > span em {
+      display: none;
+      font-style: normal;
+      background-color: #94deec;
+      padding: 0rem 0.5rem;
+      border-radius: 3px;
+      margin-left: 0.5rem;
+      color: #0c3a42; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003111}}
     .console-messages > span i {
       line-height: inherit; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003114}}
     .console-messages > span i.open-icon {
       position: absolute;
       right: 1rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003118}}
     .console-messages > span:hover {
       color: #CECECE; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003120}}
       .console-messages > span:hover .open-icon {
         color: #fbb040; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003125}}
   .console-messages > ul {
+    display: none;
     position: fixed;
     background-color: #151515;
     margin: 0;
@@ -9494,12 +9504,13 @@ version:
     max-height: 200px;
     bottom: 30px;
     border: 1px solid #353535;
-    box-shadow: -7px -7px 8px -6px #050505; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003132}}
+    box-shadow: -7px -7px 8px -6px #050505;
+    overflow: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003139}}
     .console-messages > ul > li {
       width: 100%;
       padding: 0.15rem 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003142}}
       .console-messages > ul > li span {
         position: relative;
         display: block;
@@ -9509,14 +9520,14 @@ version:
         padding-right: 1.3rem;
         font-size: 0.85rem;
         line-height: 1.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003151}}
         .console-messages > ul > li span > i {
           cursor: pointer;
           position: absolute;
           top: 0;
           right: 0;
           padding: 0.5rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003158}}
         .console-messages > ul > li span::after {
           display: inline-block;
           font-style: normal;
@@ -9532,25 +9543,25 @@ version:
           opacity: .6;
           width: 30px;
           text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003174}}
         .console-messages > ul > li span.notify-info {
           background-color: #94deec;
           color: #1b8599; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003177}}
           .console-messages > ul > li span.notify-info::after {
             content: "\f129"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003181}}
         .console-messages > ul > li span.notify-warn {
           background-color: #e9c98d;
           color: #8f671c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003184}}
           .console-messages > ul > li span.notify-warn::after {
             content: "\f12a"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003188}}
         .console-messages > ul > li span.notify-error {
           background-color: #e07d87;
           color: #751c25; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-sys-notify\.scss}line{font-family:\00003191}}
           .console-messages > ul > li span.notify-error::after {
             content: "\f00d"; }
 

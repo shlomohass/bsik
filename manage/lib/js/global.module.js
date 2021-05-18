@@ -1,5 +1,7 @@
 /******************************  SIDE MENU HANDLERS  *****************************/
+import { siknotify } from './siknotify.module.js';
 
+//Default handlers:
 $(function() {
 
     //Expand menu:
@@ -16,9 +18,9 @@ $(function() {
 
 });
 
-
 /*****************************  MAIN APP CLASS *********************************************/
-let sikbase = {
+window.bsik["notify"] = siknotify.init();
+window.bsik["core"] = {
     init: function() {
 
     },
@@ -133,4 +135,4 @@ let sikbase = {
             scrollTop: $(selector).eq(0).offset().top
         }, speed);
     }
-}
+};

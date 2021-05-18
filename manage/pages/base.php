@@ -54,6 +54,10 @@ if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, 
     $APage->include("head", "js", "link", ["name" => $generic_lib["url"]]); // Always keep in head - gives more control on needed predefined function declaration
     Trace::add_trace("Loaded generic module script.", __FILE__.__LINE__);
 }
+if ($generic_lib = $APage::std_fs_file_exists("modules", [$APage->module->name, "logic.module.js"])) {
+    $APage->include("head", "js", "link", ["name" => $generic_lib["url"]]); // Always keep in head - gives more control on needed predefined function declaration
+    Trace::add_trace("Loaded generic module script.", __FILE__.__LINE__);
+}
 
 
 /******************************  Set Side Menu  *****************************/
@@ -111,6 +115,7 @@ $doc_tpl = <<<HTML
             <span>
                 <i class="fas fa-comment-alt"></i>
                 &nbsp;&nbsp;Console Log
+                <em>0</em>
                 <i class="fas fa-angle-up open-icon"></i>
             </span>
             <ul>
@@ -121,12 +126,6 @@ $doc_tpl = <<<HTML
         </div></div>
     </div>
     %s
-    <div class="bsik-notify notify-info">
-        <span class='notify-title'>System Information</span>
-        <span class='notify-message'>Updated all required modules of the selected list - Total 13 modules.</span>
-        <span class='notify-time'>12/05/2021 00:45:32</span>
-        <span class='notify-release'>X</span>
-    </div>
 HTML;
 
 printf($doc_tpl,

@@ -4,6 +4,8 @@ $sys-notify-console-left-border: $secondary !default;
 $sys-notify-console-max-width: 300px !default;
 $sys-notify-console-hover-color: $admin-base-text-main !default;
 $sys-notify-console-hover-carret-color:$primary !default;
+$sys-notify-console-badge-color: darken($info, 60%) !default;
+$sys-notify-console-badge-bg: $info !default;
 $sys-notify-info-bg: $info !default;
 $sys-notify-info-color: darken($info, 40%) !default;
 $sys-notify-warn-bg: $warning !default;
@@ -11,12 +13,6 @@ $sys-notify-warn-color: darken($warning, 40%) !default;
 $sys-notify-error-bg: $danger !default;
 $sys-notify-error-color: darken($danger, 40%) !default;
 // Floating:
-// <div class="bsik-notify notify-info">
-//     <span class='notify-title'>System Information<span>
-//     <span class='notify-message'>Updated all required modules of the selected list - Total 13 modules.</span>
-//     <span class='notify-time'>12/05/2021 00:45:32</span>
-//     <span class='notify-release'>X</span>
-// </div>
 .bsik-notify {
     display: none;
     position: fixed;
@@ -26,6 +22,7 @@ $sys-notify-error-color: darken($danger, 40%) !default;
     width: 25%;
     max-width: $sys-notify-console-max-width;
     z-index: 9999;
+    cursor: pointer;
     span {
         display: block;
         &.notify-title {
@@ -42,7 +39,6 @@ $sys-notify-error-color: darken($danger, 40%) !default;
             text-align: right;
         }
         &.notify-release {
-            cursor: pointer;
             position: absolute;
             top: 0;
             right: 0;
@@ -103,6 +99,15 @@ $sys-notify-error-color: darken($danger, 40%) !default;
         padding-right: 1rem;
         cursor: pointer;
         line-height: inherit;
+        em {
+            display: none;
+            font-style: normal;
+            background-color: $sys-notify-console-badge-bg;
+            padding: 0rem 0.5rem;
+            border-radius: 3px;
+            margin-left: 0.5rem;
+            color: $sys-notify-console-badge-color
+        }
         i {
             line-height: inherit;
         }
@@ -118,6 +123,7 @@ $sys-notify-error-color: darken($danger, 40%) !default;
         }
     }
     >ul {
+        display: none;
         position: fixed;
         background-color: $sys-notify-console-background;
         margin: 0;
@@ -129,6 +135,7 @@ $sys-notify-error-color: darken($danger, 40%) !default;
         bottom: 30px;
         border: 1px solid $sys-notify-console-left-border;
         box-shadow: -7px -7px 8px -6px #050505;
+        overflow: auto;
         >li {
             width: 100%;
             padding: 0.15rem 0;
