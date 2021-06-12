@@ -10,7 +10,7 @@
 *******************************************************************************/
 import * as $$ from './utils.module.js';
 /******************************  NOTIFY HANDLERS  *****************************/
-let siknotify = {
+let SikNotify = {
     openEle: null,
     messagesContainer: null,
     counterBadge: null,
@@ -37,7 +37,6 @@ let siknotify = {
     counter: function(add = 0) {
         let messages = this.messagesContainer.querySelectorAll("li");
         let count = add !== 0 ? messages.length + add : messages.length;
-        console.log("counter", count, this.counterBadge);
         this.counterBadge.textContent = count;
         this.counterBadge.style.display = count > 0 ? 'inline' : 'none';
     },
@@ -110,4 +109,4 @@ let siknotify = {
     }
 };
 
-export { siknotify };
+export { SikNotify };

@@ -67,7 +67,7 @@ export let slideDown = (target, duration = 500, callback = function() {}) => {
     }, duration);
 }
 
-/* TOOGLE */
+/* TOGGLE */
 export var slideToggle = (target, duration = 500) => {
     if (window.getComputedStyle(target).display === 'none') {
         return slideDown(target, duration);

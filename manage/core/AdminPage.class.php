@@ -617,13 +617,15 @@ class APage extends Base
         $tpl_js   = "
         %s
         <script>
-            $('#%s').bootstrapTable({
-                ajax: function(params) {
-                    params.data['fields'] = %s;
-                    params.data['table_name'] = '%s';
-                    sikbase.ajaxDataTable('%s', 'get_for_datatable', params);
-                },
-                columns: %s
+            document.addEventListener('DOMContentLoaded', function(event) {
+                $('#%s').bootstrapTable({
+                    ajax: function(params) {
+                        params.data['fields'] = %s;
+                        params.data['table_name'] = '%s';
+                        Bsik.dataTables.get('%s', 'get_for_datatable', params);
+                    },
+                    columns: %s
+                });
             });
             %s
         </script>".PHP_EOL;

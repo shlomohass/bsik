@@ -67,7 +67,9 @@ $module-title-inner-shadow-color: $admin-base-text-sub;
 // ===========================================================================
 // Overwrite bootstrap base variables:
 // ===========================================================================
-// Bootstraps Base:
+
+/** Bootstraps Base: ****************************************/
+
 $body-bg: $admin-base-background;
 $body-color: $admin-base-text-main;
 $font-weight-base: $admin-base-font-weight;
@@ -81,22 +83,24 @@ $border-radius: .25rem !default;
 $border-radius-sm: .2rem !default;
 $border-radius-lg: .3rem !default;
 $border-radius-pill: 50rem !default;
-//List group:
+
+/** List group: ****************************************/
+
 $list-group-color: $admin-base-text-main;
 $list-group-bg: transparent;
 $list-group-border-color: gray;
 $list-group-border-width: 1px;
-$list-group-border-radius: $border-radius;
+$list-group-border-radius: 0px;
 $list-group-hover-bg: $admin-base-lighter-background;
 $list-group-active-color: $admin-base-text-main;
-$list-group-active-bg: $admin-base-lighter-background;
-//$list-group-active-border-color : $list-group-active-bg;
+$list-group-active-bg: lighten($list-group-hover-bg, 15%);
+$list-group-active-border-color: $admin-base-lighter-background;
 //$list-group-disabled-color : $gray-600;
 //$list-group-disabled-bg : $list-group-bg;
 $list-group-action-color: $admin-base-text-main;
 $list-group-action-hover-color: $admin-base-text-main;
-//$list-group-action-active-color : $body-color;
-//$list-group-action-active-bg : $gray-200;
+$list-group-action-active-color: $admin-base-text-main;
+$list-group-action-active-bg: lighten($list-group-hover-bg, 15%);
 // $box-shadow: 0 .5rem 1rem rgba(#000, .15) !default;
 // $box-shadow-sm: 0 .125rem .25rem rgba(#000, .075) !default;
 // $box-shadow-lg: 0 1rem 3rem rgba(#000, .175) !default;

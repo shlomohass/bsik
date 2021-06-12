@@ -8,12 +8,12 @@
 1.0.0:
     ->initial 
 *******************************************************************************/
-(function($, window, document, sikbase, undefined) {
+(function($, window, document, Bsik, undefined) {
 
 
     /************ Initiate the base js object: ******************/
-    sikbase.init();
+    Bsik.init();
 
     /************* Add dynamic table operation handler **********/
 
-})(jQuery, this, document, sikbase);
+})(jQuery, this, document, Bsik);

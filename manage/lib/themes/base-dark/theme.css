@@ -4,6 +4,8 @@
 version:
     -> initial.
 *******************************************************************************/
+/** Bootstraps Base: ****************************************/
+/** List group: ****************************************/
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_root\.scss}line{font-family:\000031}}
 :root {
   --bs-blue: #0d6efd;
@@ -8449,7 +8451,7 @@ textarea.form-control-lg {
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
-  border-radius: 0.25rem; }
+  border-radius: 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000315}}
 .list-group-numbered {
@@ -8474,7 +8476,7 @@ textarea.form-control-lg {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000346}}
   .list-group-item-action:active {
     color: #CECECE;
-    background-color: #e9ecef; }
+    background-color: #4a4a4a; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000357}}
 .list-group-item {
@@ -8502,7 +8504,7 @@ textarea.form-control-lg {
   .list-group-item.active {
     z-index: 2;
     color: #CECECE;
-    background-color: #242424;
+    background-color: #4a4a4a;
     border-color: #242424; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\0000389}}
   .list-group-item + .list-group-item {
@@ -8517,11 +8519,11 @@ textarea.form-control-lg {
   flex-direction: row; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
   .list-group-horizontal > .list-group-item:first-child {
-    border-bottom-left-radius: 0.25rem;
+    border-bottom-left-radius: 0;
     border-top-right-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
   .list-group-horizontal > .list-group-item:last-child {
-    border-top-right-radius: 0.25rem;
+    border-top-right-radius: 0;
     border-bottom-left-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
   .list-group-horizontal > .list-group-item.active {
@@ -8541,11 +8543,11 @@ textarea.form-control-lg {
     flex-direction: row; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
     .list-group-horizontal-sm > .list-group-item:first-child {
-      border-bottom-left-radius: 0.25rem;
+      border-bottom-left-radius: 0;
       border-top-right-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
     .list-group-horizontal-sm > .list-group-item:last-child {
-      border-top-right-radius: 0.25rem;
+      border-top-right-radius: 0;
       border-bottom-left-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
     .list-group-horizontal-sm > .list-group-item.active {
@@ -8564,11 +8566,11 @@ textarea.form-control-lg {
     flex-direction: row; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
     .list-group-horizontal-md > .list-group-item:first-child {
-      border-bottom-left-radius: 0.25rem;
+      border-bottom-left-radius: 0;
       border-top-right-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
     .list-group-horizontal-md > .list-group-item:last-child {
-      border-top-right-radius: 0.25rem;
+      border-top-right-radius: 0;
       border-bottom-left-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
     .list-group-horizontal-md > .list-group-item.active {
@@ -8587,11 +8589,11 @@ textarea.form-control-lg {
     flex-direction: row; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
     .list-group-horizontal-lg > .list-group-item:first-child {
-      border-bottom-left-radius: 0.25rem;
+      border-bottom-left-radius: 0;
       border-top-right-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
     .list-group-horizontal-lg > .list-group-item:last-child {
-      border-top-right-radius: 0.25rem;
+      border-top-right-radius: 0;
       border-bottom-left-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
     .list-group-horizontal-lg > .list-group-item.active {
@@ -8610,11 +8612,11 @@ textarea.form-control-lg {
     flex-direction: row; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
     .list-group-horizontal-xl > .list-group-item:first-child {
-      border-bottom-left-radius: 0.25rem;
+      border-bottom-left-radius: 0;
       border-top-right-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
     .list-group-horizontal-xl > .list-group-item:last-child {
-      border-top-right-radius: 0.25rem;
+      border-top-right-radius: 0;
       border-bottom-left-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
     .list-group-horizontal-xl > .list-group-item.active {
@@ -8633,11 +8635,11 @@ textarea.form-control-lg {
     flex-direction: row; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003112}}
     .list-group-horizontal-xxl > .list-group-item:first-child {
-      border-bottom-left-radius: 0.25rem;
+      border-bottom-left-radius: 0;
       border-top-right-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003117}}
     .list-group-horizontal-xxl > .list-group-item:last-child {
-      border-top-right-radius: 0.25rem;
+      border-top-right-radius: 0;
       border-bottom-left-radius: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/bootstrap\/_list-group\.scss}line{font-family:\00003122}}
     .list-group-horizontal-xxl > .list-group-item.active {
@@ -9349,7 +9351,7 @@ div.fixed-table-scroll-outer {
 version:
     -> initial.
 *******************************************************************************/
-/******************************  MODULE CONTRNT BASE STYLING  *****************************/
+/******************************  MODULE CONTENT BASE STYLING  *****************************/
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Server\/bsik\/manage\/lib\/themes\/base-dark\/scss\/_theme-modules\.scss}line{font-family:\0000320}}
 .container-module .module-title {
   font-size: 1.4rem;

@@ -51,16 +51,16 @@
                             switch (jqXhr.responseJSON.code) {
                                 case 400:
                                     {
-                                        alert("Search is empty");
+                                        Bsik.notify.message("warn", "Please enter a search term.", true);
                                     }
                                     break;
                                 default:
                                     {
-                                        alert("API Error occurred - Refresh the page and try again.")
+                                        Bsik.notify.message("error", "API Error occurred - Refresh the page and try again.", true);
                                     }
                             }
                         } else {
-                            alert("API Internal Server Error occurred - Refresh the page and try again.")
+                            Bsik.notify.message("error", "API Internal Server Error occurred - Refresh the page and try again.", true);
                         }
                     }
                 }
@@ -70,4 +70,4 @@
 
 
 
-})(jQuery, this, document, Bsik);
+})(jQuery, this, document, window.Bsik);

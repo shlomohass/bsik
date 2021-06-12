@@ -68,7 +68,7 @@ if (in_array($APage->module->which, ["overview", "default"])) {
                 "field"             => 'operate',
                 "title"             => 'Actions / Tools',
                 "clickToSelect"     => false,
-                "events"            => "@js:sikbase.tableOperateEvents", // the function in module js
+                "events"            => "@js:Bsik.tableOperateEvents", // the function in module js
                 "formatter"         => null // Will use dynamic generated formatter only if operations are defined next
             ]
         ],
